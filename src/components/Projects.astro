@@ -1,0 +1,57 @@
+---
+import type { Language } from '../data/i18n'
+import { movieProject, projectCopy } from '../data/projects'
+import Icon from './Icon.astro'
+interface Props {
+  lang: Language
+}
+const t = projectCopy[Astro.props.lang]
+---
+<section class="section projects" id="projects" aria-labelledby="projects-title">
+  <div class="section-intro">
+    <div><p class="eyebrow accent">{t.label}</p><h2 id="projects-title">{t.heading}</h2></div>
+    <p>{t.intro}</p>
+  </div>
+  <div class="projects-grid">
+    <article class="project-card">
+      <a class="project-cover" href={movieProject.url} target="_blank" rel="noopener noreferrer" aria-label={`${movieProject.title} — ${t.movie.action}`}>
+        <img src={movieProject.image} alt={t.movie.imageAlt} width="1440" height="900" loading="lazy" decoding="async" />
+        <span class="cover-arrow"><Icon name="arrow" /></span>
+      </a>
+      <div class="project-content">
+        <p class="eyebrow accent">{t.movie.category}</p>
+        <h3><bdi>{movieProject.title}</bdi></h3>
+        <p class="project-description">{t.movie.description}</p>
+        <ul class="tags">{t.movie.tags.map((tag) => <li>{tag}</li>)}</ul>
+        <a class="text-link project-link" href={movieProject.url} target="_blank" rel="noopener noreferrer">{t.movie.action}<Icon name="arrow" /></a>
+      </div>
+    </article>
+    <article class="project-card">
+      <figure class="dashboard-cover">
+        <div class="dashboard-illustration" aria-hidden="true">
+          <div class="dashboard-sidebar">
+            <span class="dashboard-brand" dir="ltr">o1e<span>Mortgage</span></span>
+            <span class="dashboard-nav-line selected"></span><span class="dashboard-nav-line"></span><span class="dashboard-nav-line"></span><span class="dashboard-nav-line"></span><span class="dashboard-nav-line"></span>
+            <span class="dashboard-sidebar-bottom"></span>
+          </div>
+          <div class="dashboard-main">
+            <div class="dashboard-top"><span></span><span class="dashboard-dots">● ● ●</span></div>
+            <div class="dashboard-body">
+              <p class="dashboard-title">{t.mortgage.dashboard}</p>
+              <div class="dashboard-panel"><span class="dashboard-panel-icon"><Icon name="workflow" /></span><strong>GoHighLevel</strong><span>{t.mortgage.agency}</span></div>
+              <div class="dashboard-tools"><span><Icon name="support" />{t.mortgage.accounts}</span><span><Icon name="workflow" />{t.mortgage.workflows}</span></div>
+            </div>
+          </div>
+        </div>
+        <figcaption>{t.mortgage.illustration}</figcaption>
+      </figure>
+      <div class="project-content">
+        <p class="eyebrow accent">{t.mortgage.category}</p>
+        <h3><bdi>o1e Mortgage</bdi></h3>
+        <p class="project-description">{t.mortgage.description}</p>
+        <ul class="tags">{t.mortgage.tags.map((tag) => <li>{tag}</li>)}</ul>
+        <a class="text-link project-link" href="#experience-o1e-mortgage">{t.mortgage.action}<Icon name="down" /></a>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+import { translations, type Language } from '../data/i18n'
+interface Props {
+  lang: Language
+}
+const t = translations[Astro.props.lang].experience
+const marks = ['#', 'o1e', 'HL']
+const ids = ['hashturn', 'o1e-mortgage', 'hl-pro-tools']
+---
+<section class="section experience" id="experience" aria-labelledby="experience-title">
+  <div class="section-intro">
+    <div><p class="eyebrow accent">{t.label}</p><h2 id="experience-title">{t.heading}</h2></div>
+    <p>{t.intro}</p>
+  </div>
+  <div class="experience-list">
+    {t.items.map((item, index) => <article class="experience-row" id={`experience-${ids[index]}`}>
+      <div class="experience-company"><span class={`company-mark mark-${index}`} aria-hidden="true" dir="ltr">{marks[index]}</span><h3 dir="ltr">{item.company}</h3></div>
+      <div class="experience-detail"><p class="eyebrow">{t.roleLabel}</p><h4>{item.role}</h4><p>{item.text}</p><ul class="tags">{item.tags.map((tag) => <li>{tag}</li>)}</ul></div>
+      <span class="experience-index" aria-hidden="true">0{index + 1}</span>
+    </article>)}
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Portfolio from '../../components/Portfolio.astro'
+import { languages, type Language } from '../../data/i18n'
+export const getStaticPaths = (() =>
+  languages
+    .filter((item) => item.code !== 'en')
+    .map((item) => ({
+      params: { lang: item.code },
+      props: { lang: item.code },
+    }))) satisfies GetStaticPaths
+interface Props {
+  lang: Language
+}
+---
+<Portfolio lang={Astro.props.lang} />

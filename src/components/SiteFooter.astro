@@ -1,0 +1,19 @@
+---
+import { translations, type Language } from '../data/i18n'
+import { site } from '../data/site'
+import Icon from './Icon.astro'
+interface Props {
+  lang: Language
+}
+const t = translations[Astro.props.lang]
+---
+<footer class="site-footer container">
+  <nav class="footer-socials" aria-label={t.footer.socials}>
+    <a class="social-icon" href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><Icon name="github" /></a>
+    {site.linkedin ? (
+      <a class="social-icon" href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><Icon name="linkedin" /></a>
+    ) : (
+      <button class="social-icon" type="button" disabled aria-label={t.footer.linkedinUnavailable} title={t.footer.linkedinUnavailable}><Icon name="linkedin" /></button>
+    )}
+  </nav>
+</footer>

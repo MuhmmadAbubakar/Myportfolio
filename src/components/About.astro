@@ -1,0 +1,21 @@
+---
+import { translations, type Language } from '../data/i18n'
+import { site } from '../data/site'
+import Icon from './Icon.astro'
+interface Props {
+  lang: Language
+}
+const t = translations[Astro.props.lang].about
+---
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="about-heading"><p class="eyebrow accent">{t.label}</p><h2 class="multiline" id="about-title">{t.heading}</h2><span class="signature" dir="ltr">Abubakar Mughal<span>.</span></span></div>
+  <div class="about-copy">
+    {t.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    <div class="focus"><p class="eyebrow">{t.focusLabel}</p><ul>{t.focus.map((item) => <li><Icon name="check" />{item}</li>)}</ul></div>
+  </div>
+  <a class="github-band" href={site.github} target="_blank" rel="noopener noreferrer">
+    <span class="github-icon"><Icon name="github" /></span>
+    <div><h3>{t.github}</h3><p>{t.githubText}</p></div>
+    <span class="text-link">{t.githubLink}<Icon name="arrow" /></span>
+  </a>
+</section>

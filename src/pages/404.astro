@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro'
+import { translations } from '../data/i18n'
+const t = translations.en.notFound
+---
+<Base title={`404 — ${t.title}`} description={t.text} notFound><section class="container not-found"><p class="eyebrow accent">404</p><h1>{t.title}</h1><p>{t.text}</p><a class="button button-primary" href="/">{t.back}</a></section></Base>

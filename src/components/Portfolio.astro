@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro'
+import Hero from './Hero.astro'
+import Projects from './Projects.astro'
+import Expertise from './Expertise.astro'
+import Experience from './Experience.astro'
+import About from './About.astro'
+import Contact from './Contact.astro'
+import type { Language } from '../data/i18n'
+interface Props {
+  lang: Language
+}
+const { lang } = Astro.props
+---
+<Base lang={lang}><div class="container"><Hero lang={lang} /><Projects lang={lang} /><Expertise lang={lang} /><Experience lang={lang} /><About lang={lang} /><Contact lang={lang} /></div></Base>

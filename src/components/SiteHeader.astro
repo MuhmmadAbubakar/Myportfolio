@@ -1,0 +1,30 @@
+---
+import { languages, translations, type Language } from '../data/i18n'
+import { projectCopy } from '../data/projects'
+import Icon from './Icon.astro'
+interface Props {
+  lang: Language
+}
+const { lang } = Astro.props
+const t = translations[lang]
+const home = (languages.find((item) => item.code === lang) ?? languages[0]).path
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={home} aria-label={`${t.name} — ${t.home}`}>
+      <span class="monogram" dir="ltr">am<span>.</span></span>
+      <span class="brand-name">{t.name}</span>
+    </a>
+    <nav class="main-nav" aria-label={t.navigation}>
+      <a href={`${home}#projects`}>{projectCopy[lang].nav}</a>
+      <a href={`${home}#experience`}>{t.nav.experience}</a>
+      <a href={`${home}#about`}>{t.nav.about}</a>
+    </nav>
+    <div class="header-actions">
+      <nav class="language-switcher" aria-label={t.language} dir="ltr">
+        {languages.map((item) => <a href={item.path} lang={item.code} hreflang={item.code} aria-current={item.code === lang ? 'page' : undefined}>{item.label}</a>)}
+      </nav>
+      <a class="header-contact" href={`${home}#contact`}>{t.nav.contact}<Icon name="arrow" /></a>
+    </div>
+  </div>
+</header>

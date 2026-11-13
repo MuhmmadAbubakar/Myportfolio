@@ -1,0 +1,22 @@
+---
+import { translations, type Language } from '../data/i18n'
+import Icon from './Icon.astro'
+interface Props {
+  lang: Language
+}
+const t = translations[Astro.props.lang].expertise
+const icons = ['code', 'workflow', 'support'] as const
+---
+<section class="section" id="expertise" aria-labelledby="expertise-title">
+  <div class="section-intro">
+    <div><p class="eyebrow accent">{t.label}</p><h2 id="expertise-title">{t.heading}</h2></div>
+    <p>{t.intro}</p>
+  </div>
+  <div class="expertise-grid">
+    {t.items.map((item, index) => <article class="expertise-card">
+      <div class="card-top"><span class="service-icon"><Icon name={icons[index]} /></span><span class="card-index" aria-hidden="true">0{index + 1}</span></div>
+      <h3>{item.title}</h3><p>{item.text}</p>
+      <ul class="tags">{item.tags.map((tag) => <li>{tag}</li>)}</ul>
+    </article>)}
+  </div>
+</section>
