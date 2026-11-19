@@ -163,7 +163,7 @@ export const translations: Record<Language, Copy> = {
     },    skills: {
       label: '02 / SKILLS',
       heading: 'What I work with.',
-      intro: 'Three areas cover most of my work. Websites first, then the systems and AI that keep them running.',
+      intro: 'Six areas cover most of my work. Websites first, then the systems and AI that keep them running.',
       groups: [
         {
           title: 'Web Development',
@@ -339,7 +339,7 @@ export const translations: Record<Language, Copy> = {
     },    skills: {
       label: '۰۲ / ہنر',
       heading: 'میرے کام کے شعبے۔',
-      intro: 'میرے کام کے تین اہم شعبے ہیں۔ پہلے ویب سائٹس، پھر وہ سسٹمز اور اے آئی جو انہیں چلاتے ہیں۔',
+      intro: 'میرے کام کے چھ اہم شعبے ہیں۔ پہلے ویب سائٹس، پھر وہ سسٹمز اور اے آئی جو انہیں چلاتے ہیں۔',
       groups: [
         {
           title: 'ویب ڈویلپمنٹ',
@@ -511,7 +511,7 @@ export const translations: Record<Language, Copy> = {
     },    skills: {
       label: '02 / HABILIDADES',
       heading: 'Con lo que trabajo.',
-      intro: 'Tres áreas cubren la mayor parte de mi trabajo: primero las webs, y luego los sistemas y la IA que las mantienen en marcha.',
+      intro: 'Seis áreas cubren la mayor parte de mi trabajo: primero las webs, y luego los sistemas y la IA que las mantienen en marcha.',
       groups: [
         {
           title: 'Desarrollo web',
@@ -686,7 +686,7 @@ export const translations: Record<Language, Copy> = {
     },    skills: {
       label: '02 / スキル',
       heading: '得意なこと。',
-      intro: '私の仕事のほとんどは、この3つの分野です。まずWebサイト、そしてそれを支える仕組みとAI。',
+      intro: '私の仕事のほとんどは、この6つの分野です。まずWebサイト、そしてそれを支える仕組みとAI。',
       groups: [
         {
           title: 'Web開発',
