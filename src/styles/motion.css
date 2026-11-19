@@ -1,0 +1,247 @@
+/*
+ * Theme motion: scroll reveal, hero entrance, and gold hover motion.
+ * Dark + gold only, short and smooth (200-500ms), no new dependencies.
+ *
+ * Content is visible by default. The reveal script adds .js-reveal to
+ * <html> before hiding anything, so with JS off (or no
+ * IntersectionObserver) nothing is ever hidden. Reduced motion is
+ * handled below and by the global reduced-motion rules.
+ */
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes star-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 1. Hero entrance: elements arrive one after another, total under 1s. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * {
+    animation: hero-in 480ms var(--ease) both;
+  }
+  .hero-copy > *:nth-child(1) {
+    animation-delay: 0ms;
+  }
+  .hero-copy > *:nth-child(2) {
+    animation-delay: 90ms;
+  }
+  .hero-copy > *:nth-child(3) {
+    animation-delay: 180ms;
+  }
+  .hero-copy > *:nth-child(4) {
+    animation-delay: 270ms;
+  }
+  .workflow {
+    animation: hero-in 480ms var(--ease) 340ms both;
+  }
+  .hero-scroll {
+    animation: hero-in 480ms var(--ease) 430ms both;
+  }
+  .company-strip {
+    animation: hero-in 480ms var(--ease) 500ms both;
+  }
+}
+
+/* 2. Scroll reveal: hidden only while .js-reveal is present (JS running). */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 500ms var(--ease),
+    transform 500ms var(--ease);
+}
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. Gold CTA: shine sweep + soft glow on hover, gentle press. */
+.button-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background 180ms,
+    transform 180ms,
+    box-shadow 250ms var(--ease);
+}
+.button-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 600ms var(--ease);
+  pointer-events: none;
+}
+.button-primary:hover::after {
+  transform: translateX(120%);
+}
+.button-primary:hover {
+  box-shadow:
+    0 0 0 1px var(--accent-glow),
+    0 10px 30px -12px var(--accent-glow);
+}
+.button:active {
+  transform: translateY(0) scale(0.98);
+}
+.text-link {
+  transition:
+    color 200ms,
+    transform 200ms var(--ease);
+}
+.text-link:active {
+  transform: translateY(1px);
+}
+
+/* 4. Nav links: gold underline draws in on hover / focus. */
+.main-nav a {
+  position: relative;
+}
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms var(--ease);
+}
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* 5. Section eyebrows: gold bar draws in once the section is revealed. */
+.section-intro .eyebrow,
+.about-heading .eyebrow,
+.contact-copy .eyebrow {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 7px;
+}
+.section-intro .eyebrow::after,
+.about-heading .eyebrow::after,
+.contact-copy .eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms var(--ease) 120ms;
+}
+.section-intro.is-visible .eyebrow::after,
+.about-heading.is-visible .eyebrow::after,
+.contact-copy.is-visible .eyebrow::after {
+  transform: scaleX(1);
+}
+
+/* 6. Cards: gold border glow on hover (keeps the existing lift). */
+.project-card:hover,
+.expertise-card:hover,
+.testimonial-card:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent-dim),
+    0 18px 44px -24px rgba(0, 0, 0, 0.85),
+    0 0 24px -8px var(--accent-glow);
+}
+.experience-row {
+  transition:
+    background 180ms,
+    box-shadow 250ms var(--ease),
+    transform 250ms var(--ease);
+}
+.experience-row:hover {
+  background: var(--bg-1);
+  box-shadow: inset 2px 0 0 var(--accent);
+  transform: translateX(4px);
+}
+.github-band {
+  transition:
+    border-color 180ms,
+    box-shadow 250ms var(--ease);
+}
+.github-band:hover {
+  box-shadow: 0 0 24px -10px var(--accent-glow);
+}
+
+/* 7. Testimonial stars pop in gently once their card is revealed. */
+.testimonials-stars {
+  display: inline-block;
+}
+.testimonial-card.is-visible .testimonials-stars,
+.testimonials-summary.is-visible .testimonials-stars {
+  animation: star-pop 450ms var(--ease) 120ms both;
+}
+
+/* 8. "See more" button: smooth chevron rotate, soft lift and press. */
+.testimonials-toggle {
+  transition:
+    background 200ms,
+    color 200ms,
+    transform 200ms var(--ease),
+    box-shadow 250ms var(--ease);
+}
+.testimonials-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -12px var(--accent-glow);
+}
+.testimonials-toggle:active {
+  transform: translateY(0) scale(0.98);
+}
+.testimonials-toggle-icon {
+  transition: transform 300ms var(--ease);
+}
+
+/* 9. Reduced motion: everything visible, no animation, no transform. */
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-copy > *,
+  .workflow,
+  .hero-scroll,
+  .company-strip,
+  .testimonial-card.is-visible .testimonials-stars,
+  .testimonials-summary.is-visible .testimonials-stars {
+    animation: none !important;
+  }
+  .button-primary::after,
+  .main-nav a::after,
+  .section-intro .eyebrow::after,
+  .about-heading .eyebrow::after,
+  .contact-copy .eyebrow::after {
+    transition: none !important;
+  }
+  .section-intro.is-visible .eyebrow::after,
+  .about-heading.is-visible .eyebrow::after,
+  .contact-copy.is-visible .eyebrow::after {
+    transform: scaleX(1);
+  }
+}
