@@ -183,7 +183,8 @@
 .github-band {
   transition:
     border-color 180ms,
-    box-shadow 250ms var(--ease);
+    box-shadow 250ms var(--ease),
+    background-color 300ms ease;
 }
 .github-band:hover {
   box-shadow: 0 0 24px -10px var(--accent-glow);

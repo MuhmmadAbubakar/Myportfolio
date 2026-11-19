@@ -70,6 +70,7 @@ export interface Copy {
   }
   contact: { label: string; heading: string; text: string; action: string; email: string }
   footer: { socials: string; linkedinUnavailable: string }
+  theme: { toLight: string; toDark: string }
   notFound: { title: string; text: string; back: string }
 }
 
@@ -216,6 +217,10 @@ export const translations: Record<Language, Copy> = {
       socials: 'Social profiles',
       linkedinUnavailable: 'LinkedIn profile link coming soon',
     },
+    theme: {
+      toLight: 'Switch to light theme',
+      toDark: 'Switch to dark theme',
+    },
     notFound: {
       title: 'This page took a wrong turn.',
       text: 'The page you’re looking for isn’t here. Let’s get you back to the portfolio.',
@@ -345,6 +350,10 @@ export const translations: Record<Language, Copy> = {
     footer: {
       socials: 'سوشل پروفائلز',
       linkedinUnavailable: 'LinkedIn پروفائل کا لنک جلد شامل ہوگا',
+    },
+    theme: {
+      toLight: 'ہلکی تھیم پر جائیں',
+      toDark: 'گہری تھیم پر جائیں',
     },
     notFound: {
       title: 'یہ صفحہ نہیں مل سکا۔',
@@ -480,6 +489,10 @@ export const translations: Record<Language, Copy> = {
       socials: 'Perfiles sociales',
       linkedinUnavailable: 'Enlace a LinkedIn próximamente',
     },
+    theme: {
+      toLight: 'Cambiar al tema claro',
+      toDark: 'Cambiar al tema oscuro',
+    },
     notFound: {
       title: 'Esta página se perdió en el camino.',
       text: 'La página que buscas no está aquí. Volvamos al portafolio.',
@@ -608,6 +621,10 @@ export const translations: Record<Language, Copy> = {
     footer: {
       socials: 'ソーシャルプロフィール',
       linkedinUnavailable: 'LinkedInのプロフィールリンクは準備中です',
+    },
+    theme: {
+      toLight: 'ライトテーマに切り替える',
+      toDark: 'ダークテーマに切り替える',
     },
     notFound: {
       title: 'ページが見つかりません。',

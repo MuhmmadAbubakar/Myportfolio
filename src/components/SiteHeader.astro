@@ -23,6 +23,18 @@ const home = (languages.find((item) => item.code === lang) ?? languages[0]).path
       <a href={`${home}#testimonials`}>{t.nav.testimonials}</a>
     </nav>
     <div class="header-actions">
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        data-to-light={t.theme.toLight}
+        data-to-dark={t.theme.toDark}
+        aria-label={t.theme.toLight}
+        aria-pressed="false"
+      >
+        <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true"><Icon name="moon" /></span>
+        <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true"><Icon name="sun" /></span>
+      </button>
       <a class="header-contact" href={`${home}#contact`}>{t.nav.contact}<Icon name="arrow" /></a>
     </div>
   </div>

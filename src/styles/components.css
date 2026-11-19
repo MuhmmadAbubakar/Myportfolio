@@ -5,6 +5,9 @@
   border-bottom: 1px solid var(--line-1);
   background: rgba(11, 11, 12, 0.94);
   backdrop-filter: blur(16px);
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease;
 }
 .header-inner {
   min-height: 88px;
@@ -52,6 +55,50 @@
   display: flex;
   align-items: center;
   gap: 27px;
+}
+/* Theme toggle: moon in dark mode, sun in light mode. */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  background: var(--bg-1);
+  color: var(--fg-1);
+  cursor: pointer;
+  transition:
+    border-color 180ms,
+    color 180ms,
+    background-color 300ms ease,
+    box-shadow 250ms var(--ease),
+    transform 180ms;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 16px -6px var(--accent-glow);
+}
+.theme-toggle:active {
+  transform: scale(0.94);
+}
+.theme-toggle-icon {
+  display: grid;
+  place-items: center;
+}
+.theme-toggle-icon svg {
+  width: 19px;
+  height: 19px;
+}
+.theme-toggle-sun {
+  display: none;
+}
+html[data-theme="light"] .theme-toggle-sun {
+  display: grid;
+}
+html[data-theme="light"] .theme-toggle-moon {
+  display: none;
 }
 .header-contact {
   display: flex;
@@ -327,7 +374,8 @@
   transition:
     border-color 180ms,
     transform 180ms,
-    box-shadow 180ms;
+    box-shadow 180ms,
+    background-color 300ms ease;
 }
 .project-card:hover {
   border-color: #e8b45855;
@@ -654,7 +702,8 @@ html[lang="ur"] .dashboard-cover figcaption {
   flex-direction: column;
   transition:
     border-color 180ms,
-    transform 180ms;
+    transform 180ms,
+    background-color 300ms ease;
 }
 .expertise-card:hover {
   border-color: #e8b45855;
@@ -784,6 +833,9 @@ html[lang="ur"] .dashboard-cover figcaption {
   border: 1px solid var(--line-2);
   border-radius: 8px;
   background: linear-gradient(90deg, var(--accent-dim), transparent 60%), var(--bg-1);
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease;
 }
 .testimonials-summary strong {
   font-size: 20px;
@@ -809,7 +861,8 @@ html[lang="ur"] .dashboard-cover figcaption {
   transition:
     border-color 180ms,
     transform 180ms,
-    box-shadow 180ms;
+    box-shadow 180ms,
+    background-color 300ms ease;
 }
 .testimonial-card:hover {
   border-color: #e8b45855;
@@ -1293,4 +1346,59 @@ html[lang="ja"] .hero h1 {
 html[lang="ja"] .hero h1 span {
   font-family: "Shippori Mincho B1", serif;
   font-style: normal;
+}
+
+/* Light theme: fixes for the few surfaces that use hard-coded dark colours
+ * instead of tokens. The dashboard illustration is a depicted UI, so it
+ * keeps its own colours in both themes. */
+html[data-theme="light"] .site-header {
+  background: rgba(245, 243, 238, 0.94);
+}
+html[data-theme="light"] .workflow {
+  background-color: #ffffff;
+  background-image: radial-gradient(rgba(29, 26, 20, 0.07) 1px, transparent 1px);
+  box-shadow:
+    16px 16px 0 -1px var(--bg-0),
+    16px 16px 0 0 rgba(29, 26, 20, 0.08);
+}
+html[data-theme="light"] .workflow-steps li {
+  background: #ffffff;
+}
+html[data-theme="light"] .project-cover {
+  background: #e7e2d4;
+}
+html[data-theme="light"] .cover-arrow {
+  background: rgba(255, 255, 255, 0.92);
+}
+html[data-theme="light"] .company-strip li {
+  color: var(--fg-2);
+}
+html[data-theme="light"] .tags li {
+  color: var(--fg-3);
+}
+html[data-theme="light"] .hl-symbol {
+  border-color: var(--line-2);
+}
+html[data-theme="light"] .mark-1 {
+  color: #46688a;
+}
+html[data-theme="light"] .mark-2 {
+  color: #4c7a58;
+}
+/* The gold CTA keeps its bright gold fill in light mode (dark text on it),
+ * since the light accent is darkened for use as text. */
+html[data-theme="light"] .button-primary {
+  background: #e8b458;
+}
+html[data-theme="light"] .button-primary:hover {
+  background: #f0c169;
+}
+/* Lighter hover shadow on cards in light mode. */
+html[data-theme="light"] .project-card:hover,
+html[data-theme="light"] .expertise-card:hover,
+html[data-theme="light"] .testimonial-card:hover {
+  box-shadow:
+    0 0 0 1px var(--accent-dim),
+    0 18px 44px -24px rgba(80, 64, 20, 0.45),
+    0 0 24px -8px var(--accent-glow);
 }
