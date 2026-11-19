@@ -180,6 +180,21 @@ export const translations: Record<Language, Copy> = {
           text: 'Agentic AI and automation that take on multi-step work, so people spend less time on repetitive tasks.',
           tags: ['Agentic AI', 'AI agents', 'Hermes', 'Grok', 'Muse AI', 'Automation', 'RPA'],
         },
+        {
+          title: 'Game Development',
+          text: 'Building interactive games and playful experiences on the web.',
+          tags: ['Game development', 'Interactive games', 'Web games'],
+        },
+        {
+          title: 'Next.js & React',
+          text: 'Modern web apps built with Next.js and React, with blog posts, project pages and more than one language.',
+          tags: ['Next.js', 'React', 'TypeScript'],
+        },
+        {
+          title: 'E-commerce Development',
+          text: 'Online stores and shopping experiences, with product listings and search that help people find what they want.',
+          tags: ['E-commerce', 'Online stores', 'Product search'],
+        },
       ],
     },
 
@@ -341,6 +356,21 @@ export const translations: Record<Language, Copy> = {
           text: 'ایجنٹک اے آئی اور آٹومیشن جو کئی مراحل والا کام سنبھالے، تاکہ لوگ بار بار والے کاموں پر کم وقت لگائیں۔',
           tags: ['Agentic AI', 'AI agents', 'Hermes', 'Grok', 'Muse AI', 'Automation', 'RPA'],
         },
+        {
+          title: 'گیم ڈویلپمنٹ',
+          text: 'ویب پر انٹرایکٹو گیمز اور دلچسپ تجربات بنانا۔',
+          tags: ['Game development', 'Interactive games', 'Web games'],
+        },
+        {
+          title: 'Next.js اور React',
+          text: 'Next.js اور React سے بنی جدید ویب ایپس، جن میں بلاگ پوسٹس، پروجیکٹ صفحات اور ایک سے زیادہ زبانیں شامل ہیں۔',
+          tags: ['Next.js', 'React', 'TypeScript'],
+        },
+        {
+          title: 'ای کامرس ڈویلپمنٹ',
+          text: 'آن لائن اسٹورز اور خریداری کا تجربہ، پروڈکٹ لسٹنگ اور سرچ کے ساتھ۔',
+          tags: ['E-commerce', 'Online stores', 'Product search'],
+        },
       ],
     },
 
@@ -497,6 +527,21 @@ export const translations: Record<Language, Copy> = {
           title: 'Agentes de IA y automatización',
           text: 'IA agéntica y automatización que se encargan de trabajos de varios pasos, para dedicar menos tiempo a las tareas repetitivas.',
           tags: ['Agentic AI', 'AI agents', 'Hermes', 'Grok', 'Muse AI', 'Automation', 'RPA'],
+        },
+        {
+          title: 'Desarrollo de videojuegos',
+          text: 'Creación de videojuegos interactivos y experiencias lúdicas en la web.',
+          tags: ['Game development', 'Interactive games', 'Web games'],
+        },
+        {
+          title: 'Next.js y React',
+          text: 'Aplicaciones web modernas con Next.js y React, con entradas de blog, páginas de proyectos y más de un idioma.',
+          tags: ['Next.js', 'React', 'TypeScript'],
+        },
+        {
+          title: 'Desarrollo de comercio electrónico',
+          text: 'Tiendas en línea y experiencias de compra, con catálogo de productos y búsqueda.',
+          tags: ['E-commerce', 'Online stores', 'Product search'],
         },
       ],
     },
@@ -657,6 +702,21 @@ export const translations: Record<Language, Copy> = {
           title: 'AIエージェントと自動化',
           text: '複数ステップの業務を担うエージェンティックAIと自動化で、繰り返し作業の負担を減らします。',
           tags: ['Agentic AI', 'AI agents', 'Hermes', 'Grok', 'Muse AI', 'Automation', 'RPA'],
+        },
+        {
+          title: 'ゲーム開発',
+          text: 'Web上で楽しめるインタラクティブなゲームや体験をつくります。',
+          tags: ['Game development', 'Interactive games', 'Web games'],
+        },
+        {
+          title: 'Next.jsとReact',
+          text: 'Next.jsとReactでつくるモダンなWebアプリ。ブログ記事、プロジェクトページ、多言語対応を含みます。',
+          tags: ['Next.js', 'React', 'TypeScript'],
+        },
+        {
+          title: 'ECサイト開発',
+          text: 'オンラインストアとショッピング体験。商品一覧と検索で、欲しいものを見つけやすくします。',
+          tags: ['E-commerce', 'Online stores', 'Product search'],
         },
       ],
     },
