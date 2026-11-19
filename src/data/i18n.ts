@@ -59,6 +59,8 @@ export interface Copy {
     averageLabel: string
     count: string
     client: string
+    seeMore: string
+    seeLess: string
   }
   about: {
     label: string
@@ -77,14 +79,14 @@ export interface Copy {
 
 /** Client reviews supplied by Abubakar, Nov 20. Shown in English in every language; no reviewer names were supplied, so they are presented as client reviews. */
 export const testimonialQuotes = [
-  'Great assistance. Thank you Abubakar.',
-  "Abubakar was great, he worked with me to identify the issue clearly and although he wasn't able to fix it, he escalated the issue for me to hopefully find someone who can fix it. Thanks",
-  'Abubakar was able to explain why my Assigned user were going to my mastermind email account and the consequences of changing the email address. It enabling me to make an informed decision.',
-  'Abubakar was very friendly and assisted me quickly with my request!',
-  "Yes, Sir, I'm very grateful that they are there to help because I was struggling with this for a while, so I'm thankful that they will take care of it for me. I guess now I will have to learn to do it for myself so I can teach my clients to do it if I have to, but I'm so glad that they're working that out for me. Thanks.",
-  'I really appreciate that Abubakar asked if there was anything else I needed before signing off.',
   'Abubakar was extremely helpful, answering every question and providing information to help me resolve my issue.',
   "Abubakar was really patient and awesome! I have been trying to resolve this issue since 10/21 and he took time to understand my need and assist me. As a result, I do not have to manually update my client's website. Thank you.",
+  'Abubakar was very friendly and assisted me quickly with my request!',
+  'Abubakar was able to explain why my Assigned user were going to my mastermind email account and the consequences of changing the email address. It enabling me to make an informed decision.',
+  'Great assistance. Thank you Abubakar.',
+  "Abubakar was great, he worked with me to identify the issue clearly and although he wasn't able to fix it, he escalated the issue for me to hopefully find someone who can fix it. Thanks",
+  "Yes, Sir, I'm very grateful that they are there to help because I was struggling with this for a while, so I'm thankful that they will take care of it for me. I guess now I will have to learn to do it for myself so I can teach my clients to do it if I have to, but I'm so glad that they're working that out for me. Thanks.",
+  'I really appreciate that Abubakar asked if there was anything else I needed before signing off.',
   'Abubakar gave me steps to try and solve my problem. However, because I could not find a phone number available in my area to purchase, I am not sure if the steps will work. I am giving 5 stars because of the customer support that was provided.',
   "Today, I just don't have the words of appreciation. For my Mastermind team support. There are exceptionally phenomenal. An absolutely a blessing. Following right along. With Daddy, Tony, Uncle Dean's. Mission and purpose, and that's what I love. I'm right with you?",
 ]
@@ -129,7 +131,7 @@ export const translations: Record<Language, Copy> = {
     },
     companies: 'EXPERIENCE ACROSS',
     expertise: {
-      label: '02 / EXPERTISE',
+      label: '03 / EXPERTISE',
       heading: 'Where I can help.',
       intro:
         'The website is just the beginning. I connect the experience with the systems that support it.',
@@ -157,7 +159,7 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     experience: {
-      label: '03 / EXPERIENCE',
+      label: '04 / EXPERIENCE',
       heading: 'The work behind the skills.',
       intro: 'Experience in website development, automation, and the HighLevel ecosystem.',
       roleLabel: 'ROLE',
@@ -184,16 +186,18 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     testimonials: {
-      label: '04 / TESTIMONIALS',
+      label: '05 / TESTIMONIALS',
       heading: 'What clients say.',
-      intro: 'Ten client reviews — every one 5 out of 5.',
+      intro: 'Rated 5.0 out of 5 from 10 client reviews — trusted for clear communication, patient support, and reliable follow-through.',
       average: '5.0',
       averageLabel: 'Average rating',
       count: '10 client reviews',
       client: 'Client review',
+      seeMore: 'See more',
+      seeLess: 'See less',
     },
     about: {
-      label: '05 / ABOUT',
+      label: '01 / ABOUT',
       heading: 'A builder at heart.\nA problem-solver by nature.',
       paragraphs: [
         'I’m Abubakar Mughal, a website developer and RPA automation expert. My work connects what people see on screen with the processes that happen behind it.',
@@ -265,7 +269,7 @@ export const translations: Record<Language, Copy> = {
     },
     companies: 'ان اداروں کے ساتھ کام کا تجربہ',
     expertise: {
-      label: '۰۲ / مہارتیں',
+      label: '۰۳ / مہارتیں',
       heading: 'میں کہاں مدد کر سکتا ہوں۔',
       intro:
         'ویب سائٹ تو صرف آغاز ہے۔ میں صارف کے تجربے کو اس کے پیچھے کام کرنے والے سسٹمز سے جوڑتا ہوں۔',
@@ -293,7 +297,7 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     experience: {
-      label: '۰۳ / تجربہ',
+      label: '۰۴ / تجربہ',
       heading: 'مہارتوں کے پیچھے کا تجربہ۔',
       intro: 'ویب ڈویلپمنٹ، آٹومیشن اور HighLevel کے شعبوں میں کام کا تجربہ۔',
       roleLabel: 'ذمہ داری',
@@ -320,16 +324,18 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     testimonials: {
-      label: '۰۴ / آراء',
+      label: '۰۵ / آراء',
       heading: 'کلائنٹس کیا کہتے ہیں۔',
-      intro: 'دس کلائنٹ جائزے — ہر ایک 5 میں سے 5۔',
+      intro: 'دس کلائنٹ جائزوں کی بنیاد پر 5.0 میں سے 5.0 — واضح بات چیت، صبر آزما مدد اور قابلِ اعتماد فالو اپ کے لیے قابلِ اعتماد۔',
       average: '5.0',
       averageLabel: 'اوسط درجہ بندی',
       count: '10 کلائنٹ جائزے',
       client: 'کلائنٹ کا جائزہ',
+      seeMore: 'مزید دیکھیں',
+      seeLess: 'کم دیکھیں',
     },
     about: {
-      label: '۰۵ / میرے بارے میں',
+      label: '۰۱ / میرے بارے میں',
       heading: 'تعمیر کا شوق۔\nمسائل حل کرنے کا جذبہ۔',
       paragraphs: [
         'میں ابوبکر مغل ہوں، ویب سائٹ ڈویلپر اور آر پی اے آٹومیشن ماہر۔ میرا کام اسکرین پر نظر آنے والے تجربے کو پس منظر میں چلنے والے عمل سے جوڑتا ہے۔',
@@ -397,7 +403,7 @@ export const translations: Record<Language, Copy> = {
     },
     companies: 'EXPERIENCIA EN',
     expertise: {
-      label: '02 / ESPECIALIDADES',
+      label: '03 / ESPECIALIDADES',
       heading: 'Cómo puedo ayudarte.',
       intro:
         'El sitio web es solo el principio. Conecto la experiencia con los sistemas que la hacen posible.',
@@ -425,7 +431,7 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     experience: {
-      label: '03 / EXPERIENCIA',
+      label: '04 / EXPERIENCIA',
       heading: 'La práctica detrás de las habilidades.',
       intro: 'Experiencia en desarrollo web, automatización y el ecosistema de HighLevel.',
       roleLabel: 'PUESTO',
@@ -452,16 +458,18 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     testimonials: {
-      label: '04 / TESTIMONIOS',
+      label: '05 / TESTIMONIOS',
       heading: 'Lo que dicen los clientes.',
-      intro: 'Diez reseñas de clientes; todas de 5 sobre 5.',
+      intro: 'Valoración de 5,0 sobre 5 basada en 10 reseñas de clientes: comunicación clara, apoyo paciente y seguimiento fiable.',
       average: '5.0',
       averageLabel: 'Valoración media',
       count: '10 reseñas de clientes',
       client: 'Reseña de cliente',
+      seeMore: 'Ver más',
+      seeLess: 'Ver menos',
     },
     about: {
-      label: '05 / SOBRE MÍ',
+      label: '01 / SOBRE MÍ',
       heading: 'Vocación de crear.\nPasión por resolver.',
       paragraphs: [
         'Soy Abubakar Mughal, desarrollador web y experto en automatización RPA. Mi trabajo conecta lo que las personas ven en pantalla con los procesos que lo hacen posible.',
@@ -533,7 +541,7 @@ export const translations: Record<Language, Copy> = {
     },
     companies: 'これまでに携わった企業',
     expertise: {
-      label: '02 / 専門分野',
+      label: '03 / 専門分野',
       heading: 'お手伝いできること。',
       intro: 'Webサイトは始まりにすぎません。使う人の体験と、それを支える仕組みをつなぎます。',
       items: [
@@ -560,7 +568,7 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     experience: {
-      label: '03 / 経験',
+      label: '04 / 経験',
       heading: 'スキルを支える実務経験。',
       intro: 'Web開発、自動化、HighLevelの分野で積み重ねた経験。',
       roleLabel: '役割',
@@ -587,16 +595,18 @@ export const translations: Record<Language, Copy> = {
       ],
     },
     testimonials: {
-      label: '04 / お客様の声',
+      label: '05 / お客様の声',
       heading: 'お客様の声。',
-      intro: '10件のクライアントレビュー。すべて5点満点中5点。',
+      intro: '10件のクライアントレビューで5点満点中5.0。丁寧なコミュニケーション、辛抱強いサポート、確実なフォローアップで信頼されています。',
       average: '5.0',
       averageLabel: '平均評価',
       count: '10件のクライアントレビュー',
       client: 'クライアントレビュー',
+      seeMore: 'もっと見る',
+      seeLess: '閉じる',
     },
     about: {
-      label: '05 / 自己紹介',
+      label: '01 / 自己紹介',
       heading: 'つくることが好き。\n解決することが得意。',
       paragraphs: [
         'アブバカル・ムガルです。Webサイト開発とRPA自動化を専門としています。画面に見える体験と、その裏で動く業務プロセスをつなぐことが私の仕事です。',

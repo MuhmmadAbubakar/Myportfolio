@@ -225,12 +225,6 @@ html[lang="ur"] .eyebrow {
 html[lang="ur"] :is(.button, .text-link, .main-nav, .tags li) {
   font-size: 16px;
 }
-.language-switcher a[lang="ur"] {
-  font-family: "Noto Naskh Arabic", serif;
-}
-.language-switcher a[lang="ja"] {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-}
 @media (max-width: 640px) {
   .container {
     width: calc(100% - 40px);

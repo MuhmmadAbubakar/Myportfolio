@@ -17,11 +17,34 @@ const t = translations[lang].testimonials
     <strong>{t.average} / 5.0</strong>
     <span>{t.averageLabel} · {t.count}</span>
   </div>
-  <div class="testimonial-grid">
-    {testimonialQuotes.map((quote) => <figure class="testimonial-card">
+  <div class="testimonial-grid" id="testimonials-grid">
+    {testimonialQuotes.map((quote, index) => <figure class={index >= 4 ? 'testimonial-card testimonial-extra' : 'testimonial-card'} hidden={index >= 4}>
       <span class="testimonial-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
       <blockquote>{quote}</blockquote>
       <figcaption>— {t.client}</figcaption>
     </figure>)}
   </div>
+  <div class="testimonials-more">
+    <button type="button" class="testimonials-toggle" aria-expanded="false" aria-controls="testimonials-grid" data-see-more={t.seeMore} data-see-less={t.seeLess}>
+      <span class="testimonials-toggle-label">{t.seeMore}</span>
+      <span class="testimonials-toggle-icon" aria-hidden="true">⌄</span>
+    </button>
+  </div>
 </section>
+<script>
+  (() => {
+    const button = document.querySelector<HTMLButtonElement>('.testimonials-toggle')
+    if (!button) return
+    const label = button.querySelector('.testimonials-toggle-label')
+    const extras = document.querySelectorAll<HTMLElement>('.testimonial-extra')
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true'
+      extras.forEach((card) => {
+        card.hidden = expanded
+      })
+      button.setAttribute('aria-expanded', String(!expanded))
+      button.classList.toggle('is-expanded', !expanded)
+      if (label) label.textContent = expanded ? button.dataset.seeMore ?? '' : button.dataset.seeLess ?? ''
+    })
+  })()
+</script>

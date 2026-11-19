@@ -17,15 +17,12 @@ const home = (languages.find((item) => item.code === lang) ?? languages[0]).path
       <span class="brand-name">{t.name}</span>
     </a>
     <nav class="main-nav" aria-label={t.navigation}>
+      <a href={`${home}#about`}>{t.nav.about}</a>
       <a href={`${home}#projects`}>{projectCopy[lang].nav}</a>
       <a href={`${home}#experience`}>{t.nav.experience}</a>
       <a href={`${home}#testimonials`}>{t.nav.testimonials}</a>
-      <a href={`${home}#about`}>{t.nav.about}</a>
     </nav>
     <div class="header-actions">
-      <nav class="language-switcher" aria-label={t.language} dir="ltr">
-        {languages.map((item) => <a href={item.path} lang={item.code} hreflang={item.code} aria-current={item.code === lang ? 'page' : undefined}>{item.label}</a>)}
-      </nav>
       <a class="header-contact" href={`${home}#contact`}>{t.nav.contact}<Icon name="arrow" /></a>
     </div>
   </div>

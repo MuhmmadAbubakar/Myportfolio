@@ -21,7 +21,7 @@ npm run build
 npm run preview
 ```
 
-The production site is generated in `dist/`. No server, translation service, or client-side JavaScript is needed.
+The production site is generated in `dist/`. No server or translation service is needed; the only client-side JavaScript is the small Testimonials “See more” toggle.
 
 ## Content and languages
 
@@ -31,9 +31,9 @@ The production site is generated in `dist/`. No server, translation service, or 
 - `src/components/`: shared page sections.
 - `src/styles/`: responsive styles, theme tokens, and Urdu/Japanese typography.
 
-English is at `/`, Urdu at `/ur/`, Spanish at `/es/`, and Japanese at `/ja/`. Every page has a language switcher, translated metadata, and alternate-language links. Urdu uses a right-to-left layout and a self-hosted Noto Naskh Arabic font. Japanese fonts are also self-hosted. Language choices use native links and work with JavaScript disabled.
+English is at `/`, Urdu at `/ur/`, Spanish at `/es/`, and Japanese at `/ja/`. The translated pages are still published at those paths, with translated metadata and alternate-language links, but there is no language switcher in the header. Urdu uses a right-to-left layout and a self-hosted Noto Naskh Arabic font. Japanese fonts are also self-hosted.
 
-Experience descriptions are based on the supplied roles. Hashturn is listed as a Senior role with Agentic AI, and o1e Mortgage as Agency Admin for 8 months. The Testimonials section shows the 10 supplied 5-star client reviews, quoted in English in every language, without reviewer names — none were supplied with the reviews. No employment dates, performance statistics, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
+Experience descriptions are based on the supplied roles. Hashturn is listed as a Senior role with Agentic AI, and o1e Mortgage as Agency Admin for 8 months. The Testimonials section shows the 4 strongest of the 10 supplied 5-star client reviews first, with a “See more” button revealing the remaining 6. All 10 reviews are quoted in English in every language, without reviewer names — none were supplied with the reviews. No employment dates, performance statistics, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
 
 The selected work section features Hash Movies with a captured homepage preview and a live website link, plus o1e Mortgage's GoHighLevel work. The latter uses a clearly labelled HTML/CSS dashboard illustration based on the supplied visual reference; it does not claim authorship of the GoHighLevel platform or expose a private dashboard link.
 
