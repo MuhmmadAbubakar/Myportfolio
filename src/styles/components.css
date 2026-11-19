@@ -240,12 +240,13 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 30px;
-  padding-right: 30px;
+  gap: 64px;
+  padding-right: 64px;
 }
 .marquee-separator {
   color: var(--accent);
   font-size: 13px;
+  margin-left: 32px;
 }
 @keyframes marquee-scroll {
   to {
@@ -260,7 +261,8 @@
 .company-strip li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
+  padding-inline: 8px;
   color: #b8b8b3;
   font-size: 22px;
   font-weight: 600;
@@ -277,7 +279,7 @@
   font-weight: 400;
   display: flex;
   align-items: baseline;
-  gap: 7px;
+  gap: 12px;
 }
 .mortgage-wordmark span {
   font-size: 14px;
@@ -876,15 +878,6 @@ html[lang="ur"] .dashboard-cover figcaption {
   font-size: 34px;
   line-height: 1.4;
 }
-.signature {
-  display: block;
-  margin-top: 35px;
-  font: italic 25px var(--font-serif);
-  color: var(--fg-2);
-}
-.signature span {
-  color: var(--accent);
-}
 .about-copy > p {
   font-size: 14px;
   line-height: 1.95;
@@ -1135,7 +1128,7 @@ html[lang="ur"] .dashboard-cover figcaption {
     font-size: 18px;
   }
   .company-strip ul {
-    gap: 18px;
+    gap: 40px;
   }
   .company-strip > .eyebrow {
     max-width: 100px;
@@ -1181,9 +1174,6 @@ html[lang="ur"] .dashboard-cover figcaption {
   }
   .about-heading h2 {
     font-size: 34px;
-  }
-  .signature {
-    margin-top: 24px;
   }
   .github-band {
     grid-template-columns: auto minmax(0, 1fr);
@@ -1259,19 +1249,22 @@ html[lang="ur"] .dashboard-cover figcaption {
     width: 100%;
   }
   .marquee-track ul {
-    gap: 12px;
-    padding-right: 12px;
+    gap: 36px;
+    padding-right: 36px;
+  }
+  .marquee-separator {
+    margin-left: 18px;
   }
   .company-strip li {
     font-size: 15px;
-    gap: 5px;
+    gap: 10px;
   }
   .company-symbol {
     font-size: 23px;
   }
   .mortgage-wordmark {
     font-size: 24px;
-    gap: 4px;
+    gap: 10px;
   }
   .mortgage-wordmark span {
     font-size: 10px;

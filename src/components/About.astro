@@ -8,7 +8,7 @@ interface Props {
 const t = translations[Astro.props.lang].about
 ---
 <section class="section about" id="about" aria-labelledby="about-title">
-  <div class="about-heading"><p class="eyebrow accent">{t.label}</p><h2 class="multiline" id="about-title">{t.heading}</h2><span class="signature" dir="ltr">Abubakar Mughal<span>.</span></span></div>
+  <div class="about-heading"><p class="eyebrow accent">{t.label}</p><h2 class="multiline" id="about-title">{t.heading}</h2></div>
   <div class="about-copy">
     {t.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
     <div class="focus"><p class="eyebrow">{t.focusLabel}</p><ul>{t.focus.map((item) => <li><Icon name="check" />{item}</li>)}</ul></div>
