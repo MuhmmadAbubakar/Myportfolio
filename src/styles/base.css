@@ -58,16 +58,33 @@ html[data-theme="light"] body::before {
 /* Vanta TOPOLOGY background: a fixed full-page canvas (see public/vanta-bg.js)
  * behind all content. It never shifts layout or intercepts input; if the
  * effect cannot start, the plain theme background and the ambient glow
- * above remain. */
+ * above remain. The canvas itself is slightly transparent to dull the
+ * gold further, and the whole layer drifts very slowly (a gentle pan
+ * that loops without a jump) so the background is visibly alive even
+ * though the effect's own motion is subtle. The scale keeps the layer
+ * covering the viewport at every point of the drift. */
 #vanta-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  animation: vanta-drift 80s ease-in-out infinite alternate;
+}
+#vanta-bg canvas {
+  opacity: 0.8;
+}
+@keyframes vanta-drift {
+  from {
+    transform: translate3d(-14px, -10px, 0) scale(1.06);
+  }
+  to {
+    transform: translate3d(14px, 12px, 0) scale(1.08);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   #vanta-bg {
     display: none;
+    animation: none;
   }
 }
 main {
