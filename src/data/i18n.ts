@@ -52,7 +52,6 @@ export interface Copy {
   testimonials: {
     label: string
     heading: string
-    intro: string
     average: string
     averageLabel: string
     count: string
@@ -183,7 +182,6 @@ export const translations: Record<Language, Copy> = {
     testimonials: {
       label: '05 / TESTIMONIALS',
       heading: 'What clients say.',
-      intro: 'Rated 5.0 out of 5 from 10 client reviews. Clients trust me for clear communication, patient support and reliable follow-through.',
       average: '5.0',
       averageLabel: 'Average rating',
       count: '10 client reviews',
@@ -318,7 +316,6 @@ export const translations: Record<Language, Copy> = {
     testimonials: {
       label: '۰۵ / آراء',
       heading: 'کلائنٹس کیا کہتے ہیں۔',
-      intro: 'دس کلائنٹ جائزوں کی بنیاد پر 5.0 میں سے 5.0۔ کلائنٹس مجھ پر واضح بات چیت، صبر آزما مدد اور قابلِ اعتماد فالو اپ کے لیے بھروسہ کرتے ہیں۔',
       average: '5.0',
       averageLabel: 'اوسط درجہ بندی',
       count: '10 کلائنٹ جائزے',
@@ -449,7 +446,6 @@ export const translations: Record<Language, Copy> = {
     testimonials: {
       label: '05 / TESTIMONIOS',
       heading: 'Lo que dicen los clientes.',
-      intro: 'Valoración de 5,0 sobre 5 basada en 10 reseñas de clientes: comunicación clara, apoyo paciente y seguimiento fiable.',
       average: '5.0',
       averageLabel: 'Valoración media',
       count: '10 reseñas de clientes',
@@ -583,7 +579,6 @@ export const translations: Record<Language, Copy> = {
     testimonials: {
       label: '05 / お客様の声',
       heading: 'お客様の声。',
-      intro: '10件のクライアントレビューで5点満点中5.0。丁寧なコミュニケーション、辛抱強いサポート、確実なフォローアップで信頼されています。',
       average: '5.0',
       averageLabel: '平均評価',
       count: '10件のクライアントレビュー',
