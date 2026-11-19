@@ -1,6 +1,6 @@
 ﻿# Abubakar Mughal — Portfolio
 
-A static Astro portfolio in English, Urdu, Spanish, and Japanese. Includes web development, RPA automation, and GoHighLevel experience at Hashturn, o1e Mortgage, and HL Pro Tools.
+A static Astro portfolio in English, Urdu, Spanish, and Japanese. Includes web development, RPA automation, Agentic AI, and GoHighLevel experience at Hashturn, o1e Mortgage, and HL Pro Tools.
 
 ## Local development
 
@@ -33,7 +33,7 @@ The production site is generated in `dist/`. No server, translation service, or 
 
 English is at `/`, Urdu at `/ur/`, Spanish at `/es/`, and Japanese at `/ja/`. Every page has a language switcher, translated metadata, and alternate-language links. Urdu uses a right-to-left layout and a self-hosted Noto Naskh Arabic font. Japanese fonts are also self-hosted. Language choices use native links and work with JavaScript disabled.
 
-Experience descriptions are based on the supplied roles. No employment dates, performance statistics, testimonials, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
+Experience descriptions are based on the supplied roles. Hashturn is listed as a Senior role with Agentic AI, and o1e Mortgage as Agency Admin for 8 months. The Testimonials section shows the 10 supplied 5-star client reviews, quoted in English in every language, without reviewer names — none were supplied with the reviews. No employment dates, performance statistics, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
 
 The selected work section features Hash Movies with a captured homepage preview and a live website link, plus o1e Mortgage's GoHighLevel work. The latter uses a clearly labelled HTML/CSS dashboard illustration based on the supplied visual reference; it does not claim authorship of the GoHighLevel platform or expose a private dashboard link.
 

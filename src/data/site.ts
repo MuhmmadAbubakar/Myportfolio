@@ -1,6 +1,6 @@
 /** Shared identity. Translated page content lives in i18n.ts. */
 export const site = {
-  url: 'https://abubakar-mughal-portfolio.gkfoury.chatgpt.site',
+  url: 'https://abubakar-mughal.netlify.app',
   name: 'Abubakar Mughal',
   author: 'Abubakar Mughal',
   email: 'm.abubakarmughal23@gmail.com',

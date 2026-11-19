@@ -1,11 +1,12 @@
 ---
-import { translations, type Language } from '../data/i18n'
+import { type Language, translations } from '../data/i18n'
 import Icon from './Icon.astro'
+
 interface Props {
   lang: Language
 }
 const t = translations[Astro.props.lang].expertise
-const icons = ['code', 'workflow', 'support'] as const
+const icons = ['code', 'workflow', 'support', 'spark'] as const
 ---
 <section class="section" id="expertise" aria-labelledby="expertise-title">
   <div class="section-intro">

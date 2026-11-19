@@ -320,6 +320,15 @@
   border: 1px solid var(--line-2);
   border-radius: 8px;
   background: var(--bg-1);
+  transition:
+    border-color 180ms,
+    transform 180ms,
+    box-shadow 180ms;
+}
+.project-card:hover {
+  border-color: #e8b45855;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -24px rgba(0, 0, 0, 0.8);
 }
 .project-cover {
   display: block;
@@ -629,7 +638,7 @@ html[lang="ur"] .dashboard-cover figcaption {
 }
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 .expertise-card {
@@ -686,6 +695,11 @@ html[lang="ur"] .dashboard-cover figcaption {
   padding-block: 33px;
   border-bottom: 1px solid var(--line-1);
   align-items: start;
+  border-radius: 6px;
+  transition: background 180ms;
+}
+.experience-row:hover {
+  background: var(--bg-1);
 }
 .experience-row:last-child {
   border-bottom: none;
@@ -735,6 +749,13 @@ html[lang="ur"] .dashboard-cover figcaption {
   margin-bottom: 10px;
   line-height: 1.5;
 }
+.experience-duration {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
 .experience-detail > p:not(.eyebrow) {
   font-size: 13px;
   max-width: 530px;
@@ -748,6 +769,63 @@ html[lang="ur"] .dashboard-cover figcaption {
   color: var(--fg-3);
   padding-top: 5px;
   text-align: end;
+}
+.testimonials-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent-dim), transparent 60%), var(--bg-1);
+}
+.testimonials-summary strong {
+  font-size: 20px;
+  color: var(--fg-1);
+}
+.testimonials-summary span:last-child {
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.testimonial-card {
+  padding: 26px;
+  border: 1px solid var(--line-1);
+  border-radius: 8px;
+  background: var(--bg-1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition:
+    border-color 180ms,
+    transform 180ms,
+    box-shadow 180ms;
+}
+.testimonial-card:hover {
+  border-color: #e8b45855;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -24px rgba(0, 0, 0, 0.8);
+}
+.testimonials-stars {
+  color: var(--accent);
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+.testimonial-card blockquote {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--fg-2);
+}
+.testimonial-card figcaption {
+  font-size: 11px;
+  color: var(--fg-3);
+  margin-top: auto;
 }
 .about {
   display: grid;
@@ -906,16 +984,16 @@ html[lang="ur"] .dashboard-cover figcaption {
 }
 @media (min-width: 1000px) {
   .hero-copy {
-    animation: enter 600ms ease-out both;
+    animation: enter 320ms ease-out both;
   }
   .workflow {
-    animation: enter 700ms 100ms ease-out both;
+    animation: enter 380ms 40ms ease-out both;
   }
 }
 @keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -947,6 +1025,9 @@ html[lang="ur"] .dashboard-cover figcaption {
   }
   .section-intro > p {
     max-width: 280px;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .expertise-card {
     padding: 23px;
@@ -1032,6 +1113,9 @@ html[lang="ur"] .dashboard-cover figcaption {
     max-width: 500px;
   }
   .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-grid {
     grid-template-columns: 1fr;
   }
   .expertise-card {

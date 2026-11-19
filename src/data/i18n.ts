@@ -14,7 +14,13 @@ export interface Copy {
   home: string
   navigation: string
   language: string
-  nav: { expertise: string; experience: string; about: string; contact: string }
+  nav: {
+    expertise: string
+    experience: string
+    testimonials: string
+    about: string
+    contact: string
+  }
   hero: {
     eyebrow: string
     greeting: string
@@ -43,7 +49,16 @@ export interface Copy {
     heading: string
     intro: string
     roleLabel: string
-    items: { company: string; role: string; text: string; tags: string[] }[]
+    items: { company: string; role: string; duration?: string; text: string; tags: string[] }[]
+  }
+  testimonials: {
+    label: string
+    heading: string
+    intro: string
+    average: string
+    averageLabel: string
+    count: string
+    client: string
   }
   about: {
     label: string
@@ -60,6 +75,20 @@ export interface Copy {
   notFound: { title: string; text: string; back: string }
 }
 
+/** Client reviews supplied by Abubakar, Nov 20. Shown in English in every language; no reviewer names were supplied, so they are presented as client reviews. */
+export const testimonialQuotes = [
+  'Great assistance. Thank you Abubakar.',
+  "Abubakar was great, he worked with me to identify the issue clearly and although he wasn't able to fix it, he escalated the issue for me to hopefully find someone who can fix it. Thanks",
+  'Abubakar was able to explain why my Assigned user were going to my mastermind email account and the consequences of changing the email address. It enabling me to make an informed decision.',
+  'Abubakar was very friendly and assisted me quickly with my request!',
+  "Yes, Sir, I'm very grateful that they are there to help because I was struggling with this for a while, so I'm thankful that they will take care of it for me. I guess now I will have to learn to do it for myself so I can teach my clients to do it if I have to, but I'm so glad that they're working that out for me. Thanks.",
+  'I really appreciate that Abubakar asked if there was anything else I needed before signing off.',
+  'Abubakar was extremely helpful, answering every question and providing information to help me resolve my issue.',
+  "Abubakar was really patient and awesome! I have been trying to resolve this issue since 10/21 and he took time to understand my need and assist me. As a result, I do not have to manually update my client's website. Thank you.",
+  'Abubakar gave me steps to try and solve my problem. However, because I could not find a phone number available in my area to purchase, I am not sure if the steps will work. I am giving 5 stars because of the customer support that was provided.',
+  "Today, I just don't have the words of appreciation. For my Mastermind team support. There are exceptionally phenomenal. An absolutely a blessing. Following right along. With Daddy, Tony, Uncle Dean's. Mission and purpose, and that's what I love. I'm right with you?",
+]
+
 export const translations: Record<Language, Copy> = {
   en: {
     title: 'Abubakar Mughal — Web Developer & Automation Expert',
@@ -73,6 +102,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: 'Expertise',
       experience: 'Experience',
+      testimonials: 'Testimonials',
       about: 'About',
       contact: 'Let’s talk',
     },
@@ -119,6 +149,11 @@ export const translations: Record<Language, Copy> = {
           text: 'Hands-on HighLevel experience and technical problem-solving to help keep business systems working smoothly.',
           tags: ['GoHighLevel', 'Technical support'],
         },
+        {
+          title: 'Agentic AI',
+          text: 'AI agents that take on multi-step work — drafting, following up, and updating systems — with clear guardrails and human oversight.',
+          tags: ['Agentic AI', 'AI agents'],
+        },
       ],
     },
     experience: {
@@ -129,14 +164,15 @@ export const translations: Record<Language, Copy> = {
       items: [
         {
           company: 'Hashturn',
-          role: 'Website Developer & RPA Automation Expert',
-          text: 'Website development and robotic process automation, with a focus on practical digital experiences and more efficient workflows.',
-          tags: ['Website development', 'RPA automation'],
+          role: 'Senior Website Developer & RPA Automation Expert',
+          text: 'Website development, robotic process automation, and agentic AI, with a focus on practical digital experiences and more efficient workflows.',
+          tags: ['Website development', 'RPA automation', 'Agentic AI'],
         },
         {
           company: 'o1e Mortgage',
-          role: 'GoHighLevel Specialist',
-          text: 'Worked with o1e Mortgage on GoHighLevel, applying hands-on platform knowledge in a mortgage business environment.',
+          role: 'Agency Admin',
+          duration: '8 months',
+          text: 'Agency Admin for o1e Mortgage on GoHighLevel, applying hands-on platform knowledge in a mortgage business environment.',
           tags: ['GoHighLevel', 'CRM'],
         },
         {
@@ -147,8 +183,17 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    testimonials: {
+      label: '04 / TESTIMONIALS',
+      heading: 'What clients say.',
+      intro: 'Ten client reviews — every one 5 out of 5.',
+      average: '5.0',
+      averageLabel: 'Average rating',
+      count: '10 client reviews',
+      client: 'Client review',
+    },
     about: {
-      label: '04 / ABOUT',
+      label: '05 / ABOUT',
       heading: 'A builder at heart.\nA problem-solver by nature.',
       paragraphs: [
         'I’m Abubakar Mughal, a website developer and RPA automation expert. My work connects what people see on screen with the processes that happen behind it.',
@@ -165,7 +210,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'Visit my GitHub',
     },
     contact: {
-      label: '05 / CONTACT',
+      label: '06 / CONTACT',
       heading: 'Let’s build something\nthat works for you.',
       text: 'Have a website, an automation idea, or a HighLevel challenge in mind? Tell me about it.',
       action: 'Start a conversation',
@@ -193,6 +238,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: 'مہارتیں',
       experience: 'تجربہ',
+      testimonials: 'آراء',
       about: 'میرے بارے میں',
       contact: 'رابطہ کریں',
     },
@@ -239,6 +285,11 @@ export const translations: Record<Language, Copy> = {
           text: 'HighLevel کا عملی تجربہ اور تکنیکی مسائل کا حل، تاکہ کاروباری سسٹمز بہتر انداز میں چلتے رہیں۔',
           tags: ['GoHighLevel', 'تکنیکی معاونت'],
         },
+        {
+          title: 'ایجنٹک اے آئی',
+          text: 'ایسے اے آئی ایجنٹس جو کئی مراحل والا کام سنبھالیں — مسودے تیار کرنا، فالو اپ اور سسٹمز کو اپ ڈیٹ کرنا — واضح حدود اور انسانی نگرانی کے ساتھ۔',
+          tags: ['ایجنٹک اے آئی', 'اے آئی ایجنٹس'],
+        },
       ],
     },
     experience: {
@@ -249,14 +300,15 @@ export const translations: Record<Language, Copy> = {
       items: [
         {
           company: 'Hashturn',
-          role: 'ویب سائٹ ڈویلپر اور آر پی اے آٹومیشن ماہر',
-          text: 'ویب سائٹ ڈویلپمنٹ اور روبوٹک پروسیس آٹومیشن، بہتر ڈیجیٹل تجربات اور مؤثر کام کے طریقوں پر توجہ کے ساتھ۔',
-          tags: ['ویب سائٹ ڈویلپمنٹ', 'آر پی اے آٹومیشن'],
+          role: 'سینئر ویب سائٹ ڈویلپر اور آر پی اے آٹومیشن ماہر',
+          text: 'ویب سائٹ ڈویلپمنٹ، روبوٹک پروسیس آٹومیشن اور ایجنٹک اے آئی، بہتر ڈیجیٹل تجربات اور مؤثر کام کے طریقوں پر توجہ کے ساتھ۔',
+          tags: ['ویب سائٹ ڈویلپمنٹ', 'آر پی اے آٹومیشن', 'ایجنٹک اے آئی'],
         },
         {
           company: 'o1e Mortgage',
-          role: 'GoHighLevel اسپیشلسٹ',
-          text: 'o1e Mortgage کے ساتھ GoHighLevel پر کام کیا اور مارگیج کاروبار کے ماحول میں پلیٹ فارم کے عملی علم کا استعمال کیا۔',
+          role: 'ایجنسی ایڈمن',
+          duration: '8 ماہ',
+          text: 'o1e Mortgage میں GoHighLevel پر ایجنسی ایڈمن، مارگیج کاروبار کے ماحول میں پلیٹ فارم کے عملی علم کا استعمال کرتے ہوئے۔',
           tags: ['GoHighLevel', 'سی آر ایم'],
         },
         {
@@ -267,8 +319,17 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    testimonials: {
+      label: '۰۴ / آراء',
+      heading: 'کلائنٹس کیا کہتے ہیں۔',
+      intro: 'دس کلائنٹ جائزے — ہر ایک 5 میں سے 5۔',
+      average: '5.0',
+      averageLabel: 'اوسط درجہ بندی',
+      count: '10 کلائنٹ جائزے',
+      client: 'کلائنٹ کا جائزہ',
+    },
     about: {
-      label: '۰۴ / میرے بارے میں',
+      label: '۰۵ / میرے بارے میں',
       heading: 'تعمیر کا شوق۔\nمسائل حل کرنے کا جذبہ۔',
       paragraphs: [
         'میں ابوبکر مغل ہوں، ویب سائٹ ڈویلپر اور آر پی اے آٹومیشن ماہر۔ میرا کام اسکرین پر نظر آنے والے تجربے کو پس منظر میں چلنے والے عمل سے جوڑتا ہے۔',
@@ -281,7 +342,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'میرا GitHub دیکھیں',
     },
     contact: {
-      label: '۰۵ / رابطہ',
+      label: '۰۶ / رابطہ',
       heading: 'آئیں کچھ ایسا بنائیں\nجو آپ کے کام آئے۔',
       text: 'ویب سائٹ، آٹومیشن کا خیال یا HighLevel کا کوئی مسئلہ؟ مجھے اس کے بارے میں بتائیں۔',
       action: 'بات شروع کریں',
@@ -309,6 +370,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: 'Especialidades',
       experience: 'Experiencia',
+      testimonials: 'Testimonios',
       about: 'Sobre mí',
       contact: 'Hablemos',
     },
@@ -355,6 +417,11 @@ export const translations: Record<Language, Copy> = {
           text: 'Experiencia práctica con HighLevel y resolución de problemas técnicos para mantener los sistemas en marcha.',
           tags: ['GoHighLevel', 'Soporte técnico'],
         },
+        {
+          title: 'IA agéntica',
+          text: 'Agentes de IA que se encargan de trabajos de varios pasos — redactar, hacer seguimiento y actualizar sistemas — con límites claros y supervisión humana.',
+          tags: ['IA agéntica', 'Agentes de IA'],
+        },
       ],
     },
     experience: {
@@ -365,14 +432,15 @@ export const translations: Record<Language, Copy> = {
       items: [
         {
           company: 'Hashturn',
-          role: 'Desarrollador web y experto en automatización RPA',
-          text: 'Desarrollo web y automatización robótica de procesos, con atención a experiencias digitales útiles y flujos de trabajo más eficientes.',
-          tags: ['Desarrollo web', 'Automatización RPA'],
+          role: 'Desarrollador web sénior y experto en automatización RPA',
+          text: 'Desarrollo web, automatización robótica de procesos e IA agéntica, con atención a experiencias digitales útiles y flujos de trabajo más eficientes.',
+          tags: ['Desarrollo web', 'Automatización RPA', 'IA agéntica'],
         },
         {
           company: 'o1e Mortgage',
-          role: 'Especialista en GoHighLevel',
-          text: 'Colaboré con o1e Mortgage en GoHighLevel, aplicando conocimientos prácticos de la plataforma en el sector hipotecario.',
+          role: 'Administrador de agencia',
+          duration: '8 meses',
+          text: 'Administrador de agencia para o1e Mortgage en GoHighLevel, aplicando conocimientos prácticos de la plataforma en el sector hipotecario.',
           tags: ['GoHighLevel', 'CRM'],
         },
         {
@@ -383,8 +451,17 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    testimonials: {
+      label: '04 / TESTIMONIOS',
+      heading: 'Lo que dicen los clientes.',
+      intro: 'Diez reseñas de clientes; todas de 5 sobre 5.',
+      average: '5.0',
+      averageLabel: 'Valoración media',
+      count: '10 reseñas de clientes',
+      client: 'Reseña de cliente',
+    },
     about: {
-      label: '04 / SOBRE MÍ',
+      label: '05 / SOBRE MÍ',
       heading: 'Vocación de crear.\nPasión por resolver.',
       paragraphs: [
         'Soy Abubakar Mughal, desarrollador web y experto en automatización RPA. Mi trabajo conecta lo que las personas ven en pantalla con los procesos que lo hacen posible.',
@@ -401,7 +478,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'Visita mi GitHub',
     },
     contact: {
-      label: '05 / CONTACTO',
+      label: '06 / CONTACTO',
       heading: 'Creemos algo\nque funcione para ti.',
       text: '¿Tienes en mente un sitio web, una automatización o un reto con HighLevel? Cuéntamelo.',
       action: 'Inicia una conversación',
@@ -426,7 +503,13 @@ export const translations: Record<Language, Copy> = {
     home: 'ホーム',
     navigation: 'メインナビゲーション',
     language: '言語を選択',
-    nav: { expertise: '専門分野', experience: '経験', about: '自己紹介', contact: 'お問い合わせ' },
+    nav: {
+      expertise: '専門分野',
+      experience: '経験',
+      testimonials: 'お客様の声',
+      about: '自己紹介',
+      contact: 'お問い合わせ',
+    },
     hero: {
       eyebrow: 'WEB開発 · 自動化エキスパート',
       greeting: 'こんにちは、アブバカル・ムガルです。',
@@ -469,6 +552,11 @@ export const translations: Record<Language, Copy> = {
           text: 'HighLevelの実務経験と技術的な問題解決を通じて、ビジネスシステムの円滑な運用を支えます。',
           tags: ['GoHighLevel', '技術サポート'],
         },
+        {
+          title: 'エージェンティックAI',
+          text: '下書き、フォローアップ、システム更新など、複数ステップの業務を担うAIエージェント。明確なルールと人の確認のもとで運用します。',
+          tags: ['エージェンティックAI', 'AIエージェント'],
+        },
       ],
     },
     experience: {
@@ -479,14 +567,15 @@ export const translations: Record<Language, Copy> = {
       items: [
         {
           company: 'Hashturn',
-          role: 'Web開発者・RPA自動化エキスパート',
-          text: 'Webサイト開発とRPAを組み合わせ、実用的なデジタル体験と効率的なワークフローに取り組む。',
-          tags: ['Webサイト開発', 'RPA自動化'],
+          role: 'シニアWeb開発者・RPA自動化エキスパート',
+          text: 'Webサイト開発、RPA、エージェンティックAIを組み合わせ、実用的なデジタル体験と効率的なワークフローに取り組む。',
+          tags: ['Webサイト開発', 'RPA自動化', 'エージェンティックAI'],
         },
         {
           company: 'o1e Mortgage',
-          role: 'GoHighLevelスペシャリスト',
-          text: 'o1e MortgageのGoHighLevel関連業務に携わり、住宅ローン事業の現場でプラットフォームの知識を活かしました。',
+          role: 'エージェンシー管理者',
+          duration: '8か月',
+          text: 'o1e MortgageのGoHighLevelにおけるエージェンシー管理者として、住宅ローン事業の現場でプラットフォームの知識を活かしました。',
           tags: ['GoHighLevel', 'CRM'],
         },
         {
@@ -497,8 +586,17 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    testimonials: {
+      label: '04 / お客様の声',
+      heading: 'お客様の声。',
+      intro: '10件のクライアントレビュー。すべて5点満点中5点。',
+      average: '5.0',
+      averageLabel: '平均評価',
+      count: '10件のクライアントレビュー',
+      client: 'クライアントレビュー',
+    },
     about: {
-      label: '04 / 自己紹介',
+      label: '05 / 自己紹介',
       heading: 'つくることが好き。\n解決することが得意。',
       paragraphs: [
         'アブバカル・ムガルです。Webサイト開発とRPA自動化を専門としています。画面に見える体験と、その裏で動く業務プロセスをつなぐことが私の仕事です。',
@@ -511,7 +609,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'GitHubを見る',
     },
     contact: {
-      label: '05 / お問い合わせ',
+      label: '06 / お問い合わせ',
       heading: 'あなたの仕事に役立つものを、\n一緒につくりましょう。',
       text: 'Webサイト、自動化のアイデア、HighLevelのお困りごと。まずはお聞かせください。',
       action: 'メールで相談する',

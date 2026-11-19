@@ -1,5 +1,6 @@
 ---
-import { translations, type Language } from '../data/i18n'
+import { type Language, translations } from '../data/i18n'
+
 interface Props {
   lang: Language
 }
@@ -15,7 +16,7 @@ const ids = ['hashturn', 'o1e-mortgage', 'hl-pro-tools']
   <div class="experience-list">
     {t.items.map((item, index) => <article class="experience-row" id={`experience-${ids[index]}`}>
       <div class="experience-company"><span class={`company-mark mark-${index}`} aria-hidden="true" dir="ltr">{marks[index]}</span><h3 dir="ltr">{item.company}</h3></div>
-      <div class="experience-detail"><p class="eyebrow">{t.roleLabel}</p><h4>{item.role}</h4><p>{item.text}</p><ul class="tags">{item.tags.map((tag) => <li>{tag}</li>)}</ul></div>
+      <div class="experience-detail"><p class="eyebrow">{t.roleLabel}</p><h4>{item.role}{item.duration && <span class="experience-duration"> · {item.duration}</span>}</h4><p>{item.text}</p><ul class="tags">{item.tags.map((tag) => <li>{tag}</li>)}</ul></div>
       <span class="experience-index" aria-hidden="true">0{index + 1}</span>
     </article>)}
   </div>

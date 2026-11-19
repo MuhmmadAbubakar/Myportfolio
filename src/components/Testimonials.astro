@@ -1,0 +1,27 @@
+---
+import { type Language, testimonialQuotes, translations } from '../data/i18n'
+
+interface Props {
+  lang: Language
+}
+const { lang } = Astro.props
+const t = translations[lang].testimonials
+---
+<section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
+  <div class="section-intro">
+    <div><p class="eyebrow accent">{t.label}</p><h2 id="testimonials-title">{t.heading}</h2></div>
+    <p>{t.intro}</p>
+  </div>
+  <div class="testimonials-summary">
+    <span class="testimonials-stars" aria-hidden="true">★★★★★</span>
+    <strong>{t.average} / 5.0</strong>
+    <span>{t.averageLabel} · {t.count}</span>
+  </div>
+  <div class="testimonial-grid">
+    {testimonialQuotes.map((quote) => <figure class="testimonial-card">
+      <span class="testimonial-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+      <blockquote>{quote}</blockquote>
+      <figcaption>— {t.client}</figcaption>
+    </figure>)}
+  </div>
+</section>
