@@ -12,7 +12,7 @@ const home = (languages.find((item) => item.code === lang) ?? languages[0]).path
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href={home} aria-label={`${t.name} — ${t.home}`}>
+    <a class="brand" href={home} aria-label={`${t.name}: ${t.home}`}>
       <span class="monogram" dir="ltr">am<span>.</span></span>
       <span class="brand-name">{t.name}</span>
     </a>

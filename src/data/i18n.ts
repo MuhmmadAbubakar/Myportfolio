@@ -93,9 +93,9 @@ export const testimonialQuotes = [
 
 export const translations: Record<Language, Copy> = {
   en: {
-    title: 'Abubakar Mughal — GoHighLevel AI Operator & Automation Expert',
+    title: 'Abubakar Mughal: GoHighLevel AI Operator & Automation Expert',
     description:
-      'Abubakar Mughal’s portfolio. GoHighLevel AI Operator — CRM, workflows, and AI automation for agencies — with experience at Hashturn, o1e Mortgage, and HL Pro Tools.',
+      'Abubakar Mughal’s portfolio. GoHighLevel AI Operator, CRM, workflows, and AI automation for agencies, with experience at Hashturn, o1e Mortgage, and HL Pro Tools.',
     name: 'Abubakar Mughal',
     skip: 'Skip to content',
     home: 'Home',
@@ -114,7 +114,7 @@ export const translations: Record<Language, Copy> = {
       lineOne: 'GoHighLevel, handled.',
       lineTwo: 'AI that follows up.',
       description:
-        'I work inside GoHighLevel every day — CRM, pipelines, calendars and conversations — building workflows and AI automation that follow up, book appointments, and keep client systems clean. Websites support the work; the systems do the heavy lifting.',
+        'I work inside GoHighLevel every day. I look after the CRM, the pipelines, the calendars and the conversations. I build workflows and AI automation that follow up, book appointments, and keep client systems clean. Websites support the work. The systems do the heavy lifting.',
       primary: 'Explore my work',
       secondary: 'Get in touch',
       scroll: 'A little more about what I do',
@@ -127,33 +127,33 @@ export const translations: Record<Language, Copy> = {
         { title: 'Integrate', detail: 'AI agents that answer and update the CRM' },
         { title: 'Automate', detail: 'Systems that stay clean and don’t break' },
       ],
-      note: 'Good systems follow up, book, and stay clean — without extra work.',
+      note: 'Good systems follow up and book, and they stay clean without extra work.',
     },
     companies: 'EXPERIENCE ACROSS',
     expertise: {
       label: '03 / EXPERTISE',
       heading: 'Where I can help.',
       intro:
-        'GoHighLevel is where the work happens. I set up the CRM, build the workflows, and configure the AI — then keep it all running.',
+        'GoHighLevel is where the work happens. I set up the CRM, build the workflows, and configure the AI, then I keep it all running.',
       items: [
         {
           title: 'Website development',
-          text: 'Thoughtful, responsive websites with clear structure and an experience that feels right on every screen.',
+          text: 'Websites that look good and work well on every screen, with a clear structure people can follow.',
           tags: ['Web development', 'Responsive design'],
         },
         {
           title: 'RPA & automation',
-          text: 'Practical automation for repetitive tasks, connecting steps and giving people more room to focus.',
+          text: 'I automate the repetitive tasks, connect the steps, and give people their time back for the work that matters.',
           tags: ['RPA', 'Workflow automation'],
         },
         {
           title: 'GoHighLevel & support',
-          text: 'Hands-on GoHighLevel work — CRM, pipelines, calendars and workflows — plus technical support that keeps business systems working smoothly.',
+          text: 'Hands-on GoHighLevel work: CRM, pipelines, calendars and workflows, plus technical support that keeps business systems working smoothly.',
           tags: ['GoHighLevel', 'CRM', 'Workflows'],
         },
         {
           title: 'Agentic AI',
-          text: 'AI agents configured and tuned to take on multi-step work — drafting, following up, and updating the CRM — with clear guardrails and human oversight.',
+          text: 'AI agents I set up and tune to take on multi-step work. They draft, follow up and update the CRM, and I check their work.',
           tags: ['Agentic AI', 'AI agents'],
         },
       ],
@@ -167,7 +167,7 @@ export const translations: Record<Language, Copy> = {
         {
           company: 'Hashturn',
           role: 'Senior Website Developer & RPA Automation Expert',
-          text: 'Senior role at Hashturn: website development, RPA automation, and agentic AI — building and fixing GoHighLevel workflows, working the CRM and pipelines, and configuring and tuning AI automation so follow-ups and bookings happen reliably.',
+          text: 'Senior role at Hashturn: website development, RPA automation, and agentic AI. I build and fix GoHighLevel workflows, work the CRM and pipelines, and set up and tune AI automation so follow-ups and bookings happen reliably.',
           tags: ['GoHighLevel', 'Workflows', 'RPA automation', 'Agentic AI'],
         },
         {
@@ -188,7 +188,7 @@ export const translations: Record<Language, Copy> = {
     testimonials: {
       label: '05 / TESTIMONIALS',
       heading: 'What clients say.',
-      intro: 'Rated 5.0 out of 5 from 10 client reviews — trusted for clear communication, patient support, and reliable follow-through.',
+      intro: 'Rated 5.0 out of 5 from 10 client reviews. Clients trust me for clear communication, patient support and reliable follow-through.',
       average: '5.0',
       averageLabel: 'Average rating',
       count: '10 client reviews',
@@ -198,19 +198,19 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '01 / ABOUT',
-      heading: 'A builder at heart.\nA problem-solver by nature.',
+      heading: 'I keep GoHighLevel running.\nSo nothing slips through the cracks.',
       paragraphs: [
-        'I’m Abubakar Mughal, and I work inside GoHighLevel every day. I manage the CRM — pipelines, calendars and conversations — build workflows that follow up and book, and set up AI automation that answers, updates records, and keeps systems clean. When a workflow breaks, I find the problem and fix it.',
-        'I do this work as a Senior at Hashturn, as Agency Admin at o1e Mortgage on GoHighLevel for 8 months, and as a Technical Expert at HL Pro Tools in the HighLevel ecosystem. Websites and RPA are part of the toolkit — but the work a business feels every day is the CRM, the workflows, and the AI running behind it.',
+        'I’m Abubakar Mughal, and I work inside GoHighLevel every day. I look after the CRM, the pipelines, the calendars and the conversations. I build workflows that follow up and book appointments, and I set up AI automation that answers people, updates records and keeps everything tidy. If a workflow breaks, I track down the problem and fix it.',
+        'I do this as a Senior at Hashturn, as Agency Admin at o1e Mortgage on GoHighLevel for 8 months, and as a Technical Expert at HL Pro Tools. Websites and RPA are part of what I can do, but the work a business notices every day is the CRM, the workflows and the AI behind it.',
       ],
       focusLabel: 'MY FOCUS',
       focus: [
         'GoHighLevel CRM, pipelines & sub-accounts',
-        'AI automation & AI agents — setup, tuning and supervision',
+        'AI automation and AI agents, set up, tuned and checked by me',
         "Workflows that follow up, book and don't break",
       ],
       github: 'A closer look at the code.',
-      githubText: 'Explore my repositories and development work on GitHub.',
+      githubText: 'You can see my repositories and development work on GitHub.',
       githubLink: 'Visit my GitHub',
     },
     contact: {
@@ -222,7 +222,7 @@ export const translations: Record<Language, Copy> = {
     },
     footer: {
       socials: 'Social profiles',
-      linkedinUnavailable: 'LinkedIn — profile link coming soon',
+      linkedinUnavailable: 'LinkedIn profile link coming soon',
     },
     notFound: {
       title: 'This page took a wrong turn.',
@@ -231,9 +231,9 @@ export const translations: Record<Language, Copy> = {
     },
   },
   ur: {
-    title: 'ابوبکر مغل — GoHighLevel اے آئی آپریٹر اور آٹومیشن ماہر',
+    title: 'ابوبکر مغل: GoHighLevel اے آئی آپریٹر اور آٹومیشن ماہر',
     description:
-      'ابوبکر مغل کا پورٹ فولیو۔ GoHighLevel اے آئی آپریٹر — ایجنسیوں کے لیے سی آر ایم، ورک فلو اور اے آئی آٹومیشن — Hashturn، o1e Mortgage اور HL Pro Tools کے ساتھ کام کا تجربہ۔',
+      'ابوبکر مغل کا پورٹ فولیو۔ GoHighLevel اے آئی آپریٹر، ایجنسیوں کے لیے سی آر ایم، ورک فلو اور اے آئی آٹومیشن، اور Hashturn، o1e Mortgage اور HL Pro Tools کے ساتھ کام کا تجربہ۔',
     name: 'ابوبکر مغل',
     skip: 'اصل مواد پر جائیں',
     home: 'ابتدائی صفحہ',
@@ -252,7 +252,7 @@ export const translations: Record<Language, Copy> = {
       lineOne: 'GoHighLevel، مکمل طور پر سنبھالا ہوا۔',
       lineTwo: 'اے آئی جو فالو اپ کرے۔',
       description:
-        'میں ہر روز GoHighLevel کے اندر کام کرتا ہوں — سی آر ایم، پائپ لائنز، کیلنڈرز اور گفتگو — ایسے ورک فلو اور اے آئی آٹومیشن بناتا ہوں جو فالو اپ کریں، اپائنٹمنٹ بک کریں اور سسٹمز کو صاف رکھیں۔ ویب سائٹس اس کام کی مدد کرتی ہیں؛ اصل کام سسٹمز کرتے ہیں۔',
+        'میں ہر روز GoHighLevel کے اندر کام کرتا ہوں۔ میں سی آر ایم، پائپ لائنز، کیلنڈرز اور گفتگو دیکھتا ہوں۔ میں ایسے ورک فلو اور اے آئی آٹومیشن بناتا ہوں جو فالو اپ کریں، اپائنٹمنٹ بک کریں اور سسٹمز کو صاف رکھیں۔ ویب سائٹس اس کام کی مدد کرتی ہیں۔ اصل کام سسٹمز کرتے ہیں۔',
       primary: 'میرا کام دیکھیں',
       secondary: 'رابطہ کریں',
       scroll: 'میرے کام کے بارے میں مزید جانیں',
@@ -265,14 +265,14 @@ export const translations: Record<Language, Copy> = {
         { title: 'انضمام', detail: 'اے آئی ایجنٹس جو جواب دیں اور سی آر ایم اپ ڈیٹ کریں' },
         { title: 'آٹومیشن', detail: 'صاف ستھرے سسٹمز جو خراب نہ ہوں' },
       ],
-      note: 'اچھے سسٹمز فالو اپ کرتے ہیں، بکنگ کرتے ہیں اور صاف رہتے ہیں — بغیر اضافی کام کے۔',
+      note: 'اچھے سسٹمز فالو اپ کرتے ہیں، بکنگ کرتے ہیں اور بغیر اضافی کام کے صاف رہتے ہیں۔',
     },
     companies: 'ان اداروں کے ساتھ کام کا تجربہ',
     expertise: {
       label: '۰۳ / مہارتیں',
       heading: 'میں کہاں مدد کر سکتا ہوں۔',
       intro:
-        'GoHighLevel ہی وہ جگہ ہے جہاں اصل کام ہوتا ہے۔ میں سی آر ایم سیٹ کرتا ہوں، ورک فلو بناتا ہوں اور اے آئی ترتیب دیتا ہوں — پھر سب کچھ چلتا رہتا ہے۔',
+        'GoHighLevel ہی وہ جگہ ہے جہاں اصل کام ہوتا ہے۔ میں سی آر ایم سیٹ کرتا ہوں، ورک فلو بناتا ہوں اور اے آئی ترتیب دیتا ہوں، پھر سب کچھ چلتا رہتا ہے۔',
       items: [
         {
           title: 'ویب سائٹ ڈویلپمنٹ',
@@ -286,12 +286,12 @@ export const translations: Record<Language, Copy> = {
         },
         {
           title: 'GoHighLevel اور معاونت',
-          text: 'GoHighLevel کا عملی کام — سی آر ایم، پائپ لائنز، کیلنڈرز اور ورک فلو — اور تکنیکی معاونت جو کاروباری سسٹمز کو رواں رکھے۔',
+          text: 'GoHighLevel کا عملی کام: سی آر ایم، پائپ لائنز، کیلنڈرز اور ورک فلو، اور تکنیکی معاونت جو کاروباری سسٹمز کو رواں رکھے۔',
           tags: ['GoHighLevel', 'سی آر ایم', 'ورک فلو'],
         },
         {
           title: 'ایجنٹک اے آئی',
-          text: 'ایسے اے آئی ایجنٹس جو ترتیب دے کر کئی مراحل والا کام سنبھالیں — مسودے تیار کرنا، فالو اپ اور سی آر ایم اپ ڈیٹ کرنا — واضح حدود اور انسانی نگرانی کے ساتھ۔',
+          text: 'ایسے اے آئی ایجنٹس جنہیں میں ترتیب دے کر کئی مراحل والا کام سونپتا ہوں۔ وہ مسودے تیار کرتے ہیں، فالو اپ کرتے ہیں اور سی آر ایم اپ ڈیٹ کرتے ہیں، اور میں ان کے کام پر نظر رکھتا ہوں۔',
           tags: ['ایجنٹک اے آئی', 'اے آئی ایجنٹس'],
         },
       ],
@@ -305,7 +305,7 @@ export const translations: Record<Language, Copy> = {
         {
           company: 'Hashturn',
           role: 'سینئر ویب سائٹ ڈویلپر اور آر پی اے آٹومیشن ماہر',
-          text: 'Hashturn میں سینئر ذمہ داری: ویب سائٹ ڈویلپمنٹ، آر پی اے آٹومیشن اور ایجنٹک اے آئی — GoHighLevel ورک فلو بنانا اور درست کرنا، سی آر ایم اور پائپ لائنز پر کام اور اے آئی آٹومیشن کی ترتیب، تاکہ فالو اپ اور بکنگ قابلِ اعتماد انداز میں ہوں۔',
+          text: 'Hashturn میں سینئر ذمہ داری: ویب سائٹ ڈویلپمنٹ، آر پی اے آٹومیشن اور ایجنٹک اے آئی۔ میں GoHighLevel ورک فلو بناتا اور درست کرتا ہوں، سی آر ایم اور پائپ لائنز پر کام کرتا ہوں اور اے آئی آٹومیشن ترتیب دیتا ہوں، تاکہ فالو اپ اور بکنگ قابلِ اعتماد انداز میں ہوں۔',
           tags: ['GoHighLevel', 'ورک فلو', 'آر پی اے آٹومیشن', 'ایجنٹک اے آئی'],
         },
         {
@@ -326,7 +326,7 @@ export const translations: Record<Language, Copy> = {
     testimonials: {
       label: '۰۵ / آراء',
       heading: 'کلائنٹس کیا کہتے ہیں۔',
-      intro: 'دس کلائنٹ جائزوں کی بنیاد پر 5.0 میں سے 5.0 — واضح بات چیت، صبر آزما مدد اور قابلِ اعتماد فالو اپ کے لیے قابلِ اعتماد۔',
+      intro: 'دس کلائنٹ جائزوں کی بنیاد پر 5.0 میں سے 5.0۔ کلائنٹس مجھ پر واضح بات چیت، صبر آزما مدد اور قابلِ اعتماد فالو اپ کے لیے بھروسہ کرتے ہیں۔',
       average: '5.0',
       averageLabel: 'اوسط درجہ بندی',
       count: '10 کلائنٹ جائزے',
@@ -336,13 +336,13 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '۰۱ / میرے بارے میں',
-      heading: 'تعمیر کا شوق۔\nمسائل حل کرنے کا جذبہ۔',
+      heading: 'میں GoHighLevel کو چلاتا رہتا ہوں۔\nتاکہ کوئی کام پیچھے نہ رہ جائے۔',
       paragraphs: [
-        'میں ابوبکر مغل ہوں، اور میں ہر روز GoHighLevel کے اندر کام کرتا ہوں۔ میں سی آر ایم سنبھالتا ہوں — پائپ لائنز، کیلنڈرز اور گفتگو — ایسے ورک فلو بناتا ہوں جو فالو اپ کریں اور بکنگ کریں، اور اے آئی آٹومیشن ترتیب دیتا ہوں جو جواب دے، ریکارڈ اپ ڈیٹ کرے اور سسٹمز کو صاف رکھے۔ جب کوئی ورک فلو خراب ہو تو میں مسئلہ تلاش کر کے اسے درست کرتا ہوں۔',
-        'یہ کام میں Hashturn میں سینئر کے طور پر، o1e Mortgage میں GoHighLevel پر 8 ماہ تک ایجنسی ایڈمن کے طور پر، اور HL Pro Tools میں HighLevel کے شعبے میں تکنیکی ماہر کے طور پر کرتا ہوں۔ ویب سائٹس اور آر پی اے میرے اوزاروں کا حصہ ہیں — لیکن کاروبار کو ہر روز جو کام محسوس ہوتا ہے وہ سی آر ایم، ورک فلو اور ان کے پیچھے چلنے والی اے آئی ہے۔',
+        'میں ابوبکر مغل ہوں، اور میں ہر روز GoHighLevel کے اندر کام کرتا ہوں۔ میں سی آر ایم، پائپ لائنز، کیلنڈرز اور گفتگو دیکھتا ہوں۔ میں ایسے ورک فلو بناتا ہوں جو فالو اپ کریں اور اپائنٹمنٹ بک کریں، اور اے آئی آٹومیشن ترتیب دیتا ہوں جو لوگوں کو جواب دے، ریکارڈ اپ ڈیٹ کرے اور سب کچھ صاف رکھے۔ اگر کوئی ورک فلو خراب ہو جائے تو میں مسئلہ تلاش کر کے اسے درست کرتا ہوں۔',
+        'یہ کام میں Hashturn میں سینئر کے طور پر، o1e Mortgage میں GoHighLevel پر 8 ماہ تک ایجنسی ایڈمن کے طور پر، اور HL Pro Tools میں تکنیکی ماہر کے طور پر کرتا ہوں۔ ویب سائٹس اور آر پی اے بھی میرے کام کا حصہ ہیں، لیکن کاروبار کو ہر روز جو کام نظر آتا ہے وہ سی آر ایم، ورک فلو اور ان کے پیچھے چلنے والی اے آئی ہے۔',
       ],
       focusLabel: 'میری توجہ',
-      focus: ['GoHighLevel سی آر ایم، پائپ لائنز اور سب اکاؤنٹس', 'اے آئی آٹومیشن اور اے آئی ایجنٹس — سیٹ اپ، ترتیب اور نگرانی', 'ورک فلو جو فالو اپ کریں، بکنگ کریں اور خراب نہ ہوں'],
+      focus: ['GoHighLevel سی آر ایم، پائپ لائنز اور سب اکاؤنٹس', 'اے آئی آٹومیشن اور اے آئی ایجنٹس، سیٹ اپ، ترتیب اور میری نگرانی میں', 'ورک فلو جو فالو اپ کریں، بکنگ کریں اور خراب نہ ہوں'],
       github: 'میرے کوڈ پر ایک نظر۔',
       githubText: 'GitHub پر میری ریپوزٹریز اور ڈویلپمنٹ کے کام کو دیکھیں۔',
       githubLink: 'میرا GitHub دیکھیں',
@@ -356,7 +356,7 @@ export const translations: Record<Language, Copy> = {
     },
     footer: {
       socials: 'سوشل پروفائلز',
-      linkedinUnavailable: 'LinkedIn — پروفائل کا لنک جلد شامل ہوگا',
+      linkedinUnavailable: 'LinkedIn پروفائل کا لنک جلد شامل ہوگا',
     },
     notFound: {
       title: 'یہ صفحہ نہیں مل سکا۔',
@@ -365,7 +365,7 @@ export const translations: Record<Language, Copy> = {
     },
   },
   es: {
-    title: 'Abubakar Mughal — Operador de IA en GoHighLevel y experto en automatización',
+    title: 'Abubakar Mughal: Operador de IA en GoHighLevel y experto en automatización',
     description:
       'Portafolio de Abubakar Mughal. Operador de IA en GoHighLevel: CRM, flujos de trabajo y automatización con IA para agencias, con experiencia en Hashturn, o1e Mortgage y HL Pro Tools.',
     name: 'Abubakar Mughal',
@@ -425,7 +425,7 @@ export const translations: Record<Language, Copy> = {
         },
         {
           title: 'IA agéntica',
-          text: 'Agentes de IA configurados y ajustados para encargarse de trabajos de varios pasos: redactar, hacer seguimiento y actualizar el CRM, con límites claros y supervisión humana.',
+          text: 'Agentes de IA que configuro y ajusto para encargarse de trabajos de varios pasos. Redactan, hacen seguimiento y actualizan el CRM, y yo reviso su trabajo.',
           tags: ['IA agéntica', 'Agentes de IA'],
         },
       ],
@@ -470,10 +470,10 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '01 / SOBRE MÍ',
-      heading: 'Vocación de crear.\nPasión por resolver.',
+      heading: 'Mantengo GoHighLevel funcionando.\nPara que nada se quede sin hacer.',
       paragraphs: [
-        'Soy Abubakar Mughal y trabajo dentro de GoHighLevel todos los días. Gestiono el CRM —pipelines, calendarios y conversaciones—, creo flujos de trabajo que hacen seguimiento y reservan, y configuro automatización con IA que responde, actualiza los registros y mantiene los sistemas en orden. Cuando un flujo de trabajo se rompe, encuentro el problema y lo corrijo.',
-        'Hago este trabajo como sénior en Hashturn, como administrador de agencia en o1e Mortgage en GoHighLevel durante 8 meses y como experto técnico en HL Pro Tools, dentro del ecosistema de HighLevel. Las webs y la RPA forman parte de mis herramientas, pero lo que una empresa nota cada día es el CRM, los flujos de trabajo y la IA que trabaja detrás.',
+        'Soy Abubakar Mughal y trabajo dentro de GoHighLevel todos los días. Me encargo del CRM, los pipelines, los calendarios y las conversaciones. Creo flujos de trabajo que hacen seguimiento y reservan citas, y configuro automatización con IA que responde a las personas, actualiza los registros y mantiene todo en orden. Si un flujo de trabajo se rompe, busco el problema y lo corrijo.',
+        'Hago este trabajo como sénior en Hashturn, como administrador de agencia en o1e Mortgage en GoHighLevel durante 8 meses y como experto técnico en HL Pro Tools. Las webs y la RPA también forman parte de lo que hago, pero lo que una empresa nota cada día es el CRM, los flujos de trabajo y la IA que trabaja detrás.',
       ],
       focusLabel: 'MI ENFOQUE',
       focus: [
@@ -494,7 +494,7 @@ export const translations: Record<Language, Copy> = {
     },
     footer: {
       socials: 'Perfiles sociales',
-      linkedinUnavailable: 'LinkedIn — enlace al perfil próximamente',
+      linkedinUnavailable: 'Enlace a LinkedIn próximamente',
     },
     notFound: {
       title: 'Esta página se perdió en el camino.',
@@ -503,9 +503,9 @@ export const translations: Record<Language, Copy> = {
     },
   },
   ja: {
-    title: 'アブバカル・ムガル — GoHighLevel AIオペレーター・自動化エキスパート',
+    title: 'アブバカル・ムガル：GoHighLevel AIオペレーター・自動化エキスパート',
     description:
-      'アブバカル・ムガルのポートフォリオ。GoHighLevel AIオペレーター — 代理店向けのCRM、ワークフロー、AI自動化 — Hashturn、o1e Mortgage、HL Pro Toolsでの経験を紹介します。',
+      'アブバカル・ムガルのポートフォリオ。GoHighLevel AIオペレーターとして、代理店向けのCRM、ワークフロー、AI自動化を担当。Hashturn、o1e Mortgage、HL Pro Toolsでの経験を紹介します。',
     name: 'アブバカル・ムガル',
     skip: '本文へ移動',
     home: 'ホーム',
@@ -557,12 +557,12 @@ export const translations: Record<Language, Copy> = {
         },
         {
           title: 'GoHighLevel・技術サポート',
-          text: 'GoHighLevelの実務 — CRM、パイプライン、カレンダー、ワークフロー — と、ビジネスシステムを円滑に保つ技術サポート。',
+          text: 'GoHighLevelの実務、CRM、パイプライン、カレンダー、ワークフローと、ビジネスシステムを円滑に保つ技術サポート。',
           tags: ['GoHighLevel', 'CRM', 'ワークフロー'],
         },
         {
           title: 'エージェンティックAI',
-          text: '設定と調整を行ったAIエージェントが、下書き、フォローアップ、CRM更新など複数ステップの業務を担います。明確なルールと人の確認のもとで運用します。',
+          text: '設定と調整を行ったAIエージェントが、下書き、フォローアップ、CRM更新など複数ステップの業務を担います。私がその仕事を確認しながら運用します。',
           tags: ['エージェンティックAI', 'AIエージェント'],
         },
       ],
@@ -607,13 +607,13 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '01 / 自己紹介',
-      heading: 'つくることが好き。\n解決することが得意。',
+      heading: 'GoHighLevelを動かし続ける。\n何も見落とさないように。',
       paragraphs: [
-        'アブバカル・ムガルです。毎日GoHighLevelの中で仕事をしています。CRM — パイプライン、カレンダー、会話 — を管理し、フォローアップと予約を行うワークフローをつくり、応答し、記録を更新し、システムを整理するAI自動化を設定しています。ワークフローが壊れたときは、原因を見つけて修正します。',
-        'この仕事を、Hashturnのシニア、o1e MortgageのGoHighLevelエージェンシー管理者（8か月）、HL Pro ToolsのHighLevelテクニカルエキスパートとして行っています。WebサイトとRPAも道具の一部ですが、企業が毎日実感するのは、CRM、ワークフロー、そしてその裏で動くAIです。',
+        'アブバカル・ムガルです。毎日GoHighLevelの中で仕事をしています。CRM、パイプライン、カレンダー、会話を管理し、フォローアップと予約を行うワークフローをつくり、人に答え、記録を更新し、すべてを整理するAI自動化を設定しています。ワークフローが壊れたときは、原因を調べて修正します。',
+        'この仕事を、Hashturnのシニア、o1e MortgageのGoHighLevelエージェンシー管理者（8か月）、HL Pro Toolsのテクニカルエキスパートとして行っています。WebサイトとRPAもできますが、企業が毎日実感するのは、CRM、ワークフロー、そしてその裏で動くAIです。',
       ],
       focusLabel: '重視していること',
-      focus: ['GoHighLevelのCRM、パイプライン、サブアカウント', 'AI自動化とAIエージェント — 設定、調整、監督', 'フォローアップし、予約し、壊れないワークフロー'],
+      focus: ['GoHighLevelのCRM、パイプライン、サブアカウント', 'AI自動化とAIエージェントの設定、調整、監督', 'フォローアップし、予約し、壊れないワークフロー'],
       github: 'コードを、もう少し詳しく。',
       githubText: 'GitHubでリポジトリや開発の取り組みをご覧いただけます。',
       githubLink: 'GitHubを見る',
@@ -627,7 +627,7 @@ export const translations: Record<Language, Copy> = {
     },
     footer: {
       socials: 'ソーシャルプロフィール',
-      linkedinUnavailable: 'LinkedIn — プロフィールリンクは準備中です',
+      linkedinUnavailable: 'LinkedInのプロフィールリンクは準備中です',
     },
     notFound: {
       title: 'ページが見つかりません。',

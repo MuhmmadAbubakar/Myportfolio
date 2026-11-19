@@ -21,7 +21,7 @@ const t = translations[lang].testimonials
     {testimonialQuotes.map((quote, index) => <figure class={index >= 4 ? 'testimonial-card testimonial-extra' : 'testimonial-card'} hidden={index >= 4}>
       <span class="testimonial-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
       <blockquote>{quote}</blockquote>
-      <figcaption>— {t.client}</figcaption>
+      <figcaption>{t.client}</figcaption>
     </figure>)}
   </div>
   <div class="testimonials-more">

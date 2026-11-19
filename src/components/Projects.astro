@@ -14,7 +14,7 @@ const t = projectCopy[Astro.props.lang]
   </div>
   <div class="projects-grid">
     <article class="project-card">
-      <a class="project-cover" href={movieProject.url} target="_blank" rel="noopener noreferrer" aria-label={`${movieProject.title} — ${t.movie.action}`}>
+      <a class="project-cover" href={movieProject.url} target="_blank" rel="noopener noreferrer" aria-label={`${movieProject.title}: ${t.movie.action}`}>
         <img src={movieProject.image} alt={t.movie.imageAlt} width="1440" height="900" loading="lazy" decoding="async" />
         <span class="cover-arrow"><Icon name="arrow" /></span>
       </a>
