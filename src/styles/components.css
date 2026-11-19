@@ -3,12 +3,24 @@
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line-1);
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--header-bg);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
   transition:
     background-color 300ms ease,
-    border-color 300ms ease;
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+/* Once the page is scrolled, the header goes near-solid with a
+ * stronger blur and a soft shadow, so no content scrolling
+ * underneath is ever legible through it. The class is added by
+ * /header.js; without JS the base header above still applies. */
+.site-header.is-scrolled {
+  background: var(--header-bg-scrolled);
+  backdrop-filter: blur(24px) saturate(1.25);
+  -webkit-backdrop-filter: blur(24px) saturate(1.25);
+  border-bottom-color: var(--line-2);
+  box-shadow: 0 10px 28px -16px rgba(0, 0, 0, 0.55);
 }
 .header-inner {
   min-height: 88px;
@@ -356,7 +368,10 @@ html[data-theme="light"] .theme-toggle-moon {
   margin-bottom: 34px;
 }
 .section-intro h2 {
-  margin-top: 12px;
+  /* Clear vertical gap from the eyebrow above; the eyebrow is a
+   * block now (see motion.css), so the heading always starts on
+   * its own line and can never cover the eyebrow's last letter. */
+  margin-top: 16px;
 }
 .section-intro > p {
   max-width: 330px;

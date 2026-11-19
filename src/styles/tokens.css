@@ -56,6 +56,13 @@
   --glass-border: rgba(255, 255, 255, 0.12);
   --glass-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.65);
 
+  /* sticky header: much more opaque than the card glass, so page
+   * content can never show through behind the navigation. The
+   * scrolled value is near-solid; the base value keeps a frosted
+   * look at the top of the page. */
+  --header-bg: rgba(14, 14, 16, 0.78);
+  --header-bg-scrolled: rgba(11, 11, 12, 0.94);
+
   /* layout */
   --container: 1180px;
   --measure: 720px;
@@ -103,6 +110,11 @@ html[data-theme="light"] {
   --glass-bg-strong: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(29, 26, 20, 0.14);
   --glass-shadow: 0 8px 32px -16px rgba(80, 64, 20, 0.35);
+
+  /* sticky header: near-solid on light backgrounds too, so project
+   * images and text scrolling underneath stay hidden. */
+  --header-bg: rgba(250, 248, 243, 0.82);
+  --header-bg-scrolled: rgba(245, 243, 238, 0.95);
 }
 
 @media (max-width: 639px) {

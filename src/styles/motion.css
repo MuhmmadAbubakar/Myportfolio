@@ -140,10 +140,19 @@
   transform: scaleX(1);
 }
 
-/* 5. Section eyebrows: gold bar draws in once the section is revealed. */
+/* 5. Section eyebrows: gold bar draws in once the section is revealed.
+ * The eyebrow is a block, so the inline-block heading below it always
+ * starts on its own line. (It was inline-block before, which let the
+ * heading flow onto the same line and cover the eyebrow's last letter.)
+ * The About eyebrow keeps inline-block: About has no h2, and its
+ * gold line behind the label needs the shrink-wrapped box. */
 .section-intro .eyebrow,
-.about-heading .eyebrow,
 .contact-copy .eyebrow {
+  position: relative;
+  display: block;
+  padding-bottom: 7px;
+}
+.about-heading .eyebrow {
   position: relative;
   display: inline-block;
   padding-bottom: 7px;
