@@ -3,8 +3,9 @@
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line-1);
-  background: rgba(11, 11, 12, 0.94);
+  background: var(--glass-bg-strong);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition:
     background-color 300ms ease,
     border-color 300ms ease;
@@ -165,9 +166,11 @@ html[data-theme="light"] .theme-toggle-moon {
   border: 1px solid var(--line-2);
   border-radius: 8px;
   position: relative;
-  background-color: #101011;
+  background-color: var(--glass-bg-strong);
   background-image: radial-gradient(#ffffff0b 1px, transparent 1px);
   background-size: 16px 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow:
     16px 16px 0 -1px var(--bg-0),
     16px 16px 0 0 #ffffff06;
@@ -200,9 +203,11 @@ html[data-theme="light"] .theme-toggle-moon {
   align-items: center;
   gap: 15px;
   padding: 15px;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--glass-border);
   border-radius: 5px;
-  background: #171719;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .workflow-steps li:not(:last-child)::after {
   content: "";
@@ -368,9 +373,12 @@ html[data-theme="light"] .theme-toggle-moon {
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--glass-border);
   border-radius: 8px;
-  background: var(--bg-1);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
   transition:
     border-color 180ms,
     transform 180ms,
@@ -695,8 +703,11 @@ html[lang="ur"] .dashboard-cover figcaption {
 }
 .expertise-card {
   padding: 28px;
-  border: 1px solid var(--line-1);
-  background: var(--bg-1);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -749,10 +760,13 @@ html[lang="ur"] .dashboard-cover figcaption {
   border-bottom: 1px solid var(--line-1);
   align-items: start;
   border-radius: 6px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: background 180ms;
 }
 .experience-row:hover {
-  background: var(--bg-1);
+  background: var(--glass-bg-strong);
 }
 .experience-row:last-child {
   border-bottom: none;
@@ -830,9 +844,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   flex-wrap: wrap;
   padding: 20px 24px;
   margin-bottom: 24px;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--glass-border);
   border-radius: 8px;
-  background: linear-gradient(90deg, var(--accent-dim), transparent 60%), var(--bg-1);
+  background: linear-gradient(90deg, var(--accent-dim), transparent 60%), var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
   transition:
     background-color 300ms ease,
     border-color 300ms ease;
@@ -852,9 +869,12 @@ html[lang="ur"] .dashboard-cover figcaption {
 }
 .testimonial-card {
   padding: 26px;
-  border: 1px solid var(--line-1);
+  border: 1px solid var(--glass-border);
   border-radius: 8px;
-  background: var(--bg-1);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -961,9 +981,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   align-items: center;
   gap: 22px;
   padding: 25px 29px;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--glass-border);
   border-radius: 6px;
-  background: var(--bg-1);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
 }
 .github-band:hover {
   border-color: #e8b45855;
@@ -1351,18 +1374,15 @@ html[lang="ja"] .hero h1 span {
 /* Light theme: fixes for the few surfaces that use hard-coded dark colours
  * instead of tokens. The dashboard illustration is a depicted UI, so it
  * keeps its own colours in both themes. */
-html[data-theme="light"] .site-header {
-  background: rgba(245, 243, 238, 0.94);
-}
 html[data-theme="light"] .workflow {
-  background-color: #ffffff;
+  background-color: var(--glass-bg-strong);
   background-image: radial-gradient(rgba(29, 26, 20, 0.07) 1px, transparent 1px);
   box-shadow:
     16px 16px 0 -1px var(--bg-0),
     16px 16px 0 0 rgba(29, 26, 20, 0.08);
 }
 html[data-theme="light"] .workflow-steps li {
-  background: #ffffff;
+  background: var(--glass-bg);
 }
 html[data-theme="light"] .project-cover {
   background: #e7e2d4;

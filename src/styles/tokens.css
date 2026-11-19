@@ -50,6 +50,12 @@
   --radius-pill: 999px;
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 12px 40px -24px rgba(0, 0, 0, 0.8);
 
+  /* glass (frosted surfaces) */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-strong: rgba(18, 18, 20, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.65);
+
   /* layout */
   --container: 1180px;
   --measure: 720px;
@@ -91,6 +97,12 @@ html[data-theme="light"] {
   --accent-glow: rgba(138, 92, 0, 0.28);
 
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 40px -24px rgba(80, 64, 20, 0.35);
+
+  /* glass (frosted surfaces) */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(29, 26, 20, 0.14);
+  --glass-shadow: 0 8px 32px -16px rgba(80, 64, 20, 0.35);
 }
 
 @media (max-width: 639px) {

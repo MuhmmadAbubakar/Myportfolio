@@ -30,6 +30,15 @@
   }
 }
 
+@keyframes gold-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 /* 1. Hero entrance: elements arrive one after another, total under 1s. */
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy > * {
@@ -176,7 +185,7 @@
     transform 250ms var(--ease);
 }
 .experience-row:hover {
-  background: var(--bg-1);
+  background: var(--glass-bg-strong);
   box-shadow: inset 2px 0 0 var(--accent);
   transform: translateX(4px);
 }
@@ -218,6 +227,103 @@
   transition: transform 300ms var(--ease);
 }
 
+/* 10. Gold line behind the headings: a gold swash that draws in
+ * behind the heading text (never over it) as its section is revealed.
+ * The bar sits behind the words via isolation + z-index -1, with a
+ * soft gold glow, so the text stays fully readable. About has no h2,
+ * so its eyebrow label gets the same treatment. */
+.section-intro h2,
+.contact-copy h2,
+.workflow h2 {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.section-intro h2::before,
+.contact-copy h2::before,
+.workflow h2::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline: -0.12em;
+  bottom: 0.06em;
+  height: 0.38em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi) 55%, var(--accent));
+  opacity: 0.55;
+  box-shadow: 0 0 22px 2px var(--accent-glow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 600ms var(--ease);
+}
+.section-intro.is-visible h2::before,
+.contact-copy.is-visible h2::before {
+  transform: scaleX(1);
+}
+/* The workflow panel arrives with the hero, so its line draws on a
+ * delay instead of waiting for a scroll reveal. */
+.workflow h2::before {
+  animation: gold-line 600ms var(--ease) 700ms both;
+}
+html[dir="rtl"] .section-intro h2::before,
+html[dir="rtl"] .contact-copy h2::before,
+html[dir="rtl"] .workflow h2::before {
+  transform-origin: right;
+}
+
+/* 11. Hero greeting: the same gold line behind "Hello, I'm ..." as
+ * the hero entrance finishes. Inline-block shrink-wraps the bar to
+ * the text width. */
+.greeting {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+.greeting::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline: -0.15em;
+  bottom: 0.08em;
+  height: 0.34em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi) 55%, var(--accent));
+  opacity: 0.55;
+  box-shadow: 0 0 22px 2px var(--accent-glow);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: gold-line 600ms var(--ease) 600ms both;
+}
+html[dir="rtl"] .greeting::before {
+  transform-origin: right;
+}
+
+/* 12. About eyebrow: the same line behind the "01 / ABOUT" label,
+ * drawn when the About section is revealed. */
+.about-heading .eyebrow {
+  isolation: isolate;
+}
+.about-heading .eyebrow::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline: -0.2em;
+  bottom: 0.35em;
+  height: 0.55em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi) 60%, var(--accent));
+  opacity: 0.45;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 600ms var(--ease);
+}
+.about-heading.is-visible .eyebrow::before {
+  transform: scaleX(1);
+}
+html[dir="rtl"] .about-heading .eyebrow::before {
+  transform-origin: right;
+}
+
 /* 9. Reduced motion: everything visible, no animation, no transform. */
 @media (prefers-reduced-motion: reduce) {
   .js-reveal .reveal {
@@ -244,5 +350,13 @@
   .about-heading.is-visible .eyebrow::after,
   .contact-copy.is-visible .eyebrow::after {
     transform: scaleX(1);
+  }
+  /* Gold lines: fully drawn, no animation. */
+  .section-intro h2::before,
+  .contact-copy h2::before,
+  .workflow h2::before,
+  .greeting::before,
+  .about-heading .eyebrow::before {
+    transform: scaleX(1) !important;
   }
 }
