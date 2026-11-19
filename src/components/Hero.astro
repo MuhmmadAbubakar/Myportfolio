@@ -8,11 +8,10 @@ const { lang } = Astro.props
 const t = translations[lang]
 const icons = ['code', 'workflow', 'check'] as const
 ---
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero">
   <div class="hero-copy">
     <p class="eyebrow hero-eyebrow"><span class="small-dot" aria-hidden="true"></span>{t.hero.eyebrow}</p>
     <p class="greeting">{t.hero.greeting}</p>
-    <h1 id="hero-title">{t.hero.lineOne}<br /><span>{t.hero.lineTwo}</span></h1>
     <p class="hero-description">{t.hero.description}</p>
     <div class="actions">
       <a class="button button-primary" href="#projects">{t.hero.primary}<Icon name="down" /></a>

@@ -24,8 +24,6 @@ export interface Copy {
   hero: {
     eyebrow: string
     greeting: string
-    lineOne: string
-    lineTwo: string
     description: string
     primary: string
     secondary: string
@@ -111,8 +109,6 @@ export const translations: Record<Language, Copy> = {
     hero: {
       eyebrow: 'GOHIGHLEVEL · AI AUTOMATION · CRM',
       greeting: 'Hello, I’m Abubakar Mughal.',
-      lineOne: 'GoHighLevel, handled.',
-      lineTwo: 'AI that follows up.',
       description:
         'I work inside GoHighLevel every day. I look after the CRM, the pipelines, the calendars and the conversations. I build workflows and AI automation that follow up, book appointments, and keep client systems clean. Websites support the work. The systems do the heavy lifting.',
       primary: 'Explore my work',
@@ -249,8 +245,6 @@ export const translations: Record<Language, Copy> = {
     hero: {
       eyebrow: 'GOHIGHLEVEL · اے آئی آٹومیشن · سی آر ایم',
       greeting: 'السلام علیکم، میں ابوبکر مغل ہوں۔',
-      lineOne: 'GoHighLevel، مکمل طور پر سنبھالا ہوا۔',
-      lineTwo: 'اے آئی جو فالو اپ کرے۔',
       description:
         'میں ہر روز GoHighLevel کے اندر کام کرتا ہوں۔ میں سی آر ایم، پائپ لائنز، کیلنڈرز اور گفتگو دیکھتا ہوں۔ میں ایسے ورک فلو اور اے آئی آٹومیشن بناتا ہوں جو فالو اپ کریں، اپائنٹمنٹ بک کریں اور سسٹمز کو صاف رکھیں۔ ویب سائٹس اس کام کی مدد کرتی ہیں۔ اصل کام سسٹمز کرتے ہیں۔',
       primary: 'میرا کام دیکھیں',
@@ -383,8 +377,6 @@ export const translations: Record<Language, Copy> = {
     hero: {
       eyebrow: 'GOHIGHLEVEL · AUTOMATIZACIÓN CON IA · CRM',
       greeting: 'Hola, soy Abubakar Mughal.',
-      lineOne: 'GoHighLevel, en buenas manos.',
-      lineTwo: 'IA que hace seguimiento.',
       description:
         'Trabajo dentro de GoHighLevel todos los días: CRM, pipelines, calendarios y conversaciones. Creo flujos de trabajo y automatización con IA que hacen seguimiento, reservan citas y mantienen los sistemas en orden. Las webs apoyan el trabajo; los sistemas hacen el trabajo pesado.',
       primary: 'Explora mi trabajo',
@@ -521,8 +513,6 @@ export const translations: Record<Language, Copy> = {
     hero: {
       eyebrow: 'GOHIGHLEVEL · AI自動化 · CRM',
       greeting: 'こんにちは、アブバカル・ムガルです。',
-      lineOne: 'GoHighLevelはお任せ。',
-      lineTwo: 'フォローアップするAI。',
       description:
         '毎日GoHighLevelの中で仕事をしています。CRM、パイプライン、カレンダー、会話を管理し、フォローアップや予約を行うワークフローと、応答・記録更新・整理を行うAI自動化を構築します。Webサイトは仕事を支え、システムが重い作業を担います。',
       primary: '制作・実務を見る',
