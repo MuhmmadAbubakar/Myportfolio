@@ -44,7 +44,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -3;
   pointer-events: none;
   background:
     radial-gradient(560px 380px at 12% -4%, rgba(232, 180, 88, 0.1), transparent 70%),
@@ -66,12 +66,26 @@ html[data-theme="light"] body::before {
 #vanta-bg {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
   animation: vanta-drift 80s ease-in-out infinite alternate;
 }
 #vanta-bg canvas {
   opacity: 0.8;
+}
+/* Vanta FOG background: a second fixed canvas layered in front of the
+ * topology mesh (see public/vanta-fog.js). FOG renders an opaque
+ * shader, so its canvas is made translucent here, a soft gold haze
+ * the topology lines show through. Same stacking rules as above:
+ * fixed, never intercepts input, never shifts layout. */
+#vanta-fog {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+#vanta-fog canvas {
+  opacity: 0.4;
 }
 @keyframes vanta-drift {
   from {
@@ -82,7 +96,8 @@ html[data-theme="light"] body::before {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  #vanta-bg {
+  #vanta-bg,
+  #vanta-fog {
     display: none;
     animation: none;
   }

@@ -4,12 +4,12 @@
 // CDN scripts and inline scripts. TOPOLOGY is a p5 effect, not a three.js
 // one, so no three.js is needed. Skips itself when the user prefers
 // reduced motion, when p5/Vanta failed to load, or when the effect
-// cannot start — the plain theme background remains.
+// cannot start, the plain theme background remains.
 //
 // Why the mesh looked static (found by reading the vendored effect):
 // TOPOLOGY builds its noise flow-field once in setup and never rebuilds
 // it, its per-frame counter is incremented but never read, and draw()
-// never clears or fades the canvas — so 4,500 faint particle trails
+// never clears or fades the canvas, so 4,500 faint particle trails
 // accumulate forever until the mesh saturates and stops changing.
 // The effect also defines no mouse handler, so the mouse does nothing
 // even with mouseControls on, and the `speed` option is inert here.

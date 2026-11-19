@@ -45,6 +45,7 @@ const locale = languages.find((item) => item.code === lang) ?? languages[0]
   </head>
   <body id="top">
     <div id="vanta-bg" aria-hidden="true"></div>
+    <div id="vanta-fog" aria-hidden="true"></div>
     <a class="skip-link" href="#main">{t.skip}</a>
     <SiteHeader lang={lang} />
     <main id="main" tabindex="-1"><slot /></main>
@@ -57,5 +58,8 @@ const locale = languages.find((item) => item.code === lang) ?? languages[0]
     <script is:inline src="/vendor/p5.min.js"></script>
     <script is:inline src="/vendor/vanta.topology.min.js"></script>
     <script is:inline src="/vanta-bg.js"></script>
+    <script is:inline src="/vendor/three.min.js"></script>
+    <script is:inline src="/vendor/vanta.fog.min.js"></script>
+    <script is:inline src="/vanta-fog.js"></script>
   </body>
 </html>
