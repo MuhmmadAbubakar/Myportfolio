@@ -62,7 +62,6 @@ export interface Copy {
   }
   about: {
     label: string
-    heading: string
     paragraphs: string[]
     focusLabel: string
     focus: string[]
@@ -194,7 +193,6 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '01 / ABOUT',
-      heading: 'I keep GoHighLevel running.\nSo nothing slips through the cracks.',
       paragraphs: [
         'I’m Abubakar Mughal, and I work inside GoHighLevel every day. I look after the CRM, the pipelines, the calendars and the conversations. I build workflows that follow up and book appointments, and I set up AI automation that answers people, updates records and keeps everything tidy. If a workflow breaks, I track down the problem and fix it.',
         'I do this as a Senior at Hashturn, as Agency Admin at o1e Mortgage on GoHighLevel for 8 months, and as a Technical Expert at HL Pro Tools. Websites and RPA are part of what I can do, but the work a business notices every day is the CRM, the workflows and the AI behind it.',
@@ -330,7 +328,6 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '۰۱ / میرے بارے میں',
-      heading: 'میں GoHighLevel کو چلاتا رہتا ہوں۔\nتاکہ کوئی کام پیچھے نہ رہ جائے۔',
       paragraphs: [
         'میں ابوبکر مغل ہوں، اور میں ہر روز GoHighLevel کے اندر کام کرتا ہوں۔ میں سی آر ایم، پائپ لائنز، کیلنڈرز اور گفتگو دیکھتا ہوں۔ میں ایسے ورک فلو بناتا ہوں جو فالو اپ کریں اور اپائنٹمنٹ بک کریں، اور اے آئی آٹومیشن ترتیب دیتا ہوں جو لوگوں کو جواب دے، ریکارڈ اپ ڈیٹ کرے اور سب کچھ صاف رکھے۔ اگر کوئی ورک فلو خراب ہو جائے تو میں مسئلہ تلاش کر کے اسے درست کرتا ہوں۔',
         'یہ کام میں Hashturn میں سینئر کے طور پر، o1e Mortgage میں GoHighLevel پر 8 ماہ تک ایجنسی ایڈمن کے طور پر، اور HL Pro Tools میں تکنیکی ماہر کے طور پر کرتا ہوں۔ ویب سائٹس اور آر پی اے بھی میرے کام کا حصہ ہیں، لیکن کاروبار کو ہر روز جو کام نظر آتا ہے وہ سی آر ایم، ورک فلو اور ان کے پیچھے چلنے والی اے آئی ہے۔',
@@ -462,7 +459,6 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '01 / SOBRE MÍ',
-      heading: 'Mantengo GoHighLevel funcionando.\nPara que nada se quede sin hacer.',
       paragraphs: [
         'Soy Abubakar Mughal y trabajo dentro de GoHighLevel todos los días. Me encargo del CRM, los pipelines, los calendarios y las conversaciones. Creo flujos de trabajo que hacen seguimiento y reservan citas, y configuro automatización con IA que responde a las personas, actualiza los registros y mantiene todo en orden. Si un flujo de trabajo se rompe, busco el problema y lo corrijo.',
         'Hago este trabajo como sénior en Hashturn, como administrador de agencia en o1e Mortgage en GoHighLevel durante 8 meses y como experto técnico en HL Pro Tools. Las webs y la RPA también forman parte de lo que hago, pero lo que una empresa nota cada día es el CRM, los flujos de trabajo y la IA que trabaja detrás.',
@@ -597,7 +593,6 @@ export const translations: Record<Language, Copy> = {
     },
     about: {
       label: '01 / 自己紹介',
-      heading: 'GoHighLevelを動かし続ける。\n何も見落とさないように。',
       paragraphs: [
         'アブバカル・ムガルです。毎日GoHighLevelの中で仕事をしています。CRM、パイプライン、カレンダー、会話を管理し、フォローアップと予約を行うワークフローをつくり、人に答え、記録を更新し、すべてを整理するAI自動化を設定しています。ワークフローが壊れたときは、原因を調べて修正します。',
         'この仕事を、Hashturnのシニア、o1e MortgageのGoHighLevelエージェンシー管理者（8か月）、HL Pro Toolsのテクニカルエキスパートとして行っています。WebサイトとRPAもできますが、企業が毎日実感するのは、CRM、ワークフロー、そしてその裏で動くAIです。',
