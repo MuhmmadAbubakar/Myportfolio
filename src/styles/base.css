@@ -55,42 +55,19 @@ html[data-theme="light"] body::before {
     radial-gradient(560px 380px at 12% -4%, rgba(138, 92, 0, 0.1), transparent 70%),
     radial-gradient(640px 460px at 96% 108%, rgba(138, 92, 0, 0.08), transparent 70%);
 }
-/* Moving background line: two thin gold lines that drift slowly up and
- * down across the page background, behind all content. Fixed, so they
- * never shift layout or intercept input; the gold fades out at both
- * ends and stays at low opacity so text is always fully readable.
- * In light mode the gold is darkened to match the theme's accent.
- * The drift is a gentle back-and-forth, so it loops without a jump. */
-body::after {
-  content: "";
+/* Vanta TOPOLOGY background: a fixed full-page canvas (see public/vanta-bg.js)
+ * behind all content. It never shifts layout or intercepts input; if the
+ * effect cannot start, the plain theme background and the ambient glow
+ * above remain. */
+#vanta-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image:
-    linear-gradient(90deg, transparent 0%, rgba(232, 180, 88, 0.3) 25%, rgba(232, 180, 88, 0.42) 50%, rgba(232, 180, 88, 0.3) 75%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, rgba(232, 180, 88, 0.18) 30%, rgba(232, 180, 88, 0.26) 50%, rgba(232, 180, 88, 0.18) 70%, transparent 100%);
-  background-size: 100% 2px, 100% 1px;
-  background-repeat: no-repeat;
-  background-position: 0 30vh, 0 72vh;
-  animation: bg-line-drift 55s ease-in-out infinite alternate;
-}
-html[data-theme="light"] body::after {
-  background-image:
-    linear-gradient(90deg, transparent 0%, rgba(138, 92, 0, 0.32) 25%, rgba(138, 92, 0, 0.45) 50%, rgba(138, 92, 0, 0.32) 75%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, rgba(138, 92, 0, 0.2) 30%, rgba(138, 92, 0, 0.28) 50%, rgba(138, 92, 0, 0.2) 70%, transparent 100%);
-}
-@keyframes bg-line-drift {
-  from {
-    transform: translateY(-9vh);
-  }
-  to {
-    transform: translateY(9vh);
-  }
 }
 @media (prefers-reduced-motion: reduce) {
-  body::after {
-    animation: none;
+  #vanta-bg {
+    display: none;
   }
 }
 main {
