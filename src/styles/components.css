@@ -214,17 +214,48 @@
   gap: 60px;
   border-block: 1px solid var(--line-1);
   padding-block: 28px;
+  overflow: hidden;
 }
 .company-strip > .eyebrow {
   font-size: 9px;
   max-width: 160px;
+  flex-shrink: 0;
 }
-.company-strip ul {
+.marquee {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 36s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-track ul {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex: 1;
+  flex-shrink: 0;
   gap: 30px;
+  padding-right: 30px;
+}
+.marquee-separator {
+  color: var(--accent);
+  font-size: 13px;
+}
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }
 .company-strip li {
   display: flex;
@@ -1224,10 +1255,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   .company-strip > .eyebrow {
     max-width: none;
   }
-  .company-strip ul {
+  .marquee {
     width: 100%;
-    justify-content: space-between;
+  }
+  .marquee-track ul {
     gap: 12px;
+    padding-right: 12px;
   }
   .company-strip li {
     font-size: 15px;

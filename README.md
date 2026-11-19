@@ -1,6 +1,6 @@
 ﻿# Abubakar Mughal — Portfolio
 
-A static Astro portfolio in English, Urdu, Spanish, and Japanese. Includes web development, RPA automation, Agentic AI, and GoHighLevel experience at Hashturn, o1e Mortgage, and HL Pro Tools.
+A static Astro portfolio in English, Urdu, Spanish, and Japanese. A GoHighLevel AI Operator portfolio — CRM, workflows, and AI automation for agencies — with web development, RPA automation, and Agentic AI experience at Hashturn, o1e Mortgage, and HL Pro Tools.
 
 ## Local development
 
@@ -33,7 +33,7 @@ The production site is generated in `dist/`. No server or translation service is
 
 English is at `/`, Urdu at `/ur/`, Spanish at `/es/`, and Japanese at `/ja/`. The translated pages are still published at those paths, with translated metadata and alternate-language links, but there is no language switcher in the header. Urdu uses a right-to-left layout and a self-hosted Noto Naskh Arabic font. Japanese fonts are also self-hosted.
 
-Experience descriptions are based on the supplied roles. Hashturn is listed as a Senior role with Agentic AI, and o1e Mortgage as Agency Admin for 8 months. The Testimonials section shows the 4 strongest of the 10 supplied 5-star client reviews first, with a “See more” button revealing the remaining 6. All 10 reviews are quoted in English in every language, without reviewer names — none were supplied with the reviews. No employment dates, performance statistics, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
+Experience descriptions are based on the supplied roles. Hashturn is listed as a Senior role with Agentic AI and GoHighLevel workflow work, and o1e Mortgage as Agency Admin for 8 months on GoHighLevel. The About section presents the work as a GoHighLevel AI Operator: CRM, workflows, and AI automation. The hero “Experience Across” strip is a scrolling marquee of the places worked and the work done. The Testimonials section shows the 4 strongest of the 10 supplied 5-star client reviews first, with a “See more” button revealing the remaining 6. All 10 reviews are quoted in English in every language, without reviewer names — none were supplied with the reviews. No employment dates, performance statistics, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
 
 The selected work section features Hash Movies with a captured homepage preview and a live website link, plus o1e Mortgage's GoHighLevel work. The latter uses a clearly labelled HTML/CSS dashboard illustration based on the supplied visual reference; it does not claim authorship of the GoHighLevel platform or expose a private dashboard link.
 
