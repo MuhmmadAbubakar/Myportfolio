@@ -7,6 +7,7 @@ import Experience from './Experience.astro'
 import Expertise from './Expertise.astro'
 import Hero from './Hero.astro'
 import Projects from './Projects.astro'
+import Skills from './Skills.astro'
 import Testimonials from './Testimonials.astro'
 
 interface Props {
@@ -14,4 +15,4 @@ interface Props {
 }
 const { lang } = Astro.props
 ---
-<Base lang={lang}><div class="container"><Hero lang={lang} /><About lang={lang} /><Projects lang={lang} /><Expertise lang={lang} /><Experience lang={lang} /><Testimonials lang={lang} /><Contact lang={lang} /></div></Base>
+<Base lang={lang}><div class="container"><Hero lang={lang} /><About lang={lang} /><Skills lang={lang} /><Projects lang={lang} /><Expertise lang={lang} /><Experience lang={lang} /><Testimonials lang={lang} /><Contact lang={lang} /></div></Base>

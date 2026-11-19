@@ -28,7 +28,7 @@ interface ProjectCopy {
 export const projectCopy: Record<Language, ProjectCopy> = {
   en: {
     nav: 'Projects',
-    label: '02 / SELECTED WORK',
+    label: '03 / SELECTED WORK',
     heading: 'A closer look at my work.',
     intro: 'A movie discovery website and hands-on work in the GoHighLevel ecosystem.',
     movie: {
@@ -55,7 +55,7 @@ export const projectCopy: Record<Language, ProjectCopy> = {
   },
   ur: {
     nav: 'پروجیکٹس',
-    label: '۰۲ / منتخب کام',
+    label: '۰۳ / منتخب کام',
     heading: 'میرے کام پر ایک نظر۔',
     intro: 'فلمیں تلاش کرنے کی ویب سائٹ اور GoHighLevel کے شعبے میں عملی تجربہ۔',
     movie: {
@@ -82,7 +82,7 @@ export const projectCopy: Record<Language, ProjectCopy> = {
   },
   es: {
     nav: 'Proyectos',
-    label: '02 / TRABAJOS DESTACADOS',
+    label: '03 / TRABAJOS DESTACADOS',
     heading: 'Mi trabajo, más de cerca.',
     intro:
       'Un sitio para descubrir películas y experiencia práctica en el ecosistema de GoHighLevel.',
@@ -110,7 +110,7 @@ export const projectCopy: Record<Language, ProjectCopy> = {
   },
   ja: {
     nav: '制作・実務',
-    label: '02 / 制作・実務紹介',
+    label: '03 / 制作・実務紹介',
     heading: '取り組みを、もっと具体的に。',
     intro: '映画を探すWebサイトと、GoHighLevelの実務経験をご紹介します。',
     movie: {

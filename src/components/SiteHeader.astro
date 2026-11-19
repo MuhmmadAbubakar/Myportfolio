@@ -18,6 +18,7 @@ const home = (languages.find((item) => item.code === lang) ?? languages[0]).path
     </a>
     <nav class="main-nav" aria-label={t.navigation}>
       <a href={`${home}#about`}>{t.nav.about}</a>
+      <a href={`${home}#skills`}>{t.nav.skills}</a>
       <a href={`${home}#projects`}>{projectCopy[lang].nav}</a>
       <a href={`${home}#experience`}>{t.nav.experience}</a>
       <a href={`${home}#testimonials`}>{t.nav.testimonials}</a>
