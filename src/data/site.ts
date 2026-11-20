@@ -5,6 +5,6 @@ export const site = {
   author: 'Abubakar Mughal',
   email: 'm.abubakarmughal23@gmail.com',
   github: 'https://github.com/MuhmmadAbubakar',
-  linkedin: '', // Add your profile URL here to activate the footer icon.
+  linkedin: 'https://www.linkedin.com/in/muhammadabubakarmughal',
   handle: 'MuhmmadAbubakar',
 }
