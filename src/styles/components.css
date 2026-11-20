@@ -380,7 +380,7 @@ html[data-theme="light"] .theme-toggle-moon {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 .project-card {
@@ -614,7 +614,6 @@ html[data-theme="light"] .theme-toggle-moon {
   line-height: 1.5;
 }
 .terminal-cover {
-  aspect-ratio: 8 / 5;
   padding: 25px 25px 12px;
   display: flex;
   flex-direction: column;
@@ -683,6 +682,9 @@ html[lang="ur"] .dashboard-cover figcaption {
   font-size: 12px;
 }
 @media (max-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .dashboard-cover {
     padding: 18px 18px 10px;
   }
@@ -737,7 +739,6 @@ html[lang="ur"] .dashboard-cover figcaption {
     padding: 16px 16px 10px;
   }
   .terminal-cover {
-    aspect-ratio: auto;
     padding: 16px 16px 10px;
   }
   .dashboard-sidebar {
