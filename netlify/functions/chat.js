@@ -33,7 +33,11 @@ const FALLBACK_REPLY =
 
 const MAX_MESSAGE_CHARS = 500
 const MAX_HISTORY = 6
-const MAX_TOKENS = 300
+// Generous output cap: Gemini 3 models spend part of the output budget on
+// internal thinking, so a small cap can cut the visible answer off
+// mid-sentence. Replies are still asked to stay short (about 80 words) in
+// the system prompt, and output is billed per token actually generated.
+const MAX_TOKENS = 1024
 
 // Best-effort abuse guard: at most 10 requests per 10 minutes per IP, the
 // server-side half of the ~10-messages-per-visitor-session cap (the widget
