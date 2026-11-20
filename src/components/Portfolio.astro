@@ -2,6 +2,7 @@
 import type { Language } from '../data/i18n'
 import Base from '../layouts/Base.astro'
 import About from './About.astro'
+import Certificates from './Certificates.astro'
 import Contact from './Contact.astro'
 import Experience from './Experience.astro'
 import Expertise from './Expertise.astro'
@@ -15,4 +16,4 @@ interface Props {
 }
 const { lang } = Astro.props
 ---
-<Base lang={lang}><div class="container"><Hero lang={lang} /><About lang={lang} /><Skills lang={lang} /><Projects lang={lang} /><Expertise lang={lang} /><Experience lang={lang} /><Testimonials lang={lang} /><Contact lang={lang} /></div></Base>
+<Base lang={lang}><div class="container"><Hero lang={lang} /><About lang={lang} /><Skills lang={lang} /><Projects lang={lang} /><Expertise lang={lang} /><Experience lang={lang} /><Certificates lang={lang} /><Testimonials lang={lang} /><Contact lang={lang} /></div></Base>

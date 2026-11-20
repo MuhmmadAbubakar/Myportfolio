@@ -1102,6 +1102,52 @@ html[lang="ur"] .dashboard-cover figcaption {
 .skill-card .tags {
   margin-top: auto;
 }
+/* Certificates: three glass cards in a row, same language as the skill
+ * cards. The type line marks the Coursera item as a certificate and the
+ * two IBM items as course completions, so nothing is overstated. */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.certificate-card {
+  padding: 28px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    border-color 180ms,
+    transform 180ms,
+    background-color 300ms ease;
+}
+.certificate-card:hover {
+  border-color: #e8b45855;
+  transform: translateY(-3px);
+}
+.certificate-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.certificate-card > p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+.certificate-meta {
+  color: var(--fg-3);
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+.certificate-type {
+  font: 10px var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 /* Tools ticker: every tag from the six cards, drifting slowly in a loop
  * under the grid, like the companies marquee in the hero. It only
  * repeats tags already in the cards, so it is hidden from screen
@@ -1522,6 +1568,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   .skill-card {
     padding: 23px;
   }
+  .certificates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .certificate-card {
+    padding: 23px;
+  }
   .about {
     gap: 40px;
   }
@@ -1614,10 +1666,16 @@ html[lang="ur"] .dashboard-cover figcaption {
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
   .expertise-card {
     padding: 27px;
   }
   .skill-card {
+    padding: 27px;
+  }
+  .certificate-card {
     padding: 27px;
   }
   .card-top {
@@ -1831,6 +1889,7 @@ html[data-theme="light"] .button-primary:hover {
 html[data-theme="light"] .project-card:hover,
 html[data-theme="light"] .expertise-card:hover,
 html[data-theme="light"] .skill-card:hover,
+html[data-theme="light"] .certificate-card:hover,
 html[data-theme="light"] .testimonial-card:hover {
   box-shadow:
     0 0 0 1px var(--accent-dim),

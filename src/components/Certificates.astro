@@ -1,0 +1,24 @@
+---
+import { type Language, translations } from '../data/i18n'
+import Icon from './Icon.astro'
+
+interface Props {
+  lang: Language
+}
+const { lang } = Astro.props
+const t = translations[lang].certificates
+---
+<section class="section certificates" id="certificates" aria-labelledby="certificates-title">
+  <div class="section-intro">
+    <div><p class="eyebrow accent">{t.label}</p><h2 id="certificates-title">{t.heading}</h2></div>
+    <p>{t.intro}</p>
+  </div>
+  <div class="certificates-grid">
+    {t.items.map((item) => <article class="certificate-card">
+      <div class="card-top"><span class="service-icon"><Icon name="award" /></span><span class="certificate-type">{item.type}</span></div>
+      <h3>{item.title}</h3>
+      <p class="certificate-meta">{item.issuer} · {item.date}{item.duration ? ` · ${item.duration}` : ''}</p>
+      <p>{item.note}</p>
+    </article>)}
+  </div>
+</section>

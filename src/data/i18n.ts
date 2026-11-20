@@ -17,6 +17,7 @@ export interface Copy {
   nav: {
     expertise: string
     experience: string
+    certificates: string
     testimonials: string
     about: string
     skills: string
@@ -55,6 +56,12 @@ export interface Copy {
     intro: string
     roleLabel: string
     items: { company: string; role: string; duration?: string; text: string; tags: string[] }[]
+  }
+  certificates: {
+    label: string
+    heading: string
+    intro: string
+    items: { title: string; issuer: string; date: string; duration?: string; type: string; note: string }[]
   }
   testimonials: {
     label: string
@@ -124,6 +131,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: 'Expertise',
       experience: 'Experience',
+      certificates: 'Certificates',
       testimonials: 'Testimonials',
       about: 'About',
       skills: 'Skills',
@@ -241,8 +249,38 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    certificates: {
+      label: '06 / CERTIFICATES',
+      heading: 'Learning, completed.',
+      intro: 'Three courses I finished, and what each one taught me.',
+      items: [
+        {
+          title: 'Build a Website using an API with HTML, JavaScript, and JSON',
+          issuer: 'Coursera',
+          date: 'February 2025',
+          type: 'Certificate',
+          note: 'I built a website that pulls data from an API and shows it with HTML, JavaScript and JSON.',
+        },
+        {
+          title: 'Introduction to Artificial Intelligence',
+          issuer: 'IBM SkillsBuild',
+          date: '20 November 2026',
+          duration: '1 hour',
+          type: 'Course completion',
+          note: 'An introduction to AI: what it is, how it works, and where people use it.',
+        },
+        {
+          title: 'AI Fundamentals Glossary',
+          issuer: 'IBM SkillsBuild',
+          date: '2026',
+          duration: '2 minutes',
+          type: 'Course completion',
+          note: 'A short glossary covering the basic AI words and what they mean.',
+        },
+      ],
+    },
     testimonials: {
-      label: '06 / TESTIMONIALS',
+      label: '07 / TESTIMONIALS',
       heading: 'What clients say.',
       average: '5.0',
       averageLabel: 'Average rating',
@@ -268,7 +306,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'Visit my GitHub',
     },
     contact: {
-      label: '07 / CONTACT',
+      label: '08 / CONTACT',
       heading: 'Let’s build something\nthat works for you.',
       text: 'Have a website, a workflow, or an AI automation idea in mind? Tell me about it.',
       action: 'Start a conversation',
@@ -316,6 +354,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: 'مہارتیں',
       experience: 'تجربہ',
+      certificates: 'اسناد',
       testimonials: 'آراء',
       about: 'میرے بارے میں',
       skills: 'ہنر',
@@ -433,8 +472,38 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    certificates: {
+      label: '۰۶ / اسناد',
+      heading: 'مکمل کی گئی تعلیم۔',
+      intro: 'تین کورس مکمل کیے، اور ہر ایک سے کیا سیکھا۔',
+      items: [
+        {
+          title: 'Build a Website using an API with HTML, JavaScript, and JSON',
+          issuer: 'Coursera',
+          date: 'فروری 2025',
+          type: 'سرٹیفکیٹ',
+          note: 'میں نے ایک ویب سائٹ بنائی جو API سے ڈیٹا لیتی ہے اور اسے HTML، JavaScript اور JSON کے ساتھ دکھاتی ہے۔',
+        },
+        {
+          title: 'Introduction to Artificial Intelligence',
+          issuer: 'IBM SkillsBuild',
+          date: '20 نومبر 2026',
+          duration: '1 گھنٹہ',
+          type: 'کورس کی تکمیل',
+          note: 'اے آئی کا تعارف: یہ کیا ہے، کیسے کام کرتا ہے، اور لوگ اسے کہاں استعمال کرتے ہیں۔',
+        },
+        {
+          title: 'AI Fundamentals Glossary',
+          issuer: 'IBM SkillsBuild',
+          date: '2026',
+          duration: '2 منٹ',
+          type: 'کورس کی تکمیل',
+          note: 'اے آئی کی بنیادی اصطلاحات کی مختصر لغت، اور ان کا مطلب کیا ہے۔',
+        },
+      ],
+    },
     testimonials: {
-      label: '۰۶ / آراء',
+      label: '۰۷ / آراء',
       heading: 'کلائنٹس کیا کہتے ہیں۔',
       average: '5.0',
       averageLabel: 'اوسط درجہ بندی',
@@ -456,7 +525,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'میرا GitHub دیکھیں',
     },
     contact: {
-      label: '۰۷ / رابطہ',
+      label: '۰۸ / رابطہ',
       heading: 'آئیں کچھ ایسا بنائیں\nجو آپ کے کام آئے۔',
       text: 'ویب سائٹ، ورک فلو یا اے آئی آٹومیشن کا کوئی خیال ہے؟ مجھے اس کے بارے میں بتائیں۔',
       action: 'بات شروع کریں',
@@ -504,6 +573,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: 'Especialidades',
       experience: 'Experiencia',
+      certificates: 'Certificados',
       testimonials: 'Testimonios',
       about: 'Sobre mí',
       skills: 'Habilidades',
@@ -621,8 +691,38 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    certificates: {
+      label: '06 / CERTIFICADOS',
+      heading: 'Aprendizaje completado.',
+      intro: 'Tres cursos que terminé y lo que me enseñó cada uno.',
+      items: [
+        {
+          title: 'Build a Website using an API with HTML, JavaScript, and JSON',
+          issuer: 'Coursera',
+          date: 'febrero de 2025',
+          type: 'Certificado',
+          note: 'Construí un sitio web que toma datos de una API y los muestra con HTML, JavaScript y JSON.',
+        },
+        {
+          title: 'Introduction to Artificial Intelligence',
+          issuer: 'IBM SkillsBuild',
+          date: '20 de noviembre de 2026',
+          duration: '1 hora',
+          type: 'Curso completado',
+          note: 'Una introducción a la IA: qué es, cómo funciona y dónde la usa la gente.',
+        },
+        {
+          title: 'AI Fundamentals Glossary',
+          issuer: 'IBM SkillsBuild',
+          date: '2026',
+          duration: '2 minutos',
+          type: 'Curso completado',
+          note: 'Un glosario corto con las palabras básicas de la IA y lo que significan.',
+        },
+      ],
+    },
     testimonials: {
-      label: '06 / TESTIMONIOS',
+      label: '07 / TESTIMONIOS',
       heading: 'Lo que dicen los clientes.',
       average: '5.0',
       averageLabel: 'Valoración media',
@@ -648,7 +748,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'Visita mi GitHub',
     },
     contact: {
-      label: '07 / CONTACTO',
+      label: '08 / CONTACTO',
       heading: 'Creemos algo\nque funcione para ti.',
       text: '¿Tienes en mente un sitio web, un flujo de trabajo o una idea de automatización con IA? Cuéntamelo.',
       action: 'Inicia una conversación',
@@ -696,6 +796,7 @@ export const translations: Record<Language, Copy> = {
     nav: {
       expertise: '専門分野',
       experience: '経験',
+      certificates: '修了証',
       testimonials: 'お客様の声',
       about: '自己紹介',
       skills: 'スキル',
@@ -812,8 +913,38 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    certificates: {
+      label: '06 / 修了証',
+      heading: '学びを、最後まで。',
+      intro: '修了した3つのコースと、それぞれから学んだこと。',
+      items: [
+        {
+          title: 'Build a Website using an API with HTML, JavaScript, and JSON',
+          issuer: 'Coursera',
+          date: '2025年2月',
+          type: '修了証',
+          note: 'APIからデータを取得し、HTML、JavaScript、JSONで表示するWebサイトをつくりました。',
+        },
+        {
+          title: 'Introduction to Artificial Intelligence',
+          issuer: 'IBM SkillsBuild',
+          date: '2026年11月20日',
+          duration: '1時間',
+          type: 'コース修了',
+          note: 'AI入門。AIとは何か、どう動くのか、どこで使われているのかを学びました。',
+        },
+        {
+          title: 'AI Fundamentals Glossary',
+          issuer: 'IBM SkillsBuild',
+          date: '2026年',
+          duration: '2分',
+          type: 'コース修了',
+          note: 'AIの基本用語をまとめた短い用語集と、その意味。',
+        },
+      ],
+    },
     testimonials: {
-      label: '06 / お客様の声',
+      label: '07 / お客様の声',
       heading: 'お客様の声。',
       average: '5.0',
       averageLabel: '平均評価',
@@ -835,7 +966,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'GitHubを見る',
     },
     contact: {
-      label: '07 / お問い合わせ',
+      label: '08 / お問い合わせ',
       heading: 'あなたの仕事に役立つものを、\n一緒につくりましょう。',
       text: 'Webサイト、ワークフロー、AI自動化のアイデアがあれば、ぜひお聞かせください。',
       action: 'メールで相談する',
