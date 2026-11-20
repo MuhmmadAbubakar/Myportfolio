@@ -386,6 +386,15 @@ html[data-theme="light"] .theme-toggle-moon {
  * story opens in place instead. */
 .projects-grid {
   display: flex;
+  /* Cards size to their own content instead of stretching to the
+   * tallest card in the row. When one card expands, the row used to
+   * grow taller and the other cards stretched with it, their tags
+   * pushed to the bottom by margin-top: auto, which left a big empty
+   * gap between their description and their tags. Now the shrunken
+   * cards keep their own height, so no gap opens up. The same rule
+   * carries into the grid layouts below, where it stops the same
+   * stretch gap when a story opens in place. */
+  align-items: flex-start;
   gap: 24px;
 }
 .project-card {
@@ -432,6 +441,11 @@ html[data-theme="light"] .theme-toggle-moon {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Show the left of the screenshot: the featured title sits at the
+   * left edge, and the tall four-across cover crops the sides, which
+   * used to cut "The Odyssey" down to "lyssey". At the 8/5 widths
+   * there is no side crop, so this changes nothing there. */
+  object-position: left center;
   transition: transform 250ms ease-out;
 }
 .project-cover:hover img {
@@ -467,6 +481,12 @@ html[data-theme="light"] .theme-toggle-moon {
 .project-content h3 {
   font-size: 25px;
   margin-block: 10px 13px;
+  /* Two lines tall, so the titles line up now that the cards size to
+   * their own content: "Daily Report Automation" wraps to two lines
+   * at the four-across width, the other three titles are one line.
+   * Overridden back to 0 in the 1000px query below, where the cards
+   * are wide enough for every title to fit on one line. */
+  min-height: 70px;
 }
 .project-description {
   font-size: 13px;
@@ -535,7 +555,11 @@ html[data-theme="light"] .theme-toggle-moon {
 }
 .dashboard-illustration {
   display: grid;
-  grid-template-columns: 19% minmax(0, 1fr);
+  /* The sidebar needs a wider share at the narrow four-across width:
+   * at 19% its content was only about 23px wide, so the 25px "o1e"
+   * logo overflowed and the white panel painted over its right edge.
+   * At 24% with tighter padding the logo fits with room to spare. */
+  grid-template-columns: 24% minmax(0, 1fr);
   flex: 1;
   /* No min-height: 0 here: the illustration must never shrink below
    * its own content, or the bottom tiles get sliced again. Its
@@ -551,14 +575,14 @@ html[data-theme="light"] .theme-toggle-moon {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 15px 12px;
+  padding: 15px 8px;
   background: #303a4b;
   min-height: 0;
 }
 .dashboard-brand {
   color: #c7d9ee;
   font:
-    25px / 1 "Segoe UI",
+    21px / 1 "Segoe UI",
     sans-serif;
   text-align: center;
   margin-bottom: 14px;
@@ -870,6 +894,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* The cards are wide enough here for every title to fit on one
+   * line, so the two-line title height from the desktop row is
+   * no longer needed. */
+  .project-content h3 {
+    min-height: 0;
   }
   .project-cover,
   .terminal-cover,
