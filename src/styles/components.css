@@ -1457,6 +1457,16 @@ html[lang="ur"] .dashboard-cover figcaption {
   grid-template-columns: 1fr 1.15fr;
   gap: 45px 80px;
 }
+/* About copy: frosted glass panel, same glass as the GitHub band below it. */
+.about-copy {
+  padding: 28px;
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+}
 .about-copy > p {
   font-size: 14px;
   line-height: 1.95;
@@ -1775,6 +1785,9 @@ html[lang="ur"] .dashboard-cover figcaption {
   }
   .about {
     grid-template-columns: 1fr;
+  }
+  .about-copy {
+    padding: 24px;
   }
   .github-band {
     grid-template-columns: auto minmax(0, 1fr);
