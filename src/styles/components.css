@@ -467,10 +467,11 @@ html[data-theme="light"] .theme-toggle-moon {
   padding-block: 6px;
 }
 .dashboard-cover {
-  aspect-ratio: 8 / 5;
-  /* Tighter padding than the 25px it had, so the dashboard drawing
-   * fits inside the 8/5 box instead of pushing the cover taller than
-   * its siblings. */
+  /* No fixed aspect ratio here: the drawing's content is taller than
+   * the 8/5 box, so a fixed ratio squeezed it and the bottom tiles
+   * were clipped by the illustration's overflow. Without it, the
+   * shared subgrid cover row grows to fit the drawing, and the other
+   * two covers stretch to match it. */
   padding: 18px 18px 10px;
   display: flex;
   flex-direction: column;
@@ -482,7 +483,10 @@ html[data-theme="light"] .theme-toggle-moon {
   display: grid;
   grid-template-columns: 19% minmax(0, 1fr);
   flex: 1;
-  min-height: 0;
+  /* No min-height: 0 here: the illustration must never shrink below
+   * its own content, or the bottom tiles get sliced again. Its
+   * automatic minimum size is what makes the shared cover row grow
+   * to fit it. */
   border: 1px solid #445264;
   border-radius: 5px;
   overflow: hidden;

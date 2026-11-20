@@ -9,6 +9,13 @@ const t = translations[Astro.props.lang].skills
 const icons = ['code', 'workflow', 'spark', 'game', 'code', 'bag'] as const
 /* The two anchor areas get a double-width card in the bento grid. */
 const wide = new Set([0, 2])
+/* Bento order: the two wide cards render first so they share the top
+ * row, then the four singles below. Plain auto-placement cannot do
+ * this: in DOM order GoHighLevel (a single) takes the third column of
+ * row 1, so AI Agents (wide) no longer fits there and drops to row 2,
+ * leaving an empty cell and pushing E-commerce onto a third row.
+ * Card numbers stay with their skill (01 Web, 02 GoHighLevel, ...). */
+const order = [0, 2, 1, 3, 4, 5]
 const allTags = t.groups.flatMap((group) => group.tags)
 ---
 <section class="section skills" id="skills" aria-labelledby="skills-title">
@@ -17,11 +24,11 @@ const allTags = t.groups.flatMap((group) => group.tags)
     <p>{t.intro}</p>
   </div>
   <div class="skills-grid">
-    {t.groups.map((group, index) => <article class={wide.has(index) ? 'skill-card skill-card--wide' : 'skill-card'}>
+    {order.map((index) => { const group = t.groups[index]; return <article class={wide.has(index) ? 'skill-card skill-card--wide' : 'skill-card'}>
       <div class="card-top"><span class="service-icon"><Icon name={icons[index]} /></span><span class="card-index" aria-hidden="true">0{index + 1}</span></div>
       <h3>{group.title}</h3><p>{group.text}</p>
       <ul class="tags">{group.tags.map((tag) => <li>{tag}</li>)}</ul>
-    </article>)}
+    </article>})}
   </div>
   <div class="skills-marquee" aria-hidden="true">
     <div class="skills-marquee-track">
