@@ -1,9 +1,10 @@
 // Chat endpoint for the portfolio chatbot (see src/components/ChatWidget.astro).
 // A Netlify Function: it runs server-side, so the DeepSeek API key stays in
 // Netlify's environment variables and is never shipped to the browser.
-// The key is read from process.env.DEEPSEEK_API_KEY at runtime. Until the
-// site owner adds that variable in Netlify, every request gets the friendly
-// offline fallback below, so the widget still works gracefully.
+// The key is read from process.env.DEEPSEEK_API_KEY or process.env.API_KEY
+// at runtime. Until the site owner adds one of those variables in Netlify,
+// every request gets the friendly offline fallback below, so the widget
+// still works gracefully.
 // Model: deepseek-flash (DeepSeek-V4.1-Flash-1017), verified on DeepSeek's
 // own pricing page (api-docs.deepseek.com/quick_start/pricing, 2026-11-20),
 // which lists only deepseek-flash and deepseek-v4-pro.
@@ -112,7 +113,7 @@ export async function handler(event) {
   }
   const recent = history.slice(-MAX_HISTORY)
 
-  const apiKey = process.env.DEEPSEEK_API_KEY
+  const apiKey = process.env.DEEPSEEK_API_KEY || process.env.API_KEY
   if (!apiKey) return fallback()
 
   const controller = new AbortController()
