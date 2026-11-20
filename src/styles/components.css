@@ -1006,13 +1006,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
+/* Expertise: solid surface, no frosted glass. */
 .expertise-card {
   padding: 28px;
-  border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--line-1);
+  background: var(--bg-1);
+  box-shadow: var(--shadow-card);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -1057,7 +1056,7 @@ html[lang="ur"] .dashboard-cover figcaption {
 /* Skills: a bento grid instead of the plain 4+2 grid, so the section has
  * a clear hierarchy. Web Development and AI Agents & Automation are the
  * two anchor areas, so they take double-width cards on the top row; the
- * other four sit in a row of singles below. Same glass cards as
+ * other four sit in a row of singles below. Same card shape as
  * Expertise, with their own classes so Expertise is untouched. */
 .skills-grid {
   display: grid;
@@ -1205,13 +1204,11 @@ html[lang="ur"] .dashboard-cover figcaption {
   border-bottom: 1px solid var(--line-1);
   align-items: start;
   border-radius: 6px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--bg-1);
   transition: background 180ms;
 }
 .experience-row:hover {
-  background: var(--glass-bg-strong);
+  background: var(--bg-2);
 }
 .experience-row:last-child {
   border-bottom: none;
@@ -1294,13 +1291,11 @@ html[lang="ur"] .dashboard-cover figcaption {
   border-bottom: 1px solid var(--line-1);
   align-items: start;
   border-radius: 6px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--bg-1);
   transition: background 180ms;
 }
 .education-row:hover {
-  background: var(--glass-bg-strong);
+  background: var(--bg-2);
 }
 .education-row:last-child {
   border-bottom: none;
