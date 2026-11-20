@@ -53,6 +53,9 @@
   /* glass (frosted surfaces) */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-bg-strong: rgba(18, 18, 20, 0.55);
+  /* rows: a touch more opaque than --glass-bg, so the frost reads clearly */
+  --glass-bg-row: rgba(255, 255, 255, 0.09);
+  --glass-bg-row-hover: rgba(255, 255, 255, 0.15);
   --glass-border: rgba(255, 255, 255, 0.12);
   --glass-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.65);
 
@@ -108,6 +111,9 @@ html[data-theme="light"] {
   /* glass (frosted surfaces) */
   --glass-bg: rgba(255, 255, 255, 0.55);
   --glass-bg-strong: rgba(255, 255, 255, 0.6);
+  /* rows: a touch more opaque than --glass-bg, so the frost reads clearly */
+  --glass-bg-row: rgba(255, 255, 255, 0.65);
+  --glass-bg-row-hover: rgba(255, 255, 255, 0.75);
   --glass-border: rgba(29, 26, 20, 0.14);
   --glass-shadow: 0 8px 32px -16px rgba(80, 64, 20, 0.35);
 

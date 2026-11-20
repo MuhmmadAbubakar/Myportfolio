@@ -180,9 +180,37 @@
     transform 250ms var(--ease);
 }
 .experience-row:hover {
-  background: var(--bg-2);
+  background: var(--glass-bg-row-hover);
   box-shadow: inset 2px 0 0 var(--accent);
   transform: translateX(4px);
+}
+
+/* Education rows: a livelier hover than Experience. The row slides
+ * right, a gold bar sweeps in on the left edge, the school mark lifts
+ * and glows gold, and the frost deepens. */
+.education-row {
+  transition:
+    background 180ms,
+    box-shadow 250ms var(--ease),
+    transform 250ms var(--ease);
+}
+.education-row:hover {
+  background: var(--glass-bg-row-hover);
+  box-shadow: inset 2px 0 0 var(--accent);
+  transform: translateX(4px);
+}
+.education-row .education-mark {
+  transition:
+    transform 250ms var(--ease),
+    border-color 180ms,
+    box-shadow 250ms var(--ease);
+}
+.education-row:hover .education-mark {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 16px -4px var(--accent-glow),
+    0 8px 18px -10px rgba(0, 0, 0, 0.65);
 }
 .github-band {
   transition:
@@ -243,6 +271,12 @@
   .about-heading .eyebrow::after,
   .contact-copy .eyebrow::after {
     transition: none !important;
+  }
+  .experience-row,
+  .education-row,
+  .education-row .education-mark {
+    transition: none !important;
+    transform: none !important;
   }
   .section-intro.is-visible .eyebrow::after,
   .about-heading.is-visible .eyebrow::after,

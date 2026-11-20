@@ -1204,11 +1204,13 @@ html[lang="ur"] .dashboard-cover figcaption {
   border-bottom: 1px solid var(--line-1);
   align-items: start;
   border-radius: 6px;
-  background: var(--bg-1);
+  background: var(--glass-bg-row);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: background 180ms;
 }
 .experience-row:hover {
-  background: var(--bg-2);
+  background: var(--glass-bg-row-hover);
 }
 .experience-row:last-child {
   border-bottom: none;
@@ -1291,11 +1293,13 @@ html[lang="ur"] .dashboard-cover figcaption {
   border-bottom: 1px solid var(--line-1);
   align-items: start;
   border-radius: 6px;
-  background: var(--bg-1);
+  background: var(--glass-bg-row);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: background 180ms;
 }
 .education-row:hover {
-  background: var(--bg-2);
+  background: var(--glass-bg-row-hover);
 }
 .education-row:last-child {
   border-bottom: none;
