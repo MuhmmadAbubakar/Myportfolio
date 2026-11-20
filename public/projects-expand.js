@@ -1,7 +1,7 @@
 // Project cards expand on tap as well as on hover and keyboard focus.
 // Kept as an external file because the site's Content-Security-Policy
 // (script-src 'self') blocks inline scripts. Without JS, hover and
-// keyboard focus still reveal the story through CSS alone.
+// keyboard focus still reveal the details through CSS alone.
 // Tapping a card (anywhere except on a link inside it) pins that card
 // open; tapping it again, or tapping anywhere outside the cards,
 // closes it. Only one card is ever pinned open at a time.

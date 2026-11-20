@@ -13,6 +13,17 @@ const t = projectCopy[Astro.props.lang]
     <p>{t.intro}</p>
   </div>
   <div class="projects-grid">
+    {/*
+      One wide row per project: the cover on the left, the text on the
+      right. The cover is always the first child of the card, so a real
+      image can replace it later by swapping that one element:
+      - Hash Movies: the <a class="project-cover"> (swap its <img>)
+      - o1e Mortgage: the <figure class="dashboard-cover">
+      - Hermes: the <figure class="terminal-cover">
+      - Daily Report Automation: the <figure class="flow-cover">
+      A replacement image should use class "project-photo" (see
+      components.css) so it fills the media area the same way.
+    */}
     <article class="project-card">
       <a class="project-cover" href={movieProject.url} target="_blank" rel="noopener noreferrer" aria-label={`${movieProject.title}: ${t.movie.action}`}>
         <img src={movieProject.image} alt={t.movie.imageAlt} width="1440" height="900" loading="lazy" decoding="async" />
@@ -22,7 +33,18 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.movie.category}</p>
         <h3><bdi>{movieProject.title}</bdi></h3>
         <p class="project-description">{t.movie.description}</p>
-        <p class="project-story">{t.movie.story}</p>
+        <div class="project-details">
+          <div class="project-details-inner">
+            <div class="project-detail">
+              <h4>{t.whatIDid}</h4>
+              <p class="project-story">{t.movie.story}</p>
+            </div>
+            <div class="project-detail">
+              <h4>{t.behindTheScenes}</h4>
+              <p class="project-backend">{t.movie.backend}</p>
+            </div>
+          </div>
+        </div>
         <ul class="tags">{t.movie.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href={movieProject.url} target="_blank" rel="noopener noreferrer">{t.movie.action}<Icon name="arrow" /></a>
       </div>
@@ -50,7 +72,18 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.mortgage.category}</p>
         <h3><bdi>o1e Mortgage</bdi></h3>
         <p class="project-description">{t.mortgage.description}</p>
-        <p class="project-story">{t.mortgage.story}</p>
+        <div class="project-details">
+          <div class="project-details-inner">
+            <div class="project-detail">
+              <h4>{t.whatIDid}</h4>
+              <p class="project-story">{t.mortgage.story}</p>
+            </div>
+            <div class="project-detail">
+              <h4>{t.behindTheScenes}</h4>
+              <p class="project-backend">{t.mortgage.backend}</p>
+            </div>
+          </div>
+        </div>
         <ul class="tags">{t.mortgage.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href="#experience-o1e-mortgage">{t.mortgage.action}<Icon name="down" /></a>
       </div>
@@ -69,7 +102,18 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.hermes.category}</p>
         <h3><bdi>Hermes</bdi></h3>
         <p class="project-description">{t.hermes.description}</p>
-        <p class="project-story">{t.hermes.story}</p>
+        <div class="project-details">
+          <div class="project-details-inner">
+            <div class="project-detail">
+              <h4>{t.whatIDid}</h4>
+              <p class="project-story">{t.hermes.story}</p>
+            </div>
+            <div class="project-detail">
+              <h4>{t.behindTheScenes}</h4>
+              <p class="project-backend">{t.hermes.backend}</p>
+            </div>
+          </div>
+        </div>
         <ul class="tags">{t.hermes.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href="#skills">{t.hermes.action}<Icon name="down" /></a>
       </div>
@@ -89,7 +133,18 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.report.category}</p>
         <h3><bdi>Daily Report Automation</bdi></h3>
         <p class="project-description">{t.report.description}</p>
-        <p class="project-story">{t.report.story}</p>
+        <div class="project-details">
+          <div class="project-details-inner">
+            <div class="project-detail">
+              <h4>{t.whatIDid}</h4>
+              <p class="project-story">{t.report.story}</p>
+            </div>
+            <div class="project-detail">
+              <h4>{t.behindTheScenes}</h4>
+              <p class="project-backend">{t.report.backend}</p>
+            </div>
+          </div>
+        </div>
         <ul class="tags">{t.report.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href="#experience-hashturn">{t.report.action}<Icon name="down" /></a>
       </div>
