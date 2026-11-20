@@ -52,7 +52,7 @@ const locale = languages.find((item) => item.code === lang) ?? languages[0]
     <SiteHeader lang={lang} />
     <main id="main" tabindex="-1"><slot /></main>
     <SiteFooter lang={lang} />
-    <ChatWidget />
+    <ChatWidget lang={lang} />
 
 
     <script is:inline src="/reveal.js"></script>

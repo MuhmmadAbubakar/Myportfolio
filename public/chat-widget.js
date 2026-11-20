@@ -8,6 +8,11 @@
 // The function answers with { reply } or, when the key is missing or the
 // API fails, with { reply, fallback: true }; network errors get the same
 // friendly contact fallback here, with the email as a clickable link.
+// All user-facing strings come from the widget element's data attributes,
+// rendered by ChatWidget.astro from translations[lang].chat, so the widget
+// speaks the page's language. When the server answers with fallback: true,
+// or the request is rate limited, the local translated message is shown,
+// not the server's English text.
 // Abuse guard, client-side half: at most 10 messages per visitor session
 // (the function enforces 10 requests per 10 minutes per IP server-side).
 // All message text is inserted with textContent, never innerHTML, so a
@@ -36,7 +41,15 @@
     return
 
   const EMAIL = 'm.abubakarmughal23@gmail.com'
-  const FALLBACK_REPLY = `I can't reach the chat right now, email Abubakar at ${EMAIL}.`
+  // Translated strings from the widget element's data attributes, rendered
+  // by ChatWidget.astro. The markup always sets them, so these are never
+  // empty in practice; the empty fallbacks only guard against stale markup.
+  const FALLBACK_REPLY = widget.dataset.fallback || ''
+  const SESSION_CAP_REPLY = widget.dataset.sessionCap || ''
+  const RATE_LIMIT_REPLY = widget.dataset.rateLimit || ''
+  const OPEN_LABEL = widget.dataset.openLabel || ''
+  const CLOSE_LABEL = widget.dataset.closeLabel || ''
+  const TYPING_LABEL = widget.dataset.typingLabel || ''
   const MAX_HISTORY = 6
   const MAX_SESSION_MESSAGES = 10
   const history = []
@@ -48,7 +61,7 @@
     toggle.setAttribute('aria-expanded', String(open))
     toggle.setAttribute(
       'aria-label',
-      open ? "Close chat with Abubakar's assistant" : "Open chat with Abubakar's assistant",
+      open ? CLOSE_LABEL : OPEN_LABEL,
     )
     if (open) input.focus()
   }
@@ -105,7 +118,7 @@
     const text = input.value.trim()
     if (!text) return
     if (sentCount >= MAX_SESSION_MESSAGES) {
-      addMessageWithEmailLink(`That's 10 messages for now, please email Abubakar at ${EMAIL}.`)
+      addMessageWithEmailLink(SESSION_CAP_REPLY)
       input.value = ''
       return
     }
@@ -116,7 +129,7 @@
 
     const typing = document.createElement('div')
     typing.className = 'chat-message chat-message-assistant chat-typing'
-    typing.setAttribute('aria-label', 'Assistant is typing')
+    typing.setAttribute('aria-label', TYPING_LABEL)
     for (let i = 0; i < 3; i += 1) {
       const dot = document.createElement('span')
       typing.appendChild(dot)
@@ -140,23 +153,26 @@
           isFallback = data.fallback === true
         }
       } else if (response.status === 429) {
-        const data = await response.json().catch(() => null)
-        if (data && typeof data.error === 'string' && data.error.trim()) {
-          reply = data.error.trim()
-          isFallback = false
-        }
+        // Show the local translated rate-limit message, not the server text.
+        reply = RATE_LIMIT_REPLY
+        isFallback = false
       }
     } catch {
       reply = null
     }
 
     typing.remove()
+    // On a fallback, show the local translated message, not the server's
+    // English reply text, and keep the history in the visitor's language.
     if (reply === null || isFallback) {
-      addMessageWithEmailLink(reply === null ? FALLBACK_REPLY : reply)
+      addMessageWithEmailLink(FALLBACK_REPLY)
     } else {
       addMessage('assistant', reply)
     }
-    history.push({ role: 'assistant', content: reply === null ? FALLBACK_REPLY : reply })
+    history.push({
+      role: 'assistant',
+      content: reply === null || isFallback ? FALLBACK_REPLY : reply,
+    })
     setBusy(false)
     input.focus()
   })

@@ -26,7 +26,8 @@ const SYSTEM_PROMPT =
   'For serious enquiries, point people to m.abubakarmughal23@gmail.com and https://github.com/MuhmmadAbubakar. ' +
   'Do not claim experience he has not stated, such as Zapier, n8n, Make or Voice AI. ' +
   'If you do not know something, say so and point to his email. ' +
-  'Keep replies short, under about 80 words.'
+  'Keep replies short, under about 80 words. ' +
+  "Reply in the same language as the visitor's latest message."
 
 const FALLBACK_REPLY =
   "I can't reach the chat right now, email Abubakar at m.abubakarmughal23@gmail.com."

@@ -78,6 +78,22 @@ export interface Copy {
   contact: { label: string; heading: string; text: string; action: string; email: string }
   footer: { socials: string; linkedinUnavailable: string }
   theme: { toLight: string; toDark: string }
+  chat: {
+    title: string
+    subtitle: string
+    greeting: string
+    inputLabel: string
+    inputPlaceholder: string
+    sendLabel: string
+    closeLabel: string
+    openLabel: string
+    closeToggleLabel: string
+    panelLabel: string
+    typingLabel: string
+    fallback: string
+    sessionCap: string
+    rateLimit: string
+  }
   notFound: { title: string; text: string; back: string }
 }
 
@@ -266,6 +282,22 @@ export const translations: Record<Language, Copy> = {
       toLight: 'Switch to light theme',
       toDark: 'Switch to dark theme',
     },
+    chat: {
+      title: "Ask Abubakar's assistant",
+      subtitle: 'AI assistant',
+      greeting: "Hi, I'm Abubakar's AI assistant. Ask me about his work, services, or experience.",
+      inputLabel: 'Type a message',
+      inputPlaceholder: 'Type a message...',
+      sendLabel: 'Send message',
+      closeLabel: 'Close chat',
+      openLabel: "Open chat with Abubakar's assistant",
+      closeToggleLabel: "Close chat with Abubakar's assistant",
+      panelLabel: "Chat with Abubakar's assistant",
+      typingLabel: 'Assistant is typing',
+      fallback: "I can't reach the chat right now, email Abubakar at m.abubakarmughal23@gmail.com.",
+      sessionCap: "That's 10 messages for now, please email Abubakar at m.abubakarmughal23@gmail.com.",
+      rateLimit: 'Too many messages for now. Please wait a few minutes and try again.',
+    },
     notFound: {
       title: 'This page took a wrong turn.',
       text: 'The page you’re looking for isn’t here. Let’s get you back to the portfolio.',
@@ -437,6 +469,22 @@ export const translations: Record<Language, Copy> = {
     theme: {
       toLight: 'ہلکی تھیم پر جائیں',
       toDark: 'گہری تھیم پر جائیں',
+    },
+    chat: {
+      title: 'ابوبکر کے اسسٹنٹ سے پوچھیں',
+      subtitle: 'اے آئی اسسٹنٹ',
+      greeting: 'السلام علیکم، میں ابوبکر کا اے آئی اسسٹنٹ ہوں۔ ان کے کام، خدمات یا تجربے کے بارے میں پوچھیں۔',
+      inputLabel: 'پیغام لکھیں',
+      inputPlaceholder: 'پیغام لکھیں...',
+      sendLabel: 'پیغام بھیجیں',
+      closeLabel: 'چیٹ بند کریں',
+      openLabel: 'ابوبکر کے اسسٹنٹ سے چیٹ کھولیں',
+      closeToggleLabel: 'ابوبکر کے اسسٹنٹ سے چیٹ بند کریں',
+      panelLabel: 'ابوبکر کے اسسٹنٹ سے چیٹ',
+      typingLabel: 'اسسٹنٹ لکھ رہا ہے',
+      fallback: 'اس وقت چیٹ سے رابطہ نہیں ہو رہا، براہ کرم ابوبکر کو m.abubakarmughal23@gmail.com پر ای میل کریں۔',
+      sessionCap: 'ابھی کے لیے 10 پیغامات ہو گئے، براہ کرم ابوبکر کو m.abubakarmughal23@gmail.com پر ای میل کریں۔',
+      rateLimit: 'ابھی بہت زیادہ پیغامات ہو گئے ہیں۔ براہ کرم چند منٹ انتظار کریں اور دوبارہ کوشش کریں۔',
     },
     notFound: {
       title: 'یہ صفحہ نہیں مل سکا۔',
@@ -614,6 +662,22 @@ export const translations: Record<Language, Copy> = {
       toLight: 'Cambiar al tema claro',
       toDark: 'Cambiar al tema oscuro',
     },
+    chat: {
+      title: 'Pregunta al asistente de Abubakar',
+      subtitle: 'Asistente de IA',
+      greeting: 'Hola, soy el asistente de IA de Abubakar. Pregúntame sobre su trabajo, sus servicios o su experiencia.',
+      inputLabel: 'Escribe un mensaje',
+      inputPlaceholder: 'Escribe un mensaje...',
+      sendLabel: 'Enviar mensaje',
+      closeLabel: 'Cerrar el chat',
+      openLabel: 'Abrir el chat con el asistente de Abubakar',
+      closeToggleLabel: 'Cerrar el chat con el asistente de Abubakar',
+      panelLabel: 'Chat con el asistente de Abubakar',
+      typingLabel: 'El asistente está escribiendo',
+      fallback: 'Ahora mismo no puedo conectar con el chat. Escríbele a Abubakar a m.abubakarmughal23@gmail.com.',
+      sessionCap: 'Son 10 mensajes por ahora. Escríbele a Abubakar a m.abubakarmughal23@gmail.com.',
+      rateLimit: 'Demasiados mensajes por ahora. Espera unos minutos e inténtalo de nuevo.',
+    },
     notFound: {
       title: 'Esta página se perdió en el camino.',
       text: 'La página que buscas no está aquí. Volvamos al portafolio.',
@@ -784,6 +848,22 @@ export const translations: Record<Language, Copy> = {
     theme: {
       toLight: 'ライトテーマに切り替える',
       toDark: 'ダークテーマに切り替える',
+    },
+    chat: {
+      title: 'アブバカルのアシスタントに聞く',
+      subtitle: 'AIアシスタント',
+      greeting: 'こんにちは、アブバカルのAIアシスタントです。仕事、サービス、経験についてお気軽にどうぞ。',
+      inputLabel: 'メッセージを入力',
+      inputPlaceholder: 'メッセージを入力...',
+      sendLabel: '送信する',
+      closeLabel: 'チャットを閉じる',
+      openLabel: 'アブバカルのアシスタントとのチャットを開く',
+      closeToggleLabel: 'アブバカルのアシスタントとのチャットを閉じる',
+      panelLabel: 'アブバカルのアシスタントとのチャット',
+      typingLabel: 'アシスタントが入力中',
+      fallback: '今はチャットに接続できません。アブバカルに m.abubakarmughal23@gmail.com までメールしてください。',
+      sessionCap: '今回は10件のメッセージまでです。アブバカルに m.abubakarmughal23@gmail.com までメールしてください。',
+      rateLimit: 'メッセージが多すぎます。数分待ってから、もう一度お試しください。',
     },
     notFound: {
       title: 'ページが見つかりません。',
