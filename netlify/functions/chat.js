@@ -1,13 +1,12 @@
 // Chat endpoint for the portfolio chatbot (see src/components/ChatWidget.astro).
-// A Netlify Function: it runs server-side, so the DeepSeek API key stays in
+// A Netlify Function: it runs server-side, so the Google API key stays in
 // Netlify's environment variables and is never shipped to the browser.
-// The key is read from process.env.DEEPSEEK_API_KEY or process.env.API_KEY
-// at runtime. Until the site owner adds one of those variables in Netlify,
-// every request gets the friendly offline fallback below, so the widget
-// still works gracefully.
-// Model: deepseek-flash (DeepSeek-V4.1-Flash-1017), verified on DeepSeek's
-// own pricing page (api-docs.deepseek.com/quick_start/pricing, 2026-11-20),
-// which lists only deepseek-flash and deepseek-v4-pro.
+// The key is read from process.env.API_KEY at runtime. Until the
+// site owner adds that variable in Netlify, every request gets the friendly
+// offline fallback below, so the widget still works gracefully.
+// Model: gemini-2.5-flash via Google AI Studio, which has a free tier
+// (1,500 requests a day, no credit card). The key the site owner added to
+// Netlify is a Google key, so this function calls Gemini, not DeepSeek.
 // Note: this file uses ESM because the repo's package.json has
 // "type": "module"; Netlify bundles it the same way.
 
@@ -113,29 +112,36 @@ export async function handler(event) {
   }
   const recent = history.slice(-MAX_HISTORY)
 
-  const apiKey = process.env.DEEPSEEK_API_KEY || process.env.API_KEY
+  const apiKey = process.env.API_KEY
   if (!apiKey) return fallback()
 
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 9000)
   try {
-    const response = await fetch('https://api.deepseek.com/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
+    // Gemini roles are "user" and "model"; the widget sends "user"/"assistant".
+    const contents = recent.map((m) => ({
+      role: m.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: m.content }],
+    }))
+    const response = await fetch(
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey,
+        },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents,
+          generationConfig: { temperature: 0.7, maxOutputTokens: MAX_TOKENS },
+        }),
+        signal: controller.signal,
       },
-      body: JSON.stringify({
-        model: 'deepseek-flash',
-        messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...recent],
-        temperature: 0.7,
-        max_tokens: MAX_TOKENS,
-      }),
-      signal: controller.signal,
-    })
+    )
     if (!response.ok) return fallback()
     const data = await response.json()
-    const reply = data?.choices?.[0]?.message?.content?.trim()
+    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
     if (!reply) return fallback()
     return json(200, { reply })
   } catch {
