@@ -53,5 +53,23 @@ const t = projectCopy[Astro.props.lang]
         <a class="text-link project-link" href="#experience-o1e-mortgage">{t.mortgage.action}<Icon name="down" /></a>
       </div>
     </article>
+    <article class="project-card">
+      <figure class="terminal-cover">
+        <div class="terminal-illustration" aria-hidden="true">
+          <div class="terminal-header"><span class="terminal-dots">● ● ●</span><span dir="ltr">HERMES AGENT</span></div>
+          <p><span class="terminal-prompt">&gt;_</span> <span dir="ltr">ollama run qwen3:5.2b</span></p>
+          <p class="terminal-dim"><span dir="ltr">Hermes Agent v0.22.2</span></p>
+          <p><span class="terminal-prompt">&gt;_</span> <span dir="ltr">21 tools · 52 skills</span></p>
+        </div>
+        <figcaption>{t.hermes.illustration}</figcaption>
+      </figure>
+      <div class="project-content">
+        <p class="eyebrow accent">{t.hermes.category}</p>
+        <h3><bdi>Hermes</bdi></h3>
+        <p class="project-description">{t.hermes.description}</p>
+        <ul class="tags">{t.hermes.tags.map((tag) => <li>{tag}</li>)}</ul>
+        <a class="text-link project-link" href="#skills">{t.hermes.action}<Icon name="down" /></a>
+      </div>
+    </article>
   </div>
 </section>

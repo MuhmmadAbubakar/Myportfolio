@@ -23,6 +23,13 @@ interface ProjectCopy {
     accounts: string
     workflows: string
   }
+  hermes: {
+    category: string
+    description: string
+    action: string
+    tags: string[]
+    illustration: string
+  }
 }
 
 export const projectCopy: Record<Language, ProjectCopy> = {
@@ -30,7 +37,7 @@ export const projectCopy: Record<Language, ProjectCopy> = {
     nav: 'Projects',
     label: '03 / SELECTED WORK',
     heading: 'A closer look at my work.',
-    intro: 'A movie discovery website and hands-on work in the GoHighLevel ecosystem.',
+    intro: 'A movie discovery website, hands-on work in the GoHighLevel ecosystem, and a local AI agent I run on my own machine.',
     movie: {
       category: 'WEB DEVELOPMENT',
       description:
@@ -52,12 +59,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       accounts: 'Sub-accounts',
       workflows: 'Workflows',
     },
+    hermes: {
+      category: 'LOCAL AI AGENT',
+      description:
+        'An AI agent I run locally on my own machine with Ollama and Qwen3 5.2B. It browses, runs code, works with files and does research, with 21 tools and 52 skills.',
+      action: 'See AI skills',
+      tags: ['Ollama', 'Qwen3 5.2B', 'AI agent'],
+      illustration: 'Terminal illustration',
+    },
   },
   ur: {
     nav: 'پروجیکٹس',
     label: '۰۳ / منتخب کام',
     heading: 'میرے کام پر ایک نظر۔',
-    intro: 'فلمیں تلاش کرنے کی ویب سائٹ اور GoHighLevel کے شعبے میں عملی تجربہ۔',
+    intro: 'فلمیں تلاش کرنے کی ویب سائٹ، GoHighLevel کے شعبے میں عملی تجربہ، اور ایک لوکل اے آئی ایجنٹ جسے میں اپنی مشین پر چلاتا ہوں۔',
     movie: {
       category: 'ویب ڈویلپمنٹ',
       description:
@@ -79,13 +94,21 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       accounts: 'ذیلی اکاؤنٹس',
       workflows: 'ورک فلوز',
     },
+    hermes: {
+      category: 'لوکل اے آئی ایجنٹ',
+      description:
+        'ایک اے آئی ایجنٹ جسے میں Ollama اور Qwen3 5.2B کے ساتھ اپنی مشین پر مقامی طور پر چلاتا ہوں۔ یہ براؤز کرتا ہے، کوڈ چلاتا ہے، فائلوں کے ساتھ کام کرتا ہے اور تحقیق کرتا ہے، اور اس میں 21 ٹولز اور 52 سکلز ہیں۔',
+      action: 'اے آئی سکلز دیکھیں',
+      tags: ['Ollama', 'Qwen3 5.2B', 'اے آئی ایجنٹ'],
+      illustration: 'ٹرمینل کی تمثیلی تصویر',
+    },
   },
   es: {
     nav: 'Proyectos',
     label: '03 / TRABAJOS DESTACADOS',
     heading: 'Mi trabajo, más de cerca.',
     intro:
-      'Un sitio para descubrir películas y experiencia práctica en el ecosistema de GoHighLevel.',
+      'Un sitio para descubrir películas, experiencia práctica en el ecosistema de GoHighLevel y un agente de IA local que ejecuto en mi propio ordenador.',
     movie: {
       category: 'DESARROLLO WEB',
       description:
@@ -107,12 +130,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       accounts: 'Subcuentas',
       workflows: 'Flujos de trabajo',
     },
+    hermes: {
+      category: 'AGENTE DE IA LOCAL',
+      description:
+        'Un agente de IA que ejecuto en local en mi propio ordenador con Ollama y Qwen3 5.2B. Navega, ejecuta código, trabaja con archivos e investiga, con 21 herramientas y 52 habilidades.',
+      action: 'Ver habilidades de IA',
+      tags: ['Ollama', 'Qwen3 5.2B', 'Agente de IA'],
+      illustration: 'Ilustración de terminal',
+    },
   },
   ja: {
     nav: '制作・実務',
     label: '03 / 制作・実務紹介',
     heading: '取り組みを、もっと具体的に。',
-    intro: '映画を探すWebサイトと、GoHighLevelの実務経験をご紹介します。',
+    intro: '映画を探すWebサイト、GoHighLevelでの実務経験、そして自分のPCでローカルに動かしているAIエージェントをご紹介します。',
     movie: {
       category: 'WEB開発',
       description:
@@ -132,6 +163,14 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       agency: 'エージェンシー環境',
       accounts: 'サブアカウント',
       workflows: 'ワークフロー',
+    },
+    hermes: {
+      category: 'ローカルAIエージェント',
+      description:
+        'OllamaとQwen3 5.2Bを使い、自分のPCでローカルに動かしているAIエージェントです。Webの閲覧、コードの実行、ファイル操作、リサーチを行い、21のツールと52のスキルを備えています。',
+      action: 'AIスキルを見る',
+      tags: ['Ollama', 'Qwen3 5.2B', 'AIエージェント'],
+      illustration: 'ターミナルのイメージ',
     },
   },
 }

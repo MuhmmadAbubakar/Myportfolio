@@ -613,6 +613,63 @@ html[data-theme="light"] .theme-toggle-moon {
   font-size: 10px;
   line-height: 1.5;
 }
+.terminal-cover {
+  aspect-ratio: 8 / 5;
+  padding: 25px 25px 12px;
+  display: flex;
+  flex-direction: column;
+  background: #0b0b0c;
+  border-bottom: 1px solid var(--line-1);
+  min-width: 0;
+}
+.terminal-illustration {
+  flex: 1;
+  min-height: 0;
+  border: 1px solid #3a2f1a;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 7px 25px #0004;
+  background: #101011;
+  color: #e8e4da;
+  font:
+    12px / 2 "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+  text-align: start;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #2a2a2c;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  color: #e8b458;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+.terminal-dots {
+  color: #8a6d2f;
+  letter-spacing: 4px;
+}
+.terminal-prompt {
+  color: #e8b458;
+}
+.terminal-dim {
+  color: #9a958a;
+}
+.terminal-cover figcaption {
+  margin-top: 8px;
+  text-align: end;
+  color: #b5c1d0;
+  font-size: 10px;
+  line-height: 1.5;
+}
 html[lang="ur"] .dashboard-title {
   font-size: 16px;
 }
@@ -627,6 +684,9 @@ html[lang="ur"] .dashboard-cover figcaption {
 }
 @media (max-width: 1000px) {
   .dashboard-cover {
+    padding: 18px 18px 10px;
+  }
+  .terminal-cover {
     padding: 18px 18px 10px;
   }
   .dashboard-body {
@@ -673,6 +733,10 @@ html[lang="ur"] .dashboard-cover figcaption {
     padding: 23px;
   }
   .dashboard-cover {
+    aspect-ratio: auto;
+    padding: 16px 16px 10px;
+  }
+  .terminal-cover {
     aspect-ratio: auto;
     padding: 16px 16px 10px;
   }
