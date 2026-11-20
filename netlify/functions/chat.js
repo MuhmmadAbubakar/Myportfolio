@@ -4,10 +4,11 @@
 // The key is read from process.env.API_KEY at runtime. Until the
 // site owner adds that variable in Netlify, every request gets the friendly
 // offline fallback below, so the widget still works gracefully.
-// Model: gemini-3.8-flash via Google AI Studio, which has a free tier.
+// Model: gemini-3.5-flash via Google AI Studio, which has a free tier.
 // Google's own API error said gemini-2.5-flash "is no longer available to
-// new users" and suggested gemini-3.8-flash as the replacement, so the
-// function uses that (2026-11-20).
+// new users" and suggested gemini-3.8-flash, but 3.8-flash kept answering
+// 503 "high demand" for 20+ minutes, so the function tries 3.5-flash,
+// the previous current flash model (2026-11-20).
 // Note: this file uses ESM because the repo's package.json has
 // "type": "module"; Netlify bundles it the same way.
 
@@ -135,7 +136,7 @@ export async function handler(event) {
         parts: [{ text: m.content }],
       }))
       const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent',
         {
           method: 'POST',
           headers: {
