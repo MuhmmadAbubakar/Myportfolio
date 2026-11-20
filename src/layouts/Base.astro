@@ -1,10 +1,12 @@
 ---
 import '@fontsource-variable/jetbrains-mono'
 import '../styles/global.css'
+import ChatWidget from '../components/ChatWidget.astro'
 import SiteFooter from '../components/SiteFooter.astro'
 import SiteHeader from '../components/SiteHeader.astro'
-import { languages, translations, type Language } from '../data/i18n'
+import { type Language, languages, translations } from '../data/i18n'
 import { site } from '../data/site'
+
 interface Props {
   lang?: Language
   title?: string
@@ -50,6 +52,7 @@ const locale = languages.find((item) => item.code === lang) ?? languages[0]
     <SiteHeader lang={lang} />
     <main id="main" tabindex="-1"><slot /></main>
     <SiteFooter lang={lang} />
+    <ChatWidget />
 
 
     <script is:inline src="/reveal.js"></script>
@@ -57,6 +60,7 @@ const locale = languages.find((item) => item.code === lang) ?? languages[0]
     <script is:inline src="/header.js"></script>
     <script is:inline src="/projects-expand.js"></script>
     <script is:inline src="/cursor-dot.js"></script>
+    <script is:inline src="/chat-widget.js"></script>
     <script is:inline src="/vendor/p5.min.js"></script>
     <script is:inline src="/vendor/vanta.topology.min.js"></script>
     <script is:inline src="/vanta-bg.js"></script>

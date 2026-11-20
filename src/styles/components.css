@@ -1837,3 +1837,262 @@ html[data-theme="light"] .testimonial-card:hover {
     0 18px 44px -24px rgba(80, 64, 20, 0.45),
     0 0 24px -8px var(--accent-glow);
 }
+
+/* Floating chatbot (see src/components/ChatWidget.astro and
+ * /chat-widget.js). Glass card in the site's gold accent, readable in
+ * both themes because every colour is a design token. The toggle and the
+ * panel sit above the sticky header (z-index 20) and the Vanta canvases. */
+.chat-widget {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.chat-toggle {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-1);
+  box-shadow:
+    var(--glass-shadow),
+    0 0 20px -6px var(--accent-glow);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  transition:
+    transform var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+.chat-toggle:hover {
+  transform: scale(1.06);
+  background: var(--accent-hi);
+}
+.chat-toggle:focus-visible,
+.chat-close:focus-visible,
+.chat-send:focus-visible,
+.chat-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.chat-toggle-icon {
+  display: grid;
+  place-items: center;
+}
+.chat-toggle-icon svg {
+  width: 26px;
+  height: 26px;
+}
+.chat-toggle-close {
+  display: none;
+}
+.chat-widget.is-open .chat-toggle-open {
+  display: none;
+}
+.chat-widget.is-open .chat-toggle-close {
+  display: grid;
+}
+.chat-panel {
+  width: min(360px, calc(100vw - 32px));
+  height: min(520px, calc(100dvh - 130px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  box-shadow: var(--glass-shadow);
+  animation: chat-panel-in 200ms var(--ease);
+}
+/* The panel sets display: flex, which would beat the browser's built-in
+ * [hidden] rule, so the panel must hide itself explicitly. */
+.chat-panel[hidden] {
+  display: none;
+}
+@keyframes chat-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.chat-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line-1);
+}
+.chat-panel-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--fg-1);
+}
+.chat-panel-subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--fg-3);
+}
+.chat-close {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--fg-2);
+  cursor: pointer;
+}
+.chat-close:hover {
+  background: var(--accent-dim);
+  color: var(--fg-1);
+}
+.chat-close svg {
+  width: 18px;
+  height: 18px;
+}
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+.chat-message {
+  max-width: 85%;
+  padding: 10px 13px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.chat-message p {
+  margin: 0;
+}
+.chat-message-assistant {
+  align-self: flex-start;
+  background: var(--bg-2);
+  color: var(--fg-1);
+  border: 1px solid var(--line-1);
+  border-bottom-left-radius: 4px;
+}
+.chat-message-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--bg-0);
+  border-bottom-right-radius: 4px;
+}
+.chat-typing {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 13px 15px;
+}
+.chat-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fg-3);
+  animation: chat-typing-dot 1.2s ease-in-out infinite;
+}
+.chat-typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.chat-typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes chat-typing-dot {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+.chat-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid var(--line-1);
+}
+.chat-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line-1);
+  border-radius: var(--radius-pill);
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font: inherit;
+  font-size: 14px;
+}
+.chat-input::placeholder {
+  color: var(--fg-4);
+}
+.chat-send {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-1);
+  cursor: pointer;
+  transition:
+    background-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.chat-send:hover {
+  background: var(--accent-hi);
+  transform: scale(1.05);
+}
+.chat-send:disabled,
+.chat-input:disabled {
+  opacity: 0.55;
+}
+.chat-send svg {
+  width: 19px;
+  height: 19px;
+}
+/* Visually hidden label for the chat input (screen readers only). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 639px) {
+  .chat-widget {
+    right: 16px;
+    bottom: 16px;
+  }
+}
