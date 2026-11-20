@@ -22,6 +22,7 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.movie.category}</p>
         <h3><bdi>{movieProject.title}</bdi></h3>
         <p class="project-description">{t.movie.description}</p>
+        <p class="project-story">{t.movie.story}</p>
         <ul class="tags">{t.movie.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href={movieProject.url} target="_blank" rel="noopener noreferrer">{t.movie.action}<Icon name="arrow" /></a>
       </div>
@@ -49,6 +50,7 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.mortgage.category}</p>
         <h3><bdi>o1e Mortgage</bdi></h3>
         <p class="project-description">{t.mortgage.description}</p>
+        <p class="project-story">{t.mortgage.story}</p>
         <ul class="tags">{t.mortgage.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href="#experience-o1e-mortgage">{t.mortgage.action}<Icon name="down" /></a>
       </div>
@@ -67,6 +69,7 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.hermes.category}</p>
         <h3><bdi>Hermes</bdi></h3>
         <p class="project-description">{t.hermes.description}</p>
+        <p class="project-story">{t.hermes.story}</p>
         <ul class="tags">{t.hermes.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href="#skills">{t.hermes.action}<Icon name="down" /></a>
       </div>
@@ -86,6 +89,7 @@ const t = projectCopy[Astro.props.lang]
         <p class="eyebrow accent">{t.report.category}</p>
         <h3><bdi>Daily Report Automation</bdi></h3>
         <p class="project-description">{t.report.description}</p>
+        <p class="project-story">{t.report.story}</p>
         <ul class="tags">{t.report.tags.map((tag) => <li>{tag}</li>)}</ul>
         <a class="text-link project-link" href="#experience-hashturn">{t.report.action}<Icon name="down" /></a>
       </div>

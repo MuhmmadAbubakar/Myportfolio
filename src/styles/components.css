@@ -378,14 +378,20 @@ html[data-theme="light"] .theme-toggle-moon {
   font-size: 13px;
   line-height: 1.85;
 }
+/* Expanding cards in a row: the grid is a flex row of four equal cards.
+ * The hovered, keyboard-focused or tapped card grows wider (flex-grow)
+ * and its story opens, while the other three shrink. The growth and the
+ * story both animate, so the change is smooth rather than a jump.
+ * Below the desktop width the row becomes a plain grid again and the
+ * story opens in place instead. */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 24px;
 }
 .project-card {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0;
   min-width: 0;
   overflow: hidden;
   border: 1px solid var(--glass-border);
@@ -398,12 +404,20 @@ html[data-theme="light"] .theme-toggle-moon {
     border-color 180ms,
     transform 180ms,
     box-shadow 180ms,
+    flex-grow 450ms ease,
     background-color 300ms ease;
 }
 .project-card:hover {
   border-color: #e8b45855;
   transform: translateY(-3px);
   box-shadow: 0 16px 40px -24px rgba(0, 0, 0, 0.8);
+}
+/* The expansion itself: hover, keyboard focus inside the card, or the
+ * .is-expanded class set by a tap (projects-expand.js). */
+.project-card:hover,
+.project-card:focus-within,
+.project-card.is-expanded {
+  flex-grow: 2.2;
 }
 .project-cover {
   display: block;
@@ -458,6 +472,46 @@ html[data-theme="light"] .theme-toggle-moon {
   font-size: 13px;
   line-height: 1.9;
   margin-bottom: 22px;
+}
+/* The longer human-tone story, hidden until its card expands. It opens
+ * on hover, on keyboard focus inside the card, or on tap (the
+ * .is-expanded class, set by projects-expand.js). Collapsed it takes
+ * no space and is hidden from screen readers; expanded it reads like
+ * the rest of the card text. */
+.project-story {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  transition:
+    max-height 450ms ease,
+    opacity 350ms ease,
+    margin-bottom 450ms ease,
+    visibility 0s linear 450ms;
+}
+.project-card:hover .project-story,
+.project-card:focus-within .project-story,
+.project-card.is-expanded .project-story {
+  max-height: 400px;
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 22px;
+  transition:
+    max-height 450ms ease,
+    opacity 350ms ease 100ms,
+    margin-bottom 450ms ease,
+    visibility 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* No animation here: the story still opens on hover, focus or tap,
+   * it just appears at once. */
+  .project-card,
+  .project-story {
+    transition: none;
+  }
 }
 .project-content .tags {
   margin-top: auto;
@@ -783,24 +837,19 @@ html[data-theme="light"] .theme-toggle-moon {
   font-size: 10px;
   line-height: 1.5;
 }
-/* Equal-height project covers. With subgrid, the three cards in a row
- * share one cover row, so the row is as tall as the tallest cover and
- * every card's heading, tags and links start at the same height. The
- * row gap is moved to a bottom margin on the cards, because a gap
- * between the two subgrid rows would show inside each card. Browsers
- * without subgrid keep the previous flex layout and natural cover
- * heights, so nothing breaks there. */
-@supports (grid-template-rows: subgrid) {
-  .projects-grid {
-    grid-template-rows: auto 1fr;
-    gap: 0 24px;
-  }
-  .project-card {
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 2;
-    margin-bottom: 24px;
-  }
+/* Equal-height covers in the flex row. A flex row cannot use the old
+ * subgrid trick, so all four covers share one fixed height instead:
+ * tall enough for the dashboard drawing (the tallest cover), short
+ * enough that the image and the two dark illustrations still read
+ * well. A fixed height also keeps the covers steady while a card
+ * grows wider on hover. Below the desktop width the media queries
+ * give the covers their aspect ratio back. */
+.project-cover,
+.dashboard-cover,
+.terminal-cover,
+.flow-cover {
+  aspect-ratio: auto;
+  height: 280px;
 }
 html[lang="ur"] .dashboard-title {
   font-size: 16px;
@@ -815,8 +864,21 @@ html[lang="ur"] .dashboard-cover figcaption {
   font-size: 12px;
 }
 @media (max-width: 1000px) {
+  /* Two columns again, as a plain grid: no width expansion here, the
+   * story opens in place instead, and the covers get their aspect
+   * ratio back. */
   .projects-grid {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .project-cover,
+  .terminal-cover,
+  .flow-cover {
+    aspect-ratio: 8 / 5;
+    height: auto;
+  }
+  .dashboard-cover {
+    height: auto;
   }
   .dashboard-cover {
     padding: 18px 18px 10px;
