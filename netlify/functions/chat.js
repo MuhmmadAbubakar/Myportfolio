@@ -119,47 +119,64 @@ export async function handler(event) {
     return fallback()
   }
 
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), 9000)
-  try {
-    // Gemini roles are "user" and "model"; the widget sends "user"/"assistant".
-    const contents = recent.map((m) => ({
-      role: m.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: m.content }],
-    }))
-    const response = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-key': apiKey,
+  // Gemini can briefly refuse with 503 under high demand, and a request can
+  // hang long enough to hit the timeout, so retry once on those transient
+  // failures after a short pause. Other errors (bad key, wrong model) will
+  // not fix themselves, so they return the fallback straight away.
+  const ATTEMPT_TIMEOUT_MS = 8000
+  const RETRY_DELAY_MS = 2000
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), ATTEMPT_TIMEOUT_MS)
+    try {
+      // Gemini roles are "user" and "model"; the widget sends "user"/"assistant".
+      const contents = recent.map((m) => ({
+        role: m.role === 'assistant' ? 'model' : 'user',
+        parts: [{ text: m.content }],
+      }))
+      const response = await fetch(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': apiKey,
+          },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+            contents,
+            generationConfig: { temperature: 0.7, maxOutputTokens: MAX_TOKENS },
+          }),
+          signal: controller.signal,
         },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents,
-          generationConfig: { temperature: 0.7, maxOutputTokens: MAX_TOKENS },
-        }),
-        signal: controller.signal,
-      },
-    )
-    if (!response.ok) {
-      const detail = await response.text().catch(() => '')
-      console.error('chat: Gemini error', response.status, detail.slice(0, 200))
+      )
+      if (!response.ok) {
+        const detail = await response.text().catch(() => '')
+        console.error('chat: Gemini error', response.status, detail.slice(0, 200))
+        if ((response.status === 503 || response.status === 429) && attempt === 1) {
+          await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS))
+          continue
+        }
+        return fallback()
+      }
+      const data = await response.json()
+      const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
+      if (!reply) return fallback()
+      return json(200, { reply })
+    } catch (error) {
+      // Network failure, timeout, or bad JSON: never leak the error to visitors.
+      console.error(
+        'chat: Gemini request failed',
+        error instanceof Error ? error.message : 'unknown',
+      )
+      if (attempt === 1) {
+        await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS))
+        continue
+      }
       return fallback()
+    } finally {
+      clearTimeout(timeout)
     }
-    const data = await response.json()
-    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
-    if (!reply) return fallback()
-    return json(200, { reply })
-  } catch (error) {
-    // Network failure, timeout, or bad JSON: never leak the error to visitors.
-    console.error(
-      'chat: Gemini request failed',
-      error instanceof Error ? error.message : 'unknown',
-    )
-    return fallback()
-  } finally {
-    clearTimeout(timeout)
   }
+  return fallback()
 }
