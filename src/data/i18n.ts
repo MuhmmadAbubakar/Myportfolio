@@ -18,6 +18,7 @@ export interface Copy {
     expertise: string
     experience: string
     certificates: string
+    education: string
     testimonials: string
     about: string
     skills: string
@@ -62,6 +63,12 @@ export interface Copy {
     heading: string
     intro: string
     items: { title: string; issuer: string; date: string; duration?: string; type: string; note: string }[]
+  }
+  education: {
+    label: string
+    heading: string
+    intro: string
+    items: { school: string; qualification: string; dates: string; note: string }[]
   }
   testimonials: {
     label: string
@@ -132,6 +139,7 @@ export const translations: Record<Language, Copy> = {
       expertise: 'Expertise',
       experience: 'Experience',
       certificates: 'Certificates',
+      education: 'Education',
       testimonials: 'Testimonials',
       about: 'About',
       skills: 'Skills',
@@ -279,8 +287,33 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    education: {
+      label: '07 / EDUCATION',
+      heading: 'Where I studied.',
+      intro: 'Three steps of schooling, from high school to university.',
+      items: [
+        {
+          school: 'University of Central Punjab',
+          qualification: 'Bachelor of Computer Science',
+          dates: '2024 - Present',
+          note: 'I am studying computer science here now, alongside my work.',
+        },
+        {
+          school: 'Government Science College',
+          qualification: 'ICS, Intermediate in Computer Science',
+          dates: '2022 - 2024',
+          note: 'Where I got my grounding in computing, before university.',
+        },
+        {
+          school: 'Government Millat High School',
+          qualification: 'High School',
+          dates: '2020 - 2022',
+          note: 'High school, and the start of my education.',
+        },
+      ],
+    },
     testimonials: {
-      label: '07 / TESTIMONIALS',
+      label: '08 / TESTIMONIALS',
       heading: 'What clients say.',
       average: '5.0',
       averageLabel: 'Average rating',
@@ -306,7 +339,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'Visit my GitHub',
     },
     contact: {
-      label: '08 / CONTACT',
+      label: '09 / CONTACT',
       heading: 'Let’s build something\nthat works for you.',
       text: 'Have a website, a workflow, or an AI automation idea in mind? Tell me about it.',
       action: 'Start a conversation',
@@ -355,6 +388,7 @@ export const translations: Record<Language, Copy> = {
       expertise: 'مہارتیں',
       experience: 'تجربہ',
       certificates: 'اسناد',
+      education: 'تعلیم',
       testimonials: 'آراء',
       about: 'میرے بارے میں',
       skills: 'ہنر',
@@ -502,8 +536,33 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    education: {
+      label: '۰۷ / تعلیم',
+      heading: 'میری تعلیم۔',
+      intro: 'ہائی اسکول سے یونیورسٹی تک، تعلیم کے تین مراحل۔',
+      items: [
+        {
+          school: 'University of Central Punjab',
+          qualification: 'Bachelor of Computer Science',
+          dates: '2024 - اب',
+          note: 'میں یہاں کمپیوٹر سائنس پڑھ رہا ہوں، اپنے کام کے ساتھ ساتھ۔',
+        },
+        {
+          school: 'Government Science College',
+          qualification: 'ICS, Intermediate in Computer Science',
+          dates: '2022 - 2024',
+          note: 'یہاں سے کمپیوٹنگ کی بنیاد ملی، یونیورسٹی سے پہلے۔',
+        },
+        {
+          school: 'Government Millat High School',
+          qualification: 'High School',
+          dates: '2020 - 2022',
+          note: 'ہائی اسکول، اور میری تعلیم کی شروعات۔',
+        },
+      ],
+    },
     testimonials: {
-      label: '۰۷ / آراء',
+      label: '۰۸ / آراء',
       heading: 'کلائنٹس کیا کہتے ہیں۔',
       average: '5.0',
       averageLabel: 'اوسط درجہ بندی',
@@ -525,7 +584,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'میرا GitHub دیکھیں',
     },
     contact: {
-      label: '۰۸ / رابطہ',
+      label: '۰۹ / رابطہ',
       heading: 'آئیں کچھ ایسا بنائیں\nجو آپ کے کام آئے۔',
       text: 'ویب سائٹ، ورک فلو یا اے آئی آٹومیشن کا کوئی خیال ہے؟ مجھے اس کے بارے میں بتائیں۔',
       action: 'بات شروع کریں',
@@ -574,6 +633,7 @@ export const translations: Record<Language, Copy> = {
       expertise: 'Especialidades',
       experience: 'Experiencia',
       certificates: 'Certificados',
+      education: 'Educación',
       testimonials: 'Testimonios',
       about: 'Sobre mí',
       skills: 'Habilidades',
@@ -721,8 +781,33 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    education: {
+      label: '07 / EDUCACIÓN',
+      heading: 'Dónde estudié.',
+      intro: 'Tres etapas de formación, del instituto a la universidad.',
+      items: [
+        {
+          school: 'University of Central Punjab',
+          qualification: 'Bachelor of Computer Science',
+          dates: '2024 - Actualidad',
+          note: 'Estudio informática aquí ahora, junto con mi trabajo.',
+        },
+        {
+          school: 'Government Science College',
+          qualification: 'ICS, Intermediate in Computer Science',
+          dates: '2022 - 2024',
+          note: 'Aquí senté las bases de la informática, antes de la universidad.',
+        },
+        {
+          school: 'Government Millat High School',
+          qualification: 'High School',
+          dates: '2020 - 2022',
+          note: 'El instituto, y el inicio de mi formación.',
+        },
+      ],
+    },
     testimonials: {
-      label: '07 / TESTIMONIOS',
+      label: '08 / TESTIMONIOS',
       heading: 'Lo que dicen los clientes.',
       average: '5.0',
       averageLabel: 'Valoración media',
@@ -748,7 +833,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'Visita mi GitHub',
     },
     contact: {
-      label: '08 / CONTACTO',
+      label: '09 / CONTACTO',
       heading: 'Creemos algo\nque funcione para ti.',
       text: '¿Tienes en mente un sitio web, un flujo de trabajo o una idea de automatización con IA? Cuéntamelo.',
       action: 'Inicia una conversación',
@@ -797,6 +882,7 @@ export const translations: Record<Language, Copy> = {
       expertise: '専門分野',
       experience: '経験',
       certificates: '修了証',
+      education: '学歴',
       testimonials: 'お客様の声',
       about: '自己紹介',
       skills: 'スキル',
@@ -943,8 +1029,33 @@ export const translations: Record<Language, Copy> = {
         },
       ],
     },
+    education: {
+      label: '07 / 学歴',
+      heading: '学んだ場所。',
+      intro: '高校から大学まで、3つの学びの段階。',
+      items: [
+        {
+          school: 'University of Central Punjab',
+          qualification: 'Bachelor of Computer Science',
+          dates: '2024年 - 現在',
+          note: '仕事と並行して、ここでコンピューターサイエンスを学んでいます。',
+        },
+        {
+          school: 'Government Science College',
+          qualification: 'ICS, Intermediate in Computer Science',
+          dates: '2022年 - 2024年',
+          note: '大学の前に、コンピューターの基礎を身につけた場所。',
+        },
+        {
+          school: 'Government Millat High School',
+          qualification: 'High School',
+          dates: '2020年 - 2022年',
+          note: '高校時代、学びの始まり。',
+        },
+      ],
+    },
     testimonials: {
-      label: '07 / お客様の声',
+      label: '08 / お客様の声',
       heading: 'お客様の声。',
       average: '5.0',
       averageLabel: '平均評価',
@@ -966,7 +1077,7 @@ export const translations: Record<Language, Copy> = {
       githubLink: 'GitHubを見る',
     },
     contact: {
-      label: '08 / お問い合わせ',
+      label: '09 / お問い合わせ',
       heading: 'あなたの仕事に役立つものを、\n一緒につくりましょう。',
       text: 'Webサイト、ワークフロー、AI自動化のアイデアがあれば、ぜひお聞かせください。',
       action: 'メールで相談する',

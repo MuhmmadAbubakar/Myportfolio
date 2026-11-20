@@ -1282,6 +1282,73 @@ html[lang="ur"] .dashboard-cover figcaption {
   padding-top: 5px;
   text-align: end;
 }
+/* Education: same row language as Experience, one row per school. */
+.education-list {
+  border-top: 1px solid var(--line-2);
+}
+.education-row {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr 30px;
+  gap: 40px;
+  padding-block: 33px;
+  border-bottom: 1px solid var(--line-1);
+  align-items: start;
+  border-radius: 6px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 180ms;
+}
+.education-row:hover {
+  background: var(--glass-bg-strong);
+}
+.education-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.education-school {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.education-school h3 {
+  font-size: 20px;
+}
+.education-mark {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font: 600 13px var(--font-mono);
+  color: var(--accent);
+  background: var(--bg-1);
+}
+.education-detail h4 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.education-dates {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.education-detail > p {
+  font-size: 13px;
+  max-width: 530px;
+  line-height: 1.85;
+}
+.education-index {
+  font: 10px var(--font-mono);
+  color: var(--fg-3);
+  padding-top: 5px;
+  text-align: end;
+}
 .testimonials-summary {
   display: flex;
   align-items: center;
@@ -1694,6 +1761,19 @@ html[lang="ur"] .dashboard-cover figcaption {
   .experience-company h3 {
     font-size: 17px;
   }
+  .education-row {
+    grid-template-columns: 1fr 1.6fr;
+    gap: 30px;
+  }
+  .education-index {
+    display: none;
+  }
+  .education-school {
+    gap: 12px;
+  }
+  .education-school h3 {
+    font-size: 17px;
+  }
   .about {
     grid-template-columns: 1fr;
   }
@@ -1799,6 +1879,13 @@ html[lang="ur"] .dashboard-cover figcaption {
     gap: 21px;
   }
   .experience-detail > p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  .education-row {
+    grid-template-columns: 1fr;
+    gap: 21px;
+  }
+  .education-detail > p {
     font-size: 13px;
   }
   .github-band {
