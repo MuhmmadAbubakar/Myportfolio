@@ -30,6 +30,7 @@ export interface Copy {
     description: string
     primary: string
     secondary: string
+    bookCall: string
     scroll: string
   }
   workflow: {
@@ -152,6 +153,7 @@ export const translations: Record<Language, Copy> = {
         'I build websites and web apps that look good and work well. I also set up automation and AI that follow up, book appointments, and keep business systems clean. GoHighLevel is one of the platforms I work with every day.',
       primary: 'Explore my work',
       secondary: 'Get in touch',
+      bookCall: 'Book a call',
       scroll: 'A little more about what I do',
     },
     workflow: {
@@ -401,6 +403,7 @@ export const translations: Record<Language, Copy> = {
         'میں ایسی ویب سائٹس اور ویب ایپس بناتا ہوں جو اچھی لگیں اور اچھا کام کریں۔ میں ایسی آٹومیشن اور اے آئی بھی ترتیب دیتا ہوں جو فالو اپ کرے، اپائنٹمنٹ بک کرے اور کاروباری سسٹمز کو صاف رکھے۔ GoHighLevel ان پلیٹ فارمز میں سے ایک ہے جن پر میں ہر روز کام کرتا ہوں۔',
       primary: 'میرا کام دیکھیں',
       secondary: 'رابطہ کریں',
+      bookCall: 'کال بک کریں',
       scroll: 'میرے کام کے بارے میں مزید جانیں',
     },
     workflow: {
@@ -646,6 +649,7 @@ export const translations: Record<Language, Copy> = {
         'Creo sitios web y aplicaciones web con buen aspecto y buen funcionamiento. También configuro automatización e IA que hacen seguimiento, reservan citas y mantienen los sistemas en orden. GoHighLevel es una de las plataformas con las que trabajo cada día.',
       primary: 'Explora mi trabajo',
       secondary: 'Contacta conmigo',
+      bookCall: 'Reserva una llamada',
       scroll: 'Un poco más sobre lo que hago',
     },
     workflow: {
@@ -895,6 +899,7 @@ export const translations: Record<Language, Copy> = {
         '見た目が良く、快適に使えるWebサイトとWebアプリをつくります。フォローアップや予約を行い、ビジネスシステムを整理する自動化とAIも設定します。GoHighLevelは、毎日使っているプラットフォームのひとつです。',
       primary: '制作・実務を見る',
       secondary: 'お問い合わせ',
+      bookCall: '通話を予約する',
       scroll: '私の仕事について',
     },
     workflow: {
