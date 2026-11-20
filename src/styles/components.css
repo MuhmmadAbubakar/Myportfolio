@@ -468,7 +468,10 @@ html[data-theme="light"] .theme-toggle-moon {
 }
 .dashboard-cover {
   aspect-ratio: 8 / 5;
-  padding: 25px 25px 12px;
+  /* Tighter padding than the 25px it had, so the dashboard drawing
+   * fits inside the 8/5 box instead of pushing the cover taller than
+   * its siblings. */
+  padding: 18px 18px 10px;
   display: flex;
   flex-direction: column;
   background: #172029;
@@ -492,6 +495,7 @@ html[data-theme="light"] .theme-toggle-moon {
   gap: 10px;
   padding: 15px 12px;
   background: #303a4b;
+  min-height: 0;
 }
 .dashboard-brand {
   color: #c7d9ee;
@@ -526,12 +530,13 @@ html[data-theme="light"] .theme-toggle-moon {
 }
 .dashboard-main {
   min-width: 0;
+  min-height: 0;
 }
 .dashboard-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 24px;
+  height: 22px;
   padding-inline: 12px;
   border-bottom: 1px solid #e3e7ed;
   background: white;
@@ -550,28 +555,28 @@ html[data-theme="light"] .theme-toggle-moon {
   color: #438fa0;
 }
 .dashboard-body {
-  padding: 15px;
+  padding: 10px;
 }
 .dashboard-title {
   color: #303a4b;
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .dashboard-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  padding: 18px 8px;
+  gap: 5px;
+  padding: 12px 8px;
   border: 1px solid #e2e7ee;
   border-radius: 5px;
   background: white;
 }
 .dashboard-panel-icon {
   color: #637990;
-  padding: 7px;
+  padding: 5px;
   background: #edf2f7;
   border-radius: 7px;
 }
@@ -589,7 +594,7 @@ html[data-theme="light"] .theme-toggle-moon {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .dashboard-tools > span {
   display: flex;
@@ -607,13 +612,17 @@ html[data-theme="light"] .theme-toggle-moon {
   height: 12px;
 }
 .dashboard-cover figcaption {
-  margin-top: 8px;
+  margin-top: 6px;
   text-align: end;
   color: #b5c1d0;
   font-size: 10px;
   line-height: 1.5;
 }
 .terminal-cover {
+  /* Same 8/5 ratio as the other two covers, so all three start from the
+   * same height; the subgrid rule below then stretches them to one
+   * shared height per row. */
+  aspect-ratio: 8 / 5;
   padding: 25px 25px 12px;
   display: flex;
   flex-direction: column;
@@ -640,6 +649,10 @@ html[data-theme="light"] .theme-toggle-moon {
   padding: 14px 16px;
   display: flex;
   flex-direction: column;
+  /* The three lines sit in the middle of the box, so there is no dead
+   * space at the bottom when the cover is stretched to match its
+   * taller siblings. */
+  justify-content: center;
 }
 .terminal-header {
   display: flex;
@@ -663,11 +676,30 @@ html[data-theme="light"] .theme-toggle-moon {
   color: #9a958a;
 }
 .terminal-cover figcaption {
-  margin-top: 8px;
+  margin-top: 6px;
   text-align: end;
   color: #b5c1d0;
   font-size: 10px;
   line-height: 1.5;
+}
+/* Equal-height project covers. With subgrid, the three cards in a row
+ * share one cover row, so the row is as tall as the tallest cover and
+ * every card's heading, tags and links start at the same height. The
+ * row gap is moved to a bottom margin on the cards, because a gap
+ * between the two subgrid rows would show inside each card. Browsers
+ * without subgrid keep the previous flex layout and natural cover
+ * heights, so nothing breaks there. */
+@supports (grid-template-rows: subgrid) {
+  .projects-grid {
+    grid-template-rows: auto 1fr;
+    gap: 0 24px;
+  }
+  .project-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    margin-bottom: 24px;
+  }
 }
 html[lang="ur"] .dashboard-title {
   font-size: 16px;
@@ -711,6 +743,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   }
   .dashboard-cover {
     padding: 25px 25px 12px;
+  }
+  /* One column, so the covers no longer need to match: the terminal
+   * goes back to hugging its content instead of sitting in a tall
+   * 8/5 box. */
+  .terminal-cover {
+    aspect-ratio: auto;
   }
   .dashboard-body {
     padding: 18px;
@@ -828,6 +866,100 @@ html[lang="ur"] .dashboard-cover figcaption {
 }
 .expertise-card .tags {
   margin-top: auto;
+}
+/* Skills: a bento grid instead of the plain 4+2 grid, so the section has
+ * a clear hierarchy. Web Development and AI Agents & Automation are the
+ * two anchor areas, so they take double-width cards on the top row; the
+ * other four sit in a row of singles below. Same glass cards as
+ * Expertise, with their own classes so Expertise is untouched. */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.skill-card {
+  padding: 28px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    border-color 180ms,
+    transform 180ms,
+    background-color 300ms ease;
+}
+.skill-card:hover {
+  border-color: #e8b45855;
+  transform: translateY(-3px);
+}
+.skill-card--wide {
+  grid-column: span 2;
+}
+.skill-card--wide .service-icon svg {
+  width: 32px;
+  height: 32px;
+}
+.skill-card h3 {
+  font-size: 18px;
+  margin-bottom: 13px;
+}
+.skill-card > p {
+  font-size: 13px;
+  line-height: 1.85;
+  margin-bottom: 25px;
+}
+.skill-card .tags {
+  margin-top: auto;
+}
+/* Tools ticker: every tag from the six cards, drifting slowly in a loop
+ * under the grid, like the companies marquee in the hero. It only
+ * repeats tags already in the cards, so it is hidden from screen
+ * readers. Pauses on hover, and stays still under reduced motion. */
+.skills-marquee {
+  margin-top: 24px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.skills-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 55s linear infinite;
+}
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+.skills-marquee-track ul {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12px;
+  padding-right: 12px;
+}
+.skills-marquee-track li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border: 1px solid var(--line-1);
+  border-radius: 999px;
+  background: var(--glass-bg);
+  color: var(--fg-2);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.skills-marquee-dot {
+  color: var(--accent);
+  font-size: 10px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-track {
+    animation: none;
+  }
 }
 .experience-list {
   border-top: 1px solid var(--line-2);
@@ -1197,6 +1329,12 @@ html[lang="ur"] .dashboard-cover figcaption {
   .expertise-card {
     padding: 23px;
   }
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .skill-card {
+    padding: 23px;
+  }
   .about {
     gap: 40px;
   }
@@ -1280,10 +1418,19 @@ html[lang="ur"] .dashboard-cover figcaption {
   .expertise-grid {
     grid-template-columns: 1fr;
   }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-card--wide {
+    grid-column: span 1;
+  }
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
   .expertise-card {
+    padding: 27px;
+  }
+  .skill-card {
     padding: 27px;
   }
   .card-top {
@@ -1496,6 +1643,7 @@ html[data-theme="light"] .button-primary:hover {
 /* Lighter hover shadow on cards in light mode. */
 html[data-theme="light"] .project-card:hover,
 html[data-theme="light"] .expertise-card:hover,
+html[data-theme="light"] .skill-card:hover,
 html[data-theme="light"] .testimonial-card:hover {
   box-shadow:
     0 0 0 1px var(--accent-dim),

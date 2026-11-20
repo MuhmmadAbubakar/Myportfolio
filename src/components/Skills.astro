@@ -7,17 +7,25 @@ interface Props {
 }
 const t = translations[Astro.props.lang].skills
 const icons = ['code', 'workflow', 'spark', 'game', 'code', 'bag'] as const
+/* The two anchor areas get a double-width card in the bento grid. */
+const wide = new Set([0, 2])
+const allTags = t.groups.flatMap((group) => group.tags)
 ---
-<section class="section" id="skills" aria-labelledby="skills-title">
+<section class="section skills" id="skills" aria-labelledby="skills-title">
   <div class="section-intro">
     <div><p class="eyebrow accent">{t.label}</p><h2 id="skills-title">{t.heading}</h2></div>
     <p>{t.intro}</p>
   </div>
-  <div class="expertise-grid">
-    {t.groups.map((group, index) => <article class="expertise-card">
+  <div class="skills-grid">
+    {t.groups.map((group, index) => <article class={wide.has(index) ? 'skill-card skill-card--wide' : 'skill-card'}>
       <div class="card-top"><span class="service-icon"><Icon name={icons[index]} /></span><span class="card-index" aria-hidden="true">0{index + 1}</span></div>
       <h3>{group.title}</h3><p>{group.text}</p>
       <ul class="tags">{group.tags.map((tag) => <li>{tag}</li>)}</ul>
     </article>)}
+  </div>
+  <div class="skills-marquee" aria-hidden="true">
+    <div class="skills-marquee-track">
+      {[0, 1].map(() => <ul>{allTags.map((tag) => <li>{tag}<span class="skills-marquee-dot">✦</span></li>)}</ul>)}
+    </div>
   </div>
 </section>
