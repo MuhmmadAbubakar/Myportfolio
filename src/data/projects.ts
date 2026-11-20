@@ -30,6 +30,13 @@ interface ProjectCopy {
     tags: string[]
     illustration: string
   }
+  report: {
+    category: string
+    description: string
+    action: string
+    tags: string[]
+    illustration: string
+  }
 }
 
 export const projectCopy: Record<Language, ProjectCopy> = {
@@ -37,7 +44,7 @@ export const projectCopy: Record<Language, ProjectCopy> = {
     nav: 'Projects',
     label: '03 / SELECTED WORK',
     heading: 'A closer look at my work.',
-    intro: 'A movie discovery website, hands-on work in the GoHighLevel ecosystem, and a local AI agent I run on my own machine.',
+    intro: 'A movie discovery website, hands-on work in the GoHighLevel ecosystem, a local AI agent I run on my own machine, and a Power Automate system in Microsoft Teams.',
     movie: {
       category: 'WEB DEVELOPMENT',
       description:
@@ -67,12 +74,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       tags: ['Ollama', 'Qwen3 5.2B', 'AI agent'],
       illustration: 'Terminal illustration',
     },
+    report: {
+      category: 'POWER AUTOMATE / MICROSOFT TEAMS',
+      description:
+        "A Power Automate workflow in Microsoft Teams that keeps the team's records in one place. When someone fills out the end-of-day form, the report goes straight to the team's private channel with HR, and time-off requests are managed in the same place.",
+      action: 'See experience',
+      tags: ['Power Automate', 'Microsoft Teams', 'Microsoft Forms'],
+      illustration: 'Flow illustration',
+    },
   },
   ur: {
     nav: 'پروجیکٹس',
     label: '۰۳ / منتخب کام',
     heading: 'میرے کام پر ایک نظر۔',
-    intro: 'فلمیں تلاش کرنے کی ویب سائٹ، GoHighLevel کے شعبے میں عملی تجربہ، اور ایک لوکل اے آئی ایجنٹ جسے میں اپنی مشین پر چلاتا ہوں۔',
+    intro: 'فلمیں تلاش کرنے کی ویب سائٹ، GoHighLevel کے شعبے میں عملی تجربہ، ایک لوکل اے آئی ایجنٹ جسے میں اپنی مشین پر چلاتا ہوں، اور Microsoft Teams میں ایک Power Automate سسٹم۔',
     movie: {
       category: 'ویب ڈویلپمنٹ',
       description:
@@ -102,13 +117,21 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       tags: ['Ollama', 'Qwen3 5.2B', 'اے آئی ایجنٹ'],
       illustration: 'ٹرمینل کی تمثیلی تصویر',
     },
+    report: {
+      category: 'POWER AUTOMATE / MICROSOFT TEAMS',
+      description:
+        'Microsoft Teams میں ایک Power Automate ورک فلو جو ٹیم کا سارا ریکارڈ ایک جگہ رکھتا ہے۔ جب کوئی دن کے آخر کا فارم بھرتا ہے تو رپورٹ سیدھی HR کے ساتھ ٹیم کے نجی چینل میں چلی جاتی ہے، اور چھٹی کی درخواستیں بھی اسی جگہ سنبھالی جاتی ہیں۔',
+      action: 'تجربہ دیکھیں',
+      tags: ['Power Automate', 'Microsoft Teams', 'Microsoft Forms'],
+      illustration: 'فلو کی تمثیلی تصویر',
+    },
   },
   es: {
     nav: 'Proyectos',
     label: '03 / TRABAJOS DESTACADOS',
     heading: 'Mi trabajo, más de cerca.',
     intro:
-      'Un sitio para descubrir películas, experiencia práctica en el ecosistema de GoHighLevel y un agente de IA local que ejecuto en mi propio ordenador.',
+      'Un sitio para descubrir películas, experiencia práctica en el ecosistema de GoHighLevel, un agente de IA local que ejecuto en mi propio ordenador y un sistema de Power Automate en Microsoft Teams.',
     movie: {
       category: 'DESARROLLO WEB',
       description:
@@ -138,12 +161,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       tags: ['Ollama', 'Qwen3 5.2B', 'Agente de IA'],
       illustration: 'Ilustración de terminal',
     },
+    report: {
+      category: 'POWER AUTOMATE / MICROSOFT TEAMS',
+      description:
+        'Un flujo de Power Automate en Microsoft Teams que guarda los registros del equipo en un solo lugar. Cuando alguien rellena el formulario de fin de día, el informe llega directo al canal privado del equipo con RR. HH., y las solicitudes de días libres se gestionan en el mismo lugar.',
+      action: 'Ver experiencia',
+      tags: ['Power Automate', 'Microsoft Teams', 'Microsoft Forms'],
+      illustration: 'Ilustración del flujo',
+    },
   },
   ja: {
     nav: '制作・実務',
     label: '03 / 制作・実務紹介',
     heading: '取り組みを、もっと具体的に。',
-    intro: '映画を探すWebサイト、GoHighLevelでの実務経験、そして自分のPCでローカルに動かしているAIエージェントをご紹介します。',
+    intro: '映画を探すWebサイト、GoHighLevelでの実務経験、自分のPCでローカルに動かしているAIエージェント、そしてMicrosoft TeamsでのPower Automateシステムをご紹介します。',
     movie: {
       category: 'WEB開発',
       description:
@@ -171,6 +202,14 @@ export const projectCopy: Record<Language, ProjectCopy> = {
       action: 'AIスキルを見る',
       tags: ['Ollama', 'Qwen3 5.2B', 'AIエージェント'],
       illustration: 'ターミナルのイメージ',
+    },
+    report: {
+      category: 'POWER AUTOMATE / MICROSOFT TEAMS',
+      description:
+        'Microsoft Teamsで動くPower Automateのワークフローで、チームの記録を一か所にまとめています。誰かが終業時のフォームを送信すると、レポートはHRと共有するチームのプライベートチャネルに直接届き、休暇の申請も同じ場所で管理できます。',
+      action: '実務経験を見る',
+      tags: ['Power Automate', 'Microsoft Teams', 'Microsoft Forms'],
+      illustration: 'フローのイメージ',
     },
   },
 }

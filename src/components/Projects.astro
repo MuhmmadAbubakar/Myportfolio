@@ -71,5 +71,24 @@ const t = projectCopy[Astro.props.lang]
         <a class="text-link project-link" href="#skills">{t.hermes.action}<Icon name="down" /></a>
       </div>
     </article>
+    <article class="project-card">
+      <figure class="flow-cover">
+        <div class="flow-illustration" aria-hidden="true">
+          <div class="flow-step"><span class="flow-icon flow-form" aria-hidden="true"><span></span><span></span><span></span></span><span dir="ltr">EOD FORM</span></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-step"><span class="flow-icon"><Icon name="workflow" /></span><span dir="ltr">POWER AUTOMATE</span></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-step"><span class="flow-icon"><span class="flow-bubble"></span></span><span dir="ltr">TEAMS</span></div>
+        </div>
+        <figcaption>{t.report.illustration}</figcaption>
+      </figure>
+      <div class="project-content">
+        <p class="eyebrow accent">{t.report.category}</p>
+        <h3><bdi>Daily Report Automation</bdi></h3>
+        <p class="project-description">{t.report.description}</p>
+        <ul class="tags">{t.report.tags.map((tag) => <li>{tag}</li>)}</ul>
+        <a class="text-link project-link" href="#experience-hashturn">{t.report.action}<Icon name="down" /></a>
+      </div>
+    </article>
   </div>
 </section>

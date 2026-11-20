@@ -14,7 +14,9 @@ const wide = new Set([0, 2])
  * this: in DOM order GoHighLevel (a single) takes the third column of
  * row 1, so AI Agents (wide) no longer fits there and drops to row 2,
  * leaving an empty cell and pushing E-commerce onto a third row.
- * Card numbers stay with their skill (01 Web, 02 GoHighLevel, ...). */
+ * Card numbers follow reading order (01 Web, 02 AI Agents, 03
+ * GoHighLevel, 04 Game, 05 Next.js, 06 E-commerce), so they are based
+ * on the card's position in the bento, not on the skill's index. */
 const order = [0, 2, 1, 3, 4, 5]
 const allTags = t.groups.flatMap((group) => group.tags)
 ---
@@ -24,8 +26,8 @@ const allTags = t.groups.flatMap((group) => group.tags)
     <p>{t.intro}</p>
   </div>
   <div class="skills-grid">
-    {order.map((index) => { const group = t.groups[index]; return <article class={wide.has(index) ? 'skill-card skill-card--wide' : 'skill-card'}>
-      <div class="card-top"><span class="service-icon"><Icon name={icons[index]} /></span><span class="card-index" aria-hidden="true">0{index + 1}</span></div>
+    {order.map((index, position) => { const group = t.groups[index]; return <article class={wide.has(index) ? 'skill-card skill-card--wide' : 'skill-card'}>
+      <div class="card-top"><span class="service-icon"><Icon name={icons[index]} /></span><span class="card-index" aria-hidden="true">0{position + 1}</span></div>
       <h3>{group.title}</h3><p>{group.text}</p>
       <ul class="tags">{group.tags.map((tag) => <li>{tag}</li>)}</ul>
     </article>})}
