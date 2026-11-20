@@ -113,7 +113,10 @@ export async function handler(event) {
   const recent = history.slice(-MAX_HISTORY)
 
   const apiKey = process.env.API_KEY
-  if (!apiKey) return fallback()
+  if (!apiKey) {
+    console.error('chat: API_KEY is not set')
+    return fallback()
+  }
 
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 9000)
@@ -139,13 +142,21 @@ export async function handler(event) {
         signal: controller.signal,
       },
     )
-    if (!response.ok) return fallback()
+    if (!response.ok) {
+      const detail = await response.text().catch(() => '')
+      console.error('chat: Gemini error', response.status, detail.slice(0, 200))
+      return fallback()
+    }
     const data = await response.json()
     const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim()
     if (!reply) return fallback()
     return json(200, { reply })
-  } catch {
-    // Network failure, timeout, or bad JSON: never leak the error.
+  } catch (error) {
+    // Network failure, timeout, or bad JSON: never leak the error to visitors.
+    console.error(
+      'chat: Gemini request failed',
+      error instanceof Error ? error.message : 'unknown',
+    )
     return fallback()
   } finally {
     clearTimeout(timeout)
