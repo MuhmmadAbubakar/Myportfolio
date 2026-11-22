@@ -32,8 +32,8 @@
   let raf = 0
 
   const render = () => {
-    x += (targetX - x) * 0.25
-    y += (targetY - y) * 0.25
+    x += (targetX - x) * 0.4
+    y += (targetY - y) * 0.4
     scale += (targetScale - scale) * 0.2
     dot.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${scale})`
     const settled =
