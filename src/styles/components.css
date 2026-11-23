@@ -859,6 +859,85 @@ html[data-theme="light"] .theme-toggle-moon {
   font-size: 10px;
   line-height: 1.5;
 }
+.campus-cover {
+  /* The cover fills its row, at least 300px tall, like the terminal. */
+  height: 100%;
+  min-height: 300px;
+  padding: 25px 25px 12px;
+  display: flex;
+  flex-direction: column;
+  background: #0b0b0c;
+  border-inline-end: 1px solid var(--line-1);
+  min-width: 0;
+}
+.campus-illustration {
+  flex: 1;
+  min-height: 0;
+  border: 1px solid #3a2f1a;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 7px 25px #0004;
+  background: #101011;
+  padding: 14px;
+}
+.campus-plan {
+  /* Floor plan: four rooms around a lobby, joined by corridors.
+   * Library top left, Course Rooms top right, Cafe Bar bottom left,
+   * TV / Game Room bottom right, lobby in the middle. */
+  display: grid;
+  grid-template-columns: 1fr 26px 1fr;
+  grid-template-rows: 1fr 26px 1fr;
+  gap: 6px;
+  height: 100%;
+  min-height: 220px;
+}
+.campus-room,
+.campus-lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #8a6d2f;
+  border-radius: 4px;
+  background: #1a1710;
+  padding: 8px 4px;
+  text-align: center;
+  min-width: 0;
+}
+.campus-lobby {
+  border-color: #e8b458;
+  background: #211c10;
+}
+.campus-room-label {
+  color: #e8b458;
+  font:
+    9px / 1.4 "Segoe UI",
+    sans-serif;
+  letter-spacing: 1.5px;
+}
+.campus-room-sub {
+  color: #b5c1d0;
+  font-size: 9px;
+}
+.campus-corridor {
+  background: #e8b45822;
+  border-radius: 3px;
+}
+.campus-avatar {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e8b458;
+  box-shadow: 0 0 10px #e8b458aa;
+}
+.campus-cover figcaption {
+  margin-top: 6px;
+  text-align: end;
+  color: #b5c1d0;
+  font-size: 10px;
+  line-height: 1.5;
+}
 /* A real photo replacing a cover later uses this class, so it fills
  * the media area the same way the illustrations do. */
 .project-photo {
@@ -887,7 +966,8 @@ html[lang="ur"] .dashboard-cover figcaption {
   }
   .project-cover,
   .terminal-cover,
-  .flow-cover {
+  .flow-cover,
+  .campus-cover {
     aspect-ratio: 8 / 5;
     height: auto;
     min-height: 0;
@@ -905,6 +985,9 @@ html[lang="ur"] .dashboard-cover figcaption {
     padding: 18px 18px 10px;
   }
   .flow-cover {
+    padding: 18px 18px 10px;
+  }
+  .campus-cover {
     padding: 18px 18px 10px;
   }
   .dashboard-body {
@@ -932,6 +1015,9 @@ html[lang="ur"] .dashboard-cover figcaption {
     aspect-ratio: auto;
   }
   .flow-cover {
+    aspect-ratio: auto;
+  }
+  .campus-cover {
     aspect-ratio: auto;
   }
   .dashboard-body {
@@ -964,6 +1050,9 @@ html[lang="ur"] .dashboard-cover figcaption {
     padding: 16px 16px 10px;
   }
   .flow-cover {
+    padding: 16px 16px 10px;
+  }
+  .campus-cover {
     padding: 16px 16px 10px;
   }
   .dashboard-sidebar {

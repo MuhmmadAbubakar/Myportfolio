@@ -18,12 +18,49 @@ const t = projectCopy[Astro.props.lang]
       right. The cover is always the first child of the card, so a real
       image can replace it later by swapping that one element:
       - Hash Movies: the <a class="project-cover"> (swap its <img>)
+      - CampusVerse: the <figure class="campus-cover">
       - o1e Mortgage: the <figure class="dashboard-cover">
       - Hermes: the <figure class="terminal-cover">
       - Daily Report Automation: the <figure class="flow-cover">
       A replacement image should use class "project-photo" (see
       components.css) so it fills the media area the same way.
     */}
+    <article class="project-card">
+      <figure class="campus-cover">
+        <div class="campus-illustration" aria-hidden="true">
+          <div class="campus-plan">
+            <div class="campus-room"><span class="campus-room-label" dir="ltr">LIBRARY</span><span class="campus-room-sub" dir="ltr">Layla</span></div>
+            <div class="campus-corridor"></div>
+            <div class="campus-room"><span class="campus-room-label" dir="ltr">COURSE ROOMS</span><span class="campus-room-sub" dir="ltr">Courses</span></div>
+            <div class="campus-corridor"></div>
+            <div class="campus-lobby"><span class="campus-avatar" aria-hidden="true"></span><span class="campus-room-label" dir="ltr">LOBBY</span></div>
+            <div class="campus-corridor"></div>
+            <div class="campus-room"><span class="campus-room-label" dir="ltr">CAFE BAR</span><span class="campus-room-sub" dir="ltr">Rayan</span></div>
+            <div class="campus-corridor"></div>
+            <div class="campus-room"><span class="campus-room-label" dir="ltr">TV / GAME ROOM</span><span class="campus-room-sub" dir="ltr">TV + Quiz</span></div>
+          </div>
+        </div>
+        <figcaption>{t.campus.illustration}</figcaption>
+      </figure>
+      <div class="project-content">
+        <p class="eyebrow accent">{t.campus.category}</p>
+        <h3><bdi>CampusVerse</bdi></h3>
+        <p class="project-description">{t.campus.description}</p>
+        <div class="project-details">
+          <div class="project-details-inner">
+            <div class="project-detail">
+              <h4>{t.whatIDid}</h4>
+              <p class="project-story">{t.campus.story}</p>
+            </div>
+            <div class="project-detail">
+              <h4>{t.behindTheScenes}</h4>
+              <p class="project-backend">{t.campus.backend}</p>
+            </div>
+          </div>
+        </div>
+        <ul class="tags">{t.campus.tags.map((tag) => <li>{tag}</li>)}</ul>
+      </div>
+    </article>
     <article class="project-card">
       <a class="project-cover" href={movieProject.url} target="_blank" rel="noopener noreferrer" aria-label={`${movieProject.title}: ${t.movie.action}`}>
         <img src={movieProject.image} alt={t.movie.imageAlt} width="1440" height="900" loading="lazy" decoding="async" />

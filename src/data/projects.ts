@@ -13,6 +13,14 @@ interface ProjectCopy {
   intro: string
   whatIDid: string
   behindTheScenes: string
+  campus: {
+    category: string
+    description: string
+    story: string
+    backend: string
+    tags: string[]
+    illustration: string
+  }
   movie: { category: string; description: string; story: string; backend: string; imageAlt: string; action: string; tags: string[] }
   mortgage: {
     category: string
@@ -52,9 +60,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
     nav: 'Projects',
     label: '03 / SELECTED WORK',
     heading: 'A closer look at my work.',
-    intro: 'A movie discovery website, hands-on work in the GoHighLevel ecosystem, a local AI agent I run on my own machine, and a Power Automate system in Microsoft Teams.',
+    intro: 'A virtual campus students walk around in 3D, a movie discovery website, hands-on work in the GoHighLevel ecosystem, a local AI agent I run on my own machine, and a Power Automate system in Microsoft Teams.',
     whatIDid: 'What I did',
     behindTheScenes: 'Behind the scenes',
+    campus: {
+      category: 'NEXT.JS / 3D CAMPUS',
+      description:
+        'A virtual open-world campus for students. Log in at the same time, walk around a 3D lobby, see who is online, and step into the Library, Course Rooms, Cafe Bar and TV/Game Room.',
+      story:
+        'I built CampusVerse as a virtual campus students walk around together. You log in, walk through a 3D lobby with WASD or by clicking the floor, and step into the Library, Course Rooms, the Cafe Bar and the TV and Game Room. Layla the librarian and Rayan the barista are there to talk to, the doors open as you walk up, and you can sit down, order a coffee and join a real Zoom meeting from inside a room.',
+      backend:
+        'Behind the scenes, the 3D lobby runs on Next.js 14 with React Three Fiber and Three.js, with a 2D floor as a fallback when WebGL is not available. Video calls run through the Zoom Meeting SDK, so you join a real Zoom meeting with its number and passcode.',
+      tags: ['Next.js 14', 'React Three Fiber', 'Zoom Meeting SDK'],
+      illustration: 'Campus floor plan illustration',
+    },
     movie: {
       category: 'WEB DEVELOPMENT',
       description:
@@ -113,9 +132,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
     nav: 'پروجیکٹس',
     label: '۰۳ / منتخب کام',
     heading: 'میرے کام پر ایک نظر۔',
-    intro: 'فلمیں تلاش کرنے کی ویب سائٹ، GoHighLevel کے شعبے میں عملی تجربہ، ایک لوکل اے آئی ایجنٹ جسے میں اپنی مشین پر چلاتا ہوں، اور Microsoft Teams میں ایک Power Automate سسٹم۔',
+    intro: 'ایک ورچوئل کیمپس جس میں طلبہ 3D میں گھومتے ہیں، فلمیں تلاش کرنے کی ویب سائٹ، GoHighLevel کے شعبے میں عملی تجربہ، ایک لوکل اے آئی ایجنٹ جسے میں اپنی مشین پر چلاتا ہوں، اور Microsoft Teams میں ایک Power Automate سسٹم۔',
     whatIDid: 'میں نے کیا کیا',
     behindTheScenes: 'پردے کے پیچھے',
+    campus: {
+      category: 'NEXT.JS / 3D کیمپس',
+      description:
+        'طلبہ کے لیے ایک ورچوئل اوپن ورلڈ کیمپس۔ ایک ہی وقت میں لاگ ان کریں، 3D لابی میں گھومیں، دیکھیں کہ کون آن لائن ہے، اور Library، Course Rooms، Cafe Bar اور TV/Game Room میں جائیں۔',
+      story:
+        'میں نے CampusVerse ایک ورچوئل کیمپس کے طور پر بنایا ہے جس میں طلبہ ایک ساتھ گھوم سکتے ہیں۔ آپ لاگ ان کرتے ہیں، WASD سے یا فرش پر کلک کر کے 3D لابی میں چلتے ہیں، اور Library، Course Rooms، Cafe Bar اور TV اور Game Room میں جاتے ہیں۔ Layla لائبریرین اور Rayan باریستا بات کرنے کے لیے وہاں موجود ہیں، دروازے آپ کے قریب آتے ہی کھل جاتے ہیں، اور آپ بیٹھ سکتے ہیں، کافی منگوا سکتے ہیں اور کمرے کے اندر سے ہی ایک اصل Zoom میٹنگ میں شامل ہو سکتے ہیں۔',
+      backend:
+        'پس منظر میں، 3D لابی Next.js 14 کے ساتھ React Three Fiber اور Three.js پر چلتی ہے، اور WebGL دستیاب نہ ہو تو 2D فرش متبادل کے طور پر کام کرتا ہے۔ ویڈیو کالز Zoom Meeting SDK کے ذریعے چلتی ہیں، اس لیے آپ اس کے نمبر اور پاس کوڈ کے ساتھ ایک اصل Zoom میٹنگ میں شامل ہوتے ہیں۔',
+      tags: ['Next.js 14', 'React Three Fiber', 'Zoom Meeting SDK'],
+      illustration: 'کیمپس کے نقشے کی تمثیلی تصویر',
+    },
     movie: {
       category: 'ویب ڈویلپمنٹ',
       description:
@@ -175,9 +205,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
     label: '03 / TRABAJOS DESTACADOS',
     heading: 'Mi trabajo, más de cerca.',
     intro:
-      'Un sitio para descubrir películas, experiencia práctica en el ecosistema de GoHighLevel, un agente de IA local que ejecuto en mi propio ordenador y un sistema de Power Automate en Microsoft Teams.',
+      'Un campus virtual por el que los estudiantes caminan en 3D, un sitio para descubrir películas, experiencia práctica en el ecosistema de GoHighLevel, un agente de IA local que ejecuto en mi propio ordenador y un sistema de Power Automate en Microsoft Teams.',
     whatIDid: 'Lo que hice',
     behindTheScenes: 'Entre bastidores',
+    campus: {
+      category: 'NEXT.JS / CAMPUS 3D',
+      description:
+        'Un campus virtual de mundo abierto para estudiantes. Entran a la vez, caminan por un vestíbulo en 3D, ven quién está en línea y entran en la biblioteca, las aulas, la cafetería y la sala de TV y juegos.',
+      story:
+        'Construí CampusVerse como un campus virtual por el que los estudiantes caminan juntos. Entras, recorres un vestíbulo en 3D con WASD o haciendo clic en el suelo, y pasas a la biblioteca, las aulas, la cafetería y la sala de TV y juegos. Layla, la bibliotecaria, y Rayan, el barista, están ahí para hablar, las puertas se abren al acercarte, y puedes sentarte, pedir un café y unirte a una reunión real de Zoom desde dentro de una sala.',
+      backend:
+        'Detrás de las escenas, el vestíbulo 3D corre con Next.js 14, React Three Fiber y Three.js, con un suelo 2D como alternativa cuando WebGL no está disponible. Las videollamadas usan el SDK de reuniones de Zoom, así que te unes a una reunión real de Zoom con su número y su código de acceso.',
+      tags: ['Next.js 14', 'React Three Fiber', 'Zoom Meeting SDK'],
+      illustration: 'Ilustración del plano del campus',
+    },
     movie: {
       category: 'DESARROLLO WEB',
       description:
@@ -236,9 +277,20 @@ export const projectCopy: Record<Language, ProjectCopy> = {
     nav: '制作・実務',
     label: '03 / 制作・実務紹介',
     heading: '取り組みを、もっと具体的に。',
-    intro: '映画を探すWebサイト、GoHighLevelでの実務経験、自分のPCでローカルに動かしているAIエージェント、そしてMicrosoft TeamsでのPower Automateシステムをご紹介します。',
+    intro: '学生が3Dで歩き回るバーチャルキャンパス、映画を探すWebサイト、GoHighLevelでの実務経験、自分のPCでローカルに動かしているAIエージェント、そしてMicrosoft TeamsでのPower Automateシステムをご紹介します。',
     whatIDid: 'やったこと',
     behindTheScenes: '舞台裏',
+    campus: {
+      category: 'NEXT.JS / 3Dキャンパス',
+      description:
+        '学生のためのバーチャルなオープンワールドキャンパスです。同じ時間にログインし、3Dのロビーを歩き回り、誰がオンラインかを確認して、図書館、講義室、カフェバー、TV・ゲームルームに入ります。',
+      story:
+        'CampusVerseは、学生が一緒に歩き回れるバーチャルキャンパスとして作りました。ログインして、WASDキーや床をクリックして3Dロビーを歩き、図書館、講義室、カフェバー、TV・ゲームルームに入ります。司書のLaylaとバリスタのRayanが話しかけてくれて、ドアは近づくと開き、座ったり、コーヒーを注文したり、部屋の中から実際のZoomミーティングに参加したりできます。',
+      backend:
+        '裏側では、3DロビーはNext.js 14とReact Three Fiber、Three.jsで動いており、WebGLが使えない場合は2Dのフロアに切り替わります。ビデオ通話はZoom Meeting SDKを使い、ミーティング番号とパスコードで実際のZoomミーティングに参加します。',
+      tags: ['Next.js 14', 'React Three Fiber', 'Zoom Meeting SDK'],
+      illustration: 'キャンパスの平面図イメージ',
+    },
     movie: {
       category: 'WEB開発',
       description:
