@@ -883,10 +883,12 @@ html[data-theme="light"] .theme-toggle-moon {
 .campus-plan {
   /* Floor plan: four rooms around a lobby, joined by corridors.
    * Library top left, Course Rooms top right, Cafe Bar bottom left,
-   * TV / Game Room bottom right, lobby in the middle. */
+   * TV / Game Room bottom right, lobby in the middle. The middle
+   * track is 64px so the lobby box fits its gold dot and LOBBY label
+   * without clipping. */
   display: grid;
-  grid-template-columns: 1fr 26px 1fr;
-  grid-template-rows: 1fr 26px 1fr;
+  grid-template-columns: 1fr 64px 1fr;
+  grid-template-rows: 1fr 64px 1fr;
   gap: 6px;
   height: 100%;
   min-height: 220px;
