@@ -131,36 +131,13 @@
   transform: scaleX(1);
 }
 
-/* 5. Section eyebrows: a short gold bar draws in under the label once
- * the section is revealed. The eyebrow is a block, so the heading below
- * it always starts on its own line. (It was inline-block before, which
- * let the heading flow onto the same line and cover the eyebrow's last
- * letter.) */
+/* 5. Section eyebrows: plain labels, no gold bar under them. The eyebrow
+ * is a block, so the heading below it always starts on its own line. */
 .section-intro .eyebrow,
 .about-heading .eyebrow,
 .contact-copy .eyebrow {
   position: relative;
   display: block;
-  padding-bottom: 7px;
-}
-.section-intro .eyebrow::after,
-.about-heading .eyebrow::after,
-.contact-copy .eyebrow::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 28px;
-  height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 450ms var(--ease) 120ms;
-}
-.section-intro.is-visible .eyebrow::after,
-.about-heading.is-visible .eyebrow::after,
-.contact-copy.is-visible .eyebrow::after {
-  transform: scaleX(1);
 }
 
 /* 6. Cards: gold border glow on hover (keeps the existing lift). */
@@ -266,10 +243,7 @@
     animation: none !important;
   }
   .button-primary::after,
-  .main-nav a::after,
-  .section-intro .eyebrow::after,
-  .about-heading .eyebrow::after,
-  .contact-copy .eyebrow::after {
+  .main-nav a::after {
     transition: none !important;
   }
   .experience-row,
@@ -277,10 +251,5 @@
   .education-row .education-mark {
     transition: none !important;
     transform: none !important;
-  }
-  .section-intro.is-visible .eyebrow::after,
-  .about-heading.is-visible .eyebrow::after,
-  .contact-copy.is-visible .eyebrow::after {
-    transform: scaleX(1);
   }
 }
