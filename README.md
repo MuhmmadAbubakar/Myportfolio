@@ -1,6 +1,6 @@
 ﻿# Abubakar Mughal: Portfolio
 
-A static Astro portfolio in English, Urdu, Spanish, and Japanese. A GoHighLevel AI Operator portfolio: CRM, workflows, and AI automation for agencies, with web development, RPA automation, and Agentic AI experience at Hashturn, o1e Mortgage, and HL Pro Tools.
+A static Astro portfolio in English, Urdu, Spanish, and Japanese. The portfolio of Abubakar Mughal, Web Developer and Automation Expert, covering web development, GoHighLevel, RPA automation, and AI agents, with experience at Hashturn, o1e Mortgage, and HL Pro Tools. Live at https://abubakar-mughal.netlify.app/ and on LinkedIn at https://www.linkedin.com/in/muhammadabubakarmughal.
 
 ## Local development
 
@@ -35,7 +35,7 @@ English is at `/`, Urdu at `/ur/`, Spanish at `/es/`, and Japanese at `/ja/`. Th
 
 Experience descriptions are based on the supplied roles. Hashturn is listed as a Senior role with Agentic AI and GoHighLevel workflow work, and o1e Mortgage as Agency Admin for 8 months on GoHighLevel. The About section presents the work as a GoHighLevel AI Operator: CRM, workflows, and AI automation. The hero “Experience Across” strip is a scrolling marquee of the three companies where he has worked: Hashturn, o1e Mortgage, and HL Pro Tools. The Testimonials section shows the 4 strongest of the 10 supplied 5-star client reviews first, with a “See more” button revealing the remaining 6. All 10 reviews are quoted in English in every language, without reviewer names. None were supplied with the reviews. No employment dates, performance statistics, or unverified GitHub projects are included. The contact button opens the visitor’s email app to `m.abubakarmughal23@gmail.com`.
 
-The selected work section features Hash Movies with a captured homepage preview and a live website link, plus o1e Mortgage's GoHighLevel work. The latter uses a clearly labelled HTML/CSS dashboard illustration based on the supplied visual reference; it does not claim authorship of the GoHighLevel platform or expose a private dashboard link.
+The Projects section features five projects: CampusVerse, a virtual open world 3D campus for students, Hash Movies with a captured homepage preview and a live website link, o1e Mortgage's GoHighLevel work, Hermes, a local AI agent, and Daily Report Automation built with Power Automate at Hashturn. The o1e Mortgage entry uses a clearly labelled HTML/CSS dashboard illustration based on the supplied visual reference; it does not claim authorship of the GoHighLevel platform or expose a private dashboard link.
 
 ## Hosting
 
