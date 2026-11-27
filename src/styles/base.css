@@ -80,6 +80,11 @@ html[data-theme="light"] body::before {
 #vanta-bg canvas {
   opacity: 0.8;
 }
+/* In light mode the same mesh reads harsher against the pale paper
+ * background, so it sits fainter there and the text stays calmer. */
+html[data-theme="light"] #vanta-bg canvas {
+  opacity: 0.55;
+}
 /* Vanta FOG background: a second fixed canvas layered in front of the
  * topology mesh (see public/vanta-fog.js). FOG renders an opaque
  * shader, so its canvas is made translucent here, a soft gold haze
